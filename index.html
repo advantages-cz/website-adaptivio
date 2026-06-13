@@ -26,14 +26,19 @@
       --font-ui: "Matter Trial", Arial, Helvetica, sans-serif;
     }
     * { box-sizing: border-box; }
+    html {
+      min-height: 100%;
+      background:
+        linear-gradient(101deg, #ff5a12 0%, #ed7440 32%, #bea88d 52%, #a0d8d5 69%, #66d9e7 100%);
+    }
     body {
       margin: 0;
       min-height: 100svh;
+      min-height: 100dvh;
       display: grid;
       place-items: center;
       overflow: hidden;
-      background:
-        linear-gradient(101deg, #ff5a12 0%, #ed7440 32%, #bea88d 52%, #a0d8d5 69%, #66d9e7 100%);
+      background: transparent;
       color: var(--ink);
       font-family: var(--font-ui);
     }
