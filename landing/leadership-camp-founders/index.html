@@ -84,7 +84,7 @@
       right: 0;
       z-index: 50;
       color: var(--white);
-      background: linear-gradient(180deg, rgba(0, 0, 0, 0.68), rgba(0, 0, 0, 0));
+      background: linear-gradient(180deg, rgba(0, 0, 0, 0.76), rgba(0, 0, 0, 0.18) 68%, rgba(0, 0, 0, 0));
       transition: background .2s ease, color .2s ease, border-color .2s ease;
     }
 
@@ -99,7 +99,7 @@
       min-height: var(--nav);
       display: flex;
       align-items: center;
-      justify-content: space-between;
+      justify-content: flex-start;
       gap: 28px;
     }
 
@@ -139,16 +139,13 @@
     }
 
     .nav-links {
-      display: flex;
-      align-items: center;
-      gap: 24px;
-      font-size: 14px;
-      font-weight: 700;
+      display: none;
     }
 
     .nav-links a {
       text-decoration: none;
-      opacity: .78;
+      opacity: .74;
+      transition: opacity .18s ease, color .18s ease;
     }
 
     .nav-links a:hover {
@@ -177,6 +174,19 @@
       color: var(--white);
     }
 
+    .button.secondary {
+      background: rgba(255, 255, 255, 0.08);
+      color: var(--white);
+      border-color: rgba(255, 255, 255, 0.34);
+      backdrop-filter: blur(10px);
+    }
+
+    .button.secondary:hover {
+      background: rgba(255, 255, 255, 0.16);
+      color: var(--white);
+      border-color: rgba(255, 255, 255, 0.5);
+    }
+
     .button.dark {
       background: var(--ink);
       color: var(--white);
@@ -190,7 +200,7 @@
 
     .hero {
       position: relative;
-      min-height: 92svh;
+      min-height: 100svh;
       display: grid;
       align-items: end;
       overflow: hidden;
@@ -215,8 +225,9 @@
       width: 100%;
       height: 118%;
       object-fit: cover;
-      object-position: center;
-      transform: translate3d(0, var(--parallax-y, 0px), 0) scale(1.04);
+      object-position: 54% center;
+      transform: translate3d(0, var(--parallax-y, 0px), 0) scale(1.06);
+      filter: saturate(.88) brightness(.82) contrast(1.02);
       will-change: transform;
     }
 
@@ -226,14 +237,32 @@
       inset: 0;
       z-index: -1;
       background:
-        linear-gradient(90deg, rgba(0, 0, 0, 0.76) 0%, rgba(0, 0, 0, 0.36) 42%, rgba(0, 0, 0, 0.08) 100%),
-        linear-gradient(180deg, rgba(0, 0, 0, 0.28) 0%, rgba(0, 0, 0, 0.06) 48%, rgba(0, 0, 0, 0.72) 100%);
+        linear-gradient(90deg, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0.62) 34%, rgba(0, 0, 0, 0.24) 64%, rgba(0, 0, 0, 0.12) 100%),
+        linear-gradient(180deg, rgba(0, 0, 0, 0.34) 0%, rgba(0, 0, 0, 0.12) 38%, rgba(0, 0, 0, 0.8) 100%);
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: -1;
+      pointer-events: none;
+      background:
+        radial-gradient(circle at 22% 46%, rgba(0, 0, 0, 0.44), transparent 0 34%),
+        linear-gradient(180deg, rgba(129, 234, 252, 0.12), transparent 28%);
     }
 
     .hero-copy {
-      width: min(1120px, calc(100% - 44px));
+      width: min(var(--max), calc(100% - 44px));
       margin: 0 auto;
-      padding: calc(var(--nav) + 64px) 0 54px;
+      min-height: 100svh;
+      padding: calc(var(--nav) + 24px) 0 40px;
+      display: grid;
+      grid-template-columns: minmax(0, 640px);
+      align-content: center;
+      align-items: start;
+      justify-content: start;
+      row-gap: 0;
     }
 
     .eyebrow {
@@ -260,10 +289,13 @@
     }
 
     h1 {
-      max-width: 950px;
-      font-size: 88px;
+      max-width: 8.6ch;
+      font-size: clamp(68px, 6.6vw, 88px);
       font-weight: 700;
       line-height: var(--leading-display);
+      letter-spacing: -0.035em;
+      text-wrap: balance;
+      text-shadow: 0 10px 34px rgba(0, 0, 0, 0.22);
     }
 
     h2 {
@@ -278,11 +310,12 @@
     }
 
     .hero-lead {
-      max-width: 680px;
+      max-width: 24ch;
       margin: 24px 0 0;
-      color: rgba(255, 255, 255, 0.84);
-      font-size: 25px;
-      line-height: var(--leading-lead);
+      color: rgba(255, 255, 255, 0.9);
+      font-size: 20px;
+      line-height: 1.5;
+      text-wrap: pretty;
     }
 
     .hero-actions {
@@ -292,37 +325,42 @@
       margin-top: 32px;
     }
 
-    .scene-strip {
+    .intro-metrics {
       display: grid;
       grid-template-columns: repeat(4, minmax(0, 1fr));
-      margin-top: 48px;
-      border-top: 1px solid rgba(255, 255, 255, 0.28);
+      column-gap: 36px;
+      grid-column: 1 / -1;
+      border-top: 1px solid var(--ink);
+      margin-top: 40px;
     }
 
-    .scene-strip article {
-      min-height: 116px;
-      padding: 18px 22px 0 0;
-      border-right: 1px solid rgba(255, 255, 255, 0.18);
+    .intro-metrics article {
+      min-height: 124px;
+      padding: 20px 0;
+      border-bottom: 1px solid var(--line);
     }
 
-    .scene-strip article:last-child {
-      border-right: 0;
-    }
-
-    .scene-strip strong {
+    .intro-metrics strong {
       display: block;
-      margin-bottom: 8px;
-      font-size: 34px;
+      margin-bottom: 12px;
+      color: var(--ink);
+      font-size: 30px;
       line-height: var(--leading-heading);
       font-weight: 700;
+      letter-spacing: -0.03em;
     }
 
-    .scene-strip span {
+    .intro-metrics span {
       display: block;
-      max-width: 15ch;
-      color: rgba(255, 255, 255, 0.7);
-      font-size: 14px;
-      line-height: var(--leading-small);
+      color: var(--muted);
+      font-size: 17px;
+      line-height: var(--leading-copy);
+      max-width: 14ch;
+    }
+
+    .intro-metrics article:last-child strong,
+    .intro-metrics article:last-child span {
+      color: var(--orange);
     }
 
     .scroll-cue {
@@ -333,10 +371,12 @@
       place-items: center;
       width: 74px;
       height: 74px;
-      border: 1px solid rgba(255, 255, 255, 0.34);
+      border: 1px solid rgba(255, 255, 255, 0.2);
       border-radius: 999px;
+      background: rgba(0, 0, 0, 0.16);
       color: rgba(255, 255, 255, 0.82);
       font-size: 26px;
+      backdrop-filter: blur(10px);
     }
 
     section {
@@ -351,17 +391,61 @@
 
     .intro-grid {
       display: grid;
-      grid-template-columns: minmax(0, .95fr) minmax(0, 1.05fr);
-      gap: 58px;
+      gap: 40px;
       align-items: start;
     }
 
+    .intro .section-head {
+      display: grid;
+      max-width: none;
+      margin-bottom: 0;
+      grid-template-columns: minmax(0, 1.15fr) minmax(280px, 0.85fr);
+      align-items: start;
+      column-gap: 32px;
+      row-gap: 8px;
+    }
+
+    .intro .section-head .eyebrow {
+      grid-column: 1 / -1;
+      margin: 0;
+    }
+
+    .intro-title {
+      grid-column: 1;
+      grid-row: 2;
+      display: grid;
+      gap: 22px;
+      align-self: start;
+    }
+
+    .intro .section-head h2 {
+      margin: 0;
+      max-width: 14ch;
+      font-size: clamp(46px, 4vw, 68px);
+      line-height: var(--leading-display);
+    }
+
+    .intro-copy {
+      max-width: 38ch;
+      margin: 0;
+      font-size: 19px;
+      line-height: var(--leading-copy);
+    }
+
+    .intro .section-head .lead {
+      grid-column: 2;
+      grid-row: 2;
+      align-self: start;
+      max-width: 28ch;
+      margin: 0;
+      padding-left: 24px;
+      border-left: 2px solid rgba(255, 101, 18, 0.28);
+      font-size: 20px;
+      line-height: var(--leading-copy);
+    }
+
     .kicker-line {
-      width: 96px;
-      height: 6px;
-      margin-bottom: 26px;
-      background: linear-gradient(90deg, var(--orange), var(--blue));
-      border-radius: 999px;
+      display: none;
     }
 
     .lead {
@@ -1203,12 +1287,14 @@
     }
 
     @media (max-width: 1240px) {
+      .hero-copy {
+        grid-template-columns: 1fr;
+        justify-content: start;
+        column-gap: 0;
+      }
+
       h1 { font-size: 68px; }
       h2 { font-size: 46px; }
-
-      .nav-links a:not(.button) {
-        display: none;
-      }
 
       .intro-grid,
       .proof-grid {
@@ -1217,6 +1303,33 @@
 
       .proof-grid {
         gap: 42px;
+      }
+
+      .intro .section-head {
+        display: block;
+      }
+
+      .intro .section-head .eyebrow {
+        margin: 0 0 18px;
+      }
+
+      .intro .section-head h2 {
+        max-width: 14ch;
+      }
+
+      .intro-title {
+        gap: 18px;
+      }
+
+      .intro .section-head .lead {
+        max-width: 34ch;
+        margin-top: 18px;
+        padding-left: 20px;
+        font-size: 18px;
+      }
+
+      .intro-copy {
+        max-width: 34ch;
       }
 
       .stickysection .stickysection-pin {
@@ -1360,6 +1473,41 @@
       .section-head {
         margin-bottom: 46px;
       }
+
+      .hero-copy {
+        min-height: 100svh;
+        padding-top: calc(var(--nav) + 28px);
+        padding-bottom: 36px;
+      }
+
+      .hero-metrics .wrap {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        column-gap: 28px;
+      }
+    }
+
+    @media (max-height: 860px) and (min-width: 761px) {
+      .hero-copy {
+        min-height: 100svh;
+        padding-top: calc(var(--nav) + 20px);
+        padding-bottom: 20px;
+        align-content: center;
+      }
+
+      h1 {
+        font-size: clamp(54px, 6vw, 74px);
+        max-width: 8.8ch;
+      }
+
+      .hero-lead {
+        max-width: 24ch;
+        margin-top: 16px;
+        font-size: 19px;
+      }
+
+      .hero-actions {
+        margin-top: 24px;
+      }
     }
 
     @media (max-width: 1240px) {
@@ -1369,11 +1517,6 @@
 
       .brand-copy strong {
         font-size: 14px;
-      }
-
-      .nav-links {
-        gap: 18px;
-        font-size: 13px;
       }
 
       .button {
@@ -1550,10 +1693,6 @@
         display: none;
       }
 
-      .nav-links {
-        gap: 10px;
-      }
-
       .button {
         min-height: 42px;
         padding: 0 16px;
@@ -1561,24 +1700,32 @@
       }
 
       .hero {
-        min-height: 88svh;
+        min-height: 92svh;
       }
 
       .hero-copy {
-        padding-bottom: 36px;
+        min-height: 92svh;
+        padding-top: calc(var(--nav) + 24px);
+        padding-bottom: 32px;
       }
 
       h1 {
-        max-width: 10ch;
-        font-size: 46px;
+        max-width: 8.8ch;
+        font-size: 44px;
+        letter-spacing: -0.05em;
       }
 
       h2 { font-size: 38px; }
       h3 { font-size: 24px; }
 
       .hero-lead {
-        max-width: 25ch;
-        font-size: 21px;
+        max-width: 22ch;
+        margin-top: 16px;
+        font-size: 19px;
+      }
+
+      .hero-actions {
+        margin-top: 24px;
       }
 
       .lead {
@@ -1599,26 +1746,21 @@
         padding-left: 0;
       }
 
-      .scene-strip,
-      .timeline,
-      .spec-table {
-        grid-template-columns: 1fr;
+      .intro .section-head .lead {
+        max-width: none;
+        padding-left: 0;
+        border-left: 0;
+        margin-top: 16px;
       }
 
-      .scene-strip article,
-      .timeline article,
-      .spec-table article {
-        border-right: 0;
+      .intro-metrics {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        column-gap: 24px;
       }
 
-      .scene-strip {
-        margin-top: 28px;
-      }
-
-      .scene-strip article {
-        min-height: auto;
-        padding: 14px 0;
-        border-bottom: 1px solid rgba(255, 255, 255, 0.18);
+      .intro-metrics article {
+        min-height: 0;
+        padding: 16px 0 18px;
       }
 
       .scroll-cue {
@@ -1663,6 +1805,11 @@
 
       .people-row.stickysection-card {
         padding: 0;
+      }
+
+      .timeline,
+      .spec-table {
+        grid-template-columns: 1fr;
       }
 
       .story-row h3,
@@ -1739,6 +1886,26 @@
       }
     }
 
+    @media (max-width: 520px) {
+      .hero-metrics .wrap {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        column-gap: 18px;
+      }
+
+      .hero-metrics article {
+        padding: 14px 0 16px;
+      }
+
+      .intro-metrics strong {
+        font-size: 24px;
+      }
+
+      .intro-metrics span {
+        font-size: 15px;
+        max-width: 10ch;
+      }
+    }
+
     @media (prefers-reduced-motion: reduce) {
       html { scroll-behavior: auto; }
 
@@ -1792,9 +1959,23 @@
         <p class="hero-lead">Praktická týmová zkušenost, ve které uvidíte, co ve vašich lidech opravdu je, když zmizí obvyklé škatulky, porady a hotová zadání shora.</p>
         <div class="hero-actions">
           <a class="button" href="https://forms.gle/leadership-camp-placeholder">Chci vědět víc</a>
-          <a class="button" href="#film">Jak to funguje</a>
+          <a class="button secondary" href="#film">Jak to funguje</a>
         </div>
-        <div class="scene-strip" aria-label="Základní parametry campu">
+      </div>
+      <div class="scroll-cue" aria-hidden="true">↓</div>
+    </section>
+
+    <section class="intro" id="film">
+      <div class="wrap intro-grid">
+        <div class="section-head">
+          <p class="eyebrow">Co běžná porada neukáže</p>
+          <div class="intro-title">
+            <h2>Malý projekt jako zrcadlo týmu.</h2>
+            <p class="copy intro-copy">Camp není další školení do kalendáře. Je to situace, ve které je vidět iniciativa, naslouchání, odvaha ověřovat i schopnost převést neurčitý problém do konkrétního dalšího kroku.</p>
+          </div>
+          <p class="lead">Účastníci během tří dnů zmapují svou osobní výbavu, najdou problém, který stojí za pozornost, vytvoří jednoduchou zkušební verzi řešení a ověří ji přímo v terénu u lidí, kteří mají důvod říct ano, ne nebo zatím ne.</p>
+        </div>
+        <div class="intro-metrics" aria-label="Základní parametry campu">
           <article>
             <strong>3</strong>
             <span>dny mimo běžný provoz</span>
@@ -1811,21 +1992,6 @@
             <strong>0</strong>
             <span>teorie navíc bez reality</span>
           </article>
-        </div>
-      </div>
-      <div class="scroll-cue" aria-hidden="true">↓</div>
-    </section>
-
-    <section class="intro" id="film">
-      <div class="wrap intro-grid">
-        <div>
-          <div class="kicker-line"></div>
-          <p class="eyebrow">Co běžná porada neukáže</p>
-          <h2>Malý projekt jako zrcadlo týmu.</h2>
-        </div>
-        <div>
-          <p class="lead">Camp není další školení do kalendáře. Je to situace, ve které je vidět iniciativa, naslouchání, odvaha ověřovat i schopnost převést neurčitý problém do konkrétního dalšího kroku.</p>
-          <p class="copy">Účastníci během tří dnů zmapují svou osobní výbavu, najdou problém, který stojí za pozornost, vytvoří jednoduchou zkušební verzi řešení a ověří ji přímo v terénu u lidí, kteří mají důvod říct ano, ne nebo zatím ne.</p>
         </div>
       </div>
     </section>
