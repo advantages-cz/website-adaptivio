@@ -7,14 +7,14 @@
           {% for item in include.section.items %}
           <article class="stickysection-card people-row{% if forloop.first %} is-active{% endif %}" data-stickysection-card data-people-tone="{{ item.tone }}">
             <div class="lecturer-layout">
-              <div class="lecturer-media">
+              <figure class="lecturer-media">
                 <img src="{{ item.image | relative_url }}" alt="{{ item.image_alt }}">
-              </div>
-              <div class="lecturer-meta">
+              </figure>
+              <figcaption class="lecturer-meta">
                 <strong class="sequence-state-label">{{ item.label }}</strong>
                 <h3>{{ item.title }}</h3>
                 <p>{{ item.copy }}</p>
-              </div>
+              </figcaption>
             </div>
           </article>
           {% endfor %}

@@ -628,6 +628,11 @@ section {
   gap: 18px;
 }
 
+.lecturer-media,
+.lecturer-meta {
+  margin: 0;
+}
+
 .stickysection-head .copy {
   margin-top: 0;
   color: var(--stickysection-card-copy);
