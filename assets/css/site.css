@@ -1313,11 +1313,14 @@ section {
 
   .brand-copy {
     min-width: 0;
-    padding-left: 12px;
+    padding-left: 0;
+    border-left: 0;
+    opacity: 1;
   }
 
   .brand-copy strong {
-    font-size: 14px;
+    font-size: 24px;
+    font-weight: 400;
   }
 
   .nav-links .button {
@@ -1342,6 +1345,10 @@ section {
   .site-header.is-cta-visible .brand-copy {
     padding-left: 0;
     border-left: 0;
+  }
+
+  .site-header.is-cta-visible .brand-copy strong {
+    font-weight: 700;
   }
 
   section {
