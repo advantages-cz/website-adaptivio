@@ -3,7 +3,7 @@
     {% include components/section-head.html section=include.section class="section-head--split intro-head" title_class="intro-title" copy_class="intro-copy" perex_class="intro-aside" %}
     <div class="intro-metrics" aria-label="Zakladni parametry campu">
       {% for item in include.section.metrics %}
-      <article>
+      <article{% if item.tone %} class="intro-metric--{{ item.tone }}"{% endif %}>
         <strong>{{ item.value }}</strong>
         <span>{{ item.label }}</span>
       </article>

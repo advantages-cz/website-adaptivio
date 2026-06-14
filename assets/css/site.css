@@ -491,6 +491,11 @@ section {
   color: var(--ink);
 }
 
+.intro-metrics article.intro-metric--accent strong,
+.intro-metrics article.intro-metric--accent span {
+  color: var(--orange);
+}
+
 .stickysection {
   --stickysection-space: 8px;
   --stickysection-space-1-5: calc(var(--stickysection-space) * 1.5);
