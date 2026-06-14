@@ -405,7 +405,7 @@ section {
 }
 
 .intro {
-  --stickysection-card-height: 200px;
+  --stickysection-card-height: 250px;
   --stickysection-card-height-tablet: 180px;
   --stickysection-card-padding: 30px 28px 28px;
   --stickysection-card-radius: 28px;

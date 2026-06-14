@@ -29,11 +29,11 @@ intro:
   id: film
   eyebrow: Co běžná porada neukáže
   title: Malý projekt jako zrcadlo týmu.
-  perex: >-
+  copy: >-
     Malý projekt rychle ukáže, jak spolu nasloucháte, ověřujete domněnky,
     přebíráte odpovědnost a měníte nejistotu v další krok. Ne jako test lidí,
     ale jako společnou zkušenost, ke které se dá vracet.
-  copy: >-
+  perex: >-
     Během tří dnů se odrazíte od tématu, na kterém vám záleží, a vytvoříte z něj
     společně něco nového. Nepracujete na interním projektu. Začnete od nuly:
     pojmenujete problém, najdete lidi, kterým může jeho řešení pomoct, postavíte
