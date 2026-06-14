@@ -25,6 +25,13 @@
         card.style.removeProperty("--stickysection-card-y");
         card.style.removeProperty("--stickysection-card-scale");
         card.style.removeProperty("--stickysection-card-opacity");
+
+        const timelineItem = card.closest(".timeline-card");
+        if (timelineItem) {
+          timelineItem.classList.remove("is-before", "is-after");
+          timelineItem.classList.add("is-active");
+          timelineItem.style.removeProperty("--timeline-line-progress");
+        }
       }
     }
   };
@@ -43,7 +50,8 @@
 
       const rect = section.scene.getBoundingClientRect();
       const pinTop = 112;
-      const pinnedHeight = section.scene.querySelector(".stickysection-pin")?.offsetHeight || 0;
+      const pinnedHeight =
+        section.scene.querySelector(".stickysection-pin, .timeline-pin")?.offsetHeight || 0;
       const total = Math.max(rect.height - pinnedHeight, 1);
       const passed = clamp(pinTop - rect.top, 0, total);
       const ratio = passed / total;
@@ -51,11 +59,13 @@
       const step = 1 / section.cards.length;
       const travel = 96;
       const entrySpan = Math.min(0.42, step * 1.22);
+      const cardProgresses = [];
 
       for (const [cardIndex, card] of section.cards.entries()) {
-        const start = cardIndex === 0 ? -entrySpan : cardIndex * step * 0.9;
+        const start = cardIndex === 0 ? -entrySpan * 1.8 : cardIndex * step * 0.9;
         const rawProgress = clamp((ratio - start) / entrySpan, 0, 1);
         const progress = easeOutCubic(rawProgress);
+        cardProgresses[cardIndex] = progress;
         const y = (1 - progress) * travel;
         const scale = 0.94 + progress * 0.06;
         const opacity = 0.22 + progress * 0.78;
@@ -66,6 +76,19 @@
         card.classList.toggle("is-active", cardIndex === index);
         card.classList.toggle("is-before", cardIndex < index);
         card.classList.toggle("is-after", cardIndex > index);
+
+        const timelineItem = card.closest(".timeline-card");
+        if (timelineItem) {
+          timelineItem.classList.toggle("is-active", cardIndex === index);
+          timelineItem.classList.toggle("is-before", cardIndex < index);
+          timelineItem.classList.toggle("is-after", cardIndex > index);
+        }
+      }
+
+      for (const [cardIndex, card] of section.cards.entries()) {
+        const nextProgress = cardIndex < section.cards.length - 1 ? cardProgresses[cardIndex + 1] : 0;
+        const lineTarget = card.closest(".timeline-card") || card;
+        lineTarget.style.setProperty("--timeline-line-progress", nextProgress.toFixed(3));
       }
     }
   };

@@ -179,51 +179,15 @@ permalink: /system/
         <p class="copy">Tahle stránka má sloužit i jako kontrola, že se dokumentace a skutečný rendering nerozcházejí.</p>
       </div>
     </section>
-    <section class="stickysection stickysection--soft stickysection--cards-3 system-example-section">
-      <div class="wrap">
-        <div class="stickysection-scene">
-          <div class="stickysection-pin">
-            <div class="section-head stickysection-head">
-              <p class="eyebrow">{{ ds.examples.sticky.eyebrow }}</p>
-              <h2>{{ ds.examples.sticky.title }}</h2>
-              <p class="copy">{{ ds.examples.sticky.copy }}</p>
-            </div>
-            <div class="stickysection-grid">
-              {% for item in ds.examples.sticky.cards %}
-              <article class="stickysection-card is-active">
-                <div>
-                  <span class="tag sequence-state-label">{{ item.label }}</span>
-                  <h3>{{ item.title }}</h3>
-                </div>
-                <p>{{ item.copy }}</p>
-              </article>
-              {% endfor %}
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-    <section class="flow system-example-section">
-      <div class="wrap">
-        {% include components/section-head.html section=ds.examples.timeline class="section-head--split" %}
-        <div class="timeline">
-          {% for item in ds.examples.timeline.steps %}
-          <article>
-            <strong>{{ item.step }}</strong>
-            <h3>{{ item.title }}</h3>
-            <p>{{ item.copy }}</p>
-          </article>
-          {% endfor %}
-        </div>
-      </div>
-    </section>
-    <section class="quote-section system-example-section">
-      <div class="wrap">
-        <p class="eyebrow">{{ ds.examples.quote.eyebrow }}</p>
-        <blockquote class="big-quote">{{ ds.examples.quote.title }}</blockquote>
-        <p class="copy">{{ ds.examples.quote.copy }}</p>
-      </div>
-    </section>
+    <div class="system-example-section">
+      {% include components/stickysection.html section=ds.examples.sticky %}
+    </div>
+    <div class="system-example-section">
+      {% include components/timeline.html section=ds.examples.timeline %}
+    </div>
+    <div class="system-example-section">
+      {% include components/quote.html section=ds.examples.quote %}
+    </div>
   </main>
   <script src="{{ '/assets/js/site.js' | relative_url }}"></script>
 </body>

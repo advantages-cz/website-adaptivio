@@ -279,6 +279,7 @@ patterns:
     rules:
       - Desktop má horizontální spojnice mezi body.
       - Mobile timeline se překládá na 44px osu se svislou linkou.
+      - Sticky varianta používá stejný scroll scene model a generic JS hooks jako stickysection.
   - name: Quote
     class: quote-section
     kind: Centered band
@@ -308,13 +309,15 @@ patterns:
 
 examples:
   sticky:
+    theme: soft
+    cards: 3
     eyebrow: Stickysection
     title: Strukturovaná scéna pro editorial karty.
     copy: >-
       Sticky pattern drží headline a lead v jedné scéně a karty skládá do
       sdíleného gridu. Na desktopu může pinovat, na menších breakpointech se
       rozpadá do statického layoutu.
-    cards:
+    items:
       - label: Head
         title: Jeden headline blok
         copy: Eyebrow, titulek a perex používají sdílené metriky a lead rule.
@@ -331,12 +334,15 @@ examples:
       Centered band pattern používá symetrický sekční rytmus a nechává obsah
       sedět uvnitř jednoho čistého bloku.
   timeline:
+    sticky: true
+    theme: soft
+    cards: 3
     eyebrow: Timeline
     title: Tři kroky v jednom proudu.
-    perex: >-
+    copy: >-
       Process strip drží tři očíslované kroky v jedné ose a překládá je
       citlivě mezi desktopem a mobilem.
-    steps:
+    items:
       - step: "1"
         title: Pojmenování
         copy: Nejprve se zpřesní situace a rozhodující otázka.

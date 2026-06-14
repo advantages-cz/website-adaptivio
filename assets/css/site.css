@@ -676,26 +676,59 @@ section {
 }
 
 .flow {
-  background: linear-gradient(180deg, rgba(255, 255, 255, 1) 0%, rgba(129, 234, 252, 0.34) 100%);
+  background: linear-gradient(180deg, rgba(129, 234, 252, 0.34) 0%, rgba(255, 255, 255, 0.94) 54%, rgba(255, 101, 18, 0.14) 100%);
 }
 
 .flow .section-perex { border-left-color: rgba(0, 0, 0, 0.16); }
 
+.flow--timeline-sticky {
+  --timeline-scene-runway: calc((min(100svh, 760px) - 112px) + 1040px);
+  --timeline-pin-top: 112px;
+  --timeline-pin-min-height: calc(100svh - var(--timeline-pin-top));
+  --stickysection-content-gap: 82px;
+  --timeline-axis-card-gap: 66px;
+  --stickysection-card-height: 268px;
+}
+
+.timeline-scene {
+  display: grid;
+  align-items: start;
+}
+
+.timeline-pin {
+  display: grid;
+  align-self: start;
+  width: 100%;
+  gap: 0;
+  align-content: start;
+}
+
+.timeline-head .copy {
+  margin-top: 0;
+}
+
 .timeline {
   --timeline-gap: 36px;
   grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-auto-rows: 1fr;
   gap: var(--timeline-gap);
   padding-top: 34px;
+  align-items: start;
 }
 
-.timeline article {
+.timeline--sticky {
+  padding-top: 0;
+}
+
+.timeline:not(.timeline--sticky) article {
   position: relative;
   display: grid;
   grid-template-rows: 48px minmax(68px, auto) auto;
   gap: 18px;
+  align-content: start;
 }
 
-.timeline article:not(:last-child)::before {
+.timeline:not(.timeline--sticky) article:not(:last-child)::before {
   content: "";
   position: absolute;
   top: 23.5px;
@@ -719,6 +752,31 @@ section {
 
 .timeline article:nth-child(2) strong { background: var(--orange); color: var(--ink); }
 .timeline article:nth-child(3) strong { background: var(--blue); color: var(--ink); }
+
+.timeline--sticky .timeline-card {
+  --timeline-line-progress: 0;
+  overflow: visible;
+  height: 100%;
+}
+
+.timeline--sticky .timeline-card:not(:last-child)::before {
+  content: "";
+  position: absolute;
+  top: calc((var(--timeline-axis-card-gap) * -1) - 0.5px);
+  left: 48px;
+  width: calc(100% + var(--timeline-gap) - 48px);
+  height: 1px;
+  background: var(--ink);
+  transform: scaleX(var(--timeline-line-progress));
+  transform-origin: left center;
+  z-index: 0;
+}
+
+.timeline--sticky .timeline-step {
+  position: absolute;
+  top: calc((var(--timeline-axis-card-gap) * -1) - 24px);
+  left: 0;
+}
 
 .quote-section {
   padding: var(--section-space-desktop) 0;
@@ -889,15 +947,6 @@ section {
   border-top: 1px solid var(--line);
 }
 
-.system-page .stickysection-scene {
-  min-height: 0;
-}
-
-.system-page .stickysection-pin {
-  position: static;
-  padding-top: 0;
-}
-
 .token-swatch {
   width: 100%;
   aspect-ratio: 16 / 9;
@@ -906,6 +955,24 @@ section {
 }
 
 @media (min-width: 1280px) {
+  .timeline--sticky {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .timeline-scene {
+    position: relative;
+    min-height: var(--timeline-scene-runway);
+  }
+
+  .timeline-pin {
+    position: sticky;
+    top: var(--timeline-pin-top);
+    min-height: var(--timeline-pin-min-height);
+    box-sizing: border-box;
+    grid-template-rows: auto auto;
+    align-content: center;
+  }
+
   .stickysection-scene {
     position: relative;
     min-height: var(--stickysection-scene-runway);
@@ -968,9 +1035,30 @@ section {
     opacity: var(--stickysection-card-opacity);
     transition: border-color .18s ease, box-shadow .18s ease;
   }
+
+  html.has-stickysection-motion .timeline--sticky .timeline-card::before {
+    transition: transform .18s ease;
+  }
 }
 
 @media (max-width: 1279px) {
+  .timeline {
+    align-items: stretch;
+  }
+
+  .timeline--sticky .timeline-card {
+    height: 100%;
+  }
+
+  .timeline--sticky .timeline-card:not(:last-child)::before {
+    top: -48.5px;
+    left: 48px;
+    width: calc(100% + var(--timeline-gap));
+    height: 1px;
+    transform: none;
+    z-index: 0;
+  }
+
   .stickysection {
     --stickysection-static-head-gap: 48px;
     --stickysection-card-padding: 28px 26px 26px;
@@ -1122,7 +1210,7 @@ section {
     padding-top: 0;
   }
 
-  .timeline article {
+  .timeline:not(.timeline--sticky) article {
     min-height: auto;
     display: grid;
     grid-template-columns: 44px minmax(0, 1fr);
@@ -1140,23 +1228,48 @@ section {
     margin-left: 0;
   }
 
-  .timeline h3,
-  .timeline p {
+  .timeline:not(.timeline--sticky) h3,
+  .timeline:not(.timeline--sticky) p {
     grid-column: 2;
   }
 
-  .timeline h3 {
+  .timeline:not(.timeline--sticky) h3 {
     grid-row: 1;
     align-self: center;
     max-width: none;
     min-height: 0;
   }
 
-  .timeline article:not(:last-child)::before {
+  .timeline:not(.timeline--sticky) article:not(:last-child)::before {
     top: 22px;
     left: 21.5px;
     width: 1px;
     height: calc(100% + 36px);
+  }
+
+  .timeline--sticky {
+    grid-template-columns: 1fr;
+    padding-top: 0;
+  }
+
+  .timeline--sticky .timeline-card {
+    height: auto;
+    margin-left: 72px;
+  }
+
+  .timeline--sticky .timeline-step {
+    top: 0;
+    left: -72px;
+    width: 44px;
+    height: 44px;
+  }
+
+  .timeline--sticky .timeline-card:not(:last-child)::before {
+    top: 22px;
+    left: -50.5px;
+    width: 1px;
+    height: calc(100% + 36px);
+    transform: none;
   }
 
   .stickysection-card,

@@ -79,6 +79,9 @@ sections:
           další krok.
   - type: timeline
     id: prubeh
+    sticky: true
+    theme: soft
+    cards: 3
     eyebrow: Jak to probíhá
     title: Tři dny, které zvednou tým ze židlí.
     copy: >-
