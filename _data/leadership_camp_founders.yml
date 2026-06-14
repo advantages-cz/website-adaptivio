@@ -43,8 +43,8 @@ intro:
       label: dny mimo běžný provoz
     - value: "10-20"
       label: lidí v jedné skupině
-    - value: "1"
-      label: malý projekt jako zrcadlo týmu
+    - value: "2–3"
+      label: malé projekty jako zrcadla týmů
     - value: "0"
       label: teorie odtržené od reality
       tone: accent
