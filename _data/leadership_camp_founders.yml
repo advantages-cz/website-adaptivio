@@ -167,6 +167,8 @@ sections:
   - type: quote
     eyebrow: Přenos do další práce
     title: Zkušenost, ke které se dá vracet.
+    scroll_cue_target: 0.985
+    scroll_cue_complete_at: 0.96
     copy: >-
       Camp nevrací jen energii. Dá vám konkrétní situaci, na které uvidíte, jak
       oddělujete domněnky od toho, co se opravdu děje, jak spolupracujete a co 

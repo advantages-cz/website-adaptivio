@@ -297,8 +297,9 @@ patterns:
     kind: Closing band
     description: Závěrečný dark band s headline, leadem a CTA.
     rules:
-      - Působí jako uzavírací scéna, ne jako sticky sekce.
+      - Působí jako uzavírací scéna s jednokartovou sticky kompozicí na desktopu.
       - Obsah má zůstat čistý a jednosměrný, bez dalších podsekcí.
+      - Scroll cue může používat stejné datové prahy jako ostatní sticky scény.
 
 examples:
   sticky:

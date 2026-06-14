@@ -347,18 +347,41 @@ h3 {
 }
 
 .scroll-cue {
-  position: absolute;
+  position: fixed;
   right: 28px;
   bottom: 28px;
   display: grid;
   place-items: center;
   width: 74px;
   height: 74px;
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.55);
   border-radius: 999px;
-  background: rgba(0, 0, 0, 0.16);
+  background: rgba(255, 255, 255, 0.94);
+  color: rgba(17, 24, 39, 0.96);
   font-size: 26px;
+  box-shadow: 0 18px 42px rgba(0, 0, 0, 0.22);
   backdrop-filter: blur(10px);
+  z-index: 20;
+  cursor: pointer;
+  transition: opacity .18s ease, transform .18s ease, background-color .18s ease, box-shadow .18s ease;
+}
+
+.scroll-cue:hover,
+.scroll-cue:focus-visible {
+  background: #fff;
+  box-shadow: 0 22px 48px rgba(0, 0, 0, 0.28);
+  transform: translateY(-2px);
+}
+
+.scroll-cue:focus-visible {
+  outline: 2px solid rgba(255, 255, 255, 0.95);
+  outline-offset: 3px;
+}
+
+.scroll-cue.is-hidden {
+  opacity: 0;
+  transform: translateY(8px);
+  pointer-events: none;
 }
 
 section {
@@ -581,6 +604,7 @@ section {
 }
 
 .stickysection--paper { --stickysection-bg: linear-gradient(180deg, rgba(129, 234, 252, 0.22) 0%, rgba(255, 255, 255, 0.96) 52%, rgba(255, 101, 18, 0.12) 100%); }
+.stickysection--cards-1 { --stickysection-columns: 1; --stickysection-scene-runway: calc((var(--stickysection-runway-viewport) - 112px) + 420px); }
 .stickysection--cards-2 { --stickysection-columns: 2; --stickysection-scene-runway: calc((var(--stickysection-runway-viewport) - 112px) + 560px); }
 .stickysection--cards-3 { --stickysection-columns: 3; --stickysection-scene-runway: calc((var(--stickysection-runway-viewport) - 112px) + 700px); }
 .stickysection--cards-4 { --stickysection-columns: 4; --stickysection-scene-runway: calc((var(--stickysection-runway-viewport) - 112px) + 860px); }
@@ -1045,33 +1069,55 @@ section {
 .final {
   --eyebrow-color: var(--white);
   --eyebrow-rule: color-mix(in srgb, var(--blue) 72%, white);
-  color: var(--white);
-  background:
+  --stickysection-content-gap: 72px;
+  --stickysection-bg:
     radial-gradient(circle at 16% 18%, rgba(255, 101, 18, 0.28), transparent 0 34%),
     radial-gradient(circle at 82% 18%, rgba(129, 234, 252, 0.22), transparent 0 38%),
     linear-gradient(135deg, rgba(255, 101, 18, 0.38), transparent 40%),
     linear-gradient(315deg, rgba(129, 234, 252, 0.3), transparent 42%),
     var(--ink);
+  --stickysection-card-height: 0px;
+  --stickysection-card-padding: 34px 36px 36px;
+  color: var(--white);
   border-top: 0;
 }
 
-.final-inner {
-  padding: 0;
-  max-width: 900px;
+.final.quote-section {
+  background: var(--stickysection-bg);
+}
+
+.final-pin {
+  color: var(--white);
+}
+
+.final-body,
+.final-body.stickysection-card,
+.final-body.stickysection-card.is-active {
+  background: transparent;
+  border: 0;
+  box-shadow: none;
+}
+
+.final .quote-pin::after {
+  background: linear-gradient(180deg, rgba(129, 234, 252, 0.18) 0%, rgba(129, 234, 252, 0.9) 22%, rgba(255, 255, 255, 0.82) 78%, rgba(255, 255, 255, 0.16) 100%);
 }
 
 .final-head {
   margin-bottom: 0;
 }
 
-.final h2 {
-  max-width: 900px;
-  font-size: 72px;
+.final .big-quote,
+.final .eyebrow {
   color: var(--white);
 }
 
+.final .big-quote {
+  max-width: 10ch;
+  font-size: clamp(50px, 4vw, 62px);
+}
+
+.final .copy,
 .final .lead {
-  max-width: 760px;
   color: rgba(255, 255, 255, 0.82);
 }
 
@@ -1182,9 +1228,7 @@ section {
   }
 
   .final {
-    min-height: 82svh;
-    display: grid;
-    align-items: end;
+    --stickysection-pin-padding-block: clamp(24px, calc((100svh - 760px) * 0.18), 72px);
   }
 
   .timeline--sticky {
@@ -1335,6 +1379,17 @@ section {
 }
 
 @media (max-width: 1279px) {
+  .stickysection-grid {
+    grid-auto-rows: minmax(max-content, auto);
+    align-items: start;
+  }
+
+  .stickysection-card {
+    height: auto;
+    min-height: max-content;
+    overflow: clip;
+  }
+
   .timeline {
     align-items: stretch;
   }
@@ -1459,7 +1514,7 @@ section {
   }
 
   .quote-head {
-    width: 66.666%;
+    width: min(100%, 78%);
     justify-items: start;
     text-align: left;
     align-content: start;
@@ -1471,6 +1526,10 @@ section {
     margin: 0;
   }
 
+  .final .big-quote {
+    max-width: 12ch;
+  }
+
   .big-quote {
     max-width: 14ch;
     font-size: clamp(56px, 7.2vw, 72px);
@@ -1478,8 +1537,8 @@ section {
   }
 
   .quote-body {
-    width: 66.666%;
-    margin-top: var(--stickysection-content-gap);
+    width: min(100%, 78%);
+    margin-top: 10px;
     max-width: none;
   }
 
@@ -1773,6 +1832,11 @@ section {
   .timeline {
     gap: 36px;
     padding-top: 0;
+  }
+
+  .stickysection--cards-3 .stickysection-card:nth-child(3):not(.timeline-card) {
+    width: auto;
+    justify-self: stretch;
   }
 
   .timeline strong {
