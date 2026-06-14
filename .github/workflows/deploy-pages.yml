@@ -31,6 +31,15 @@ jobs:
           ruby-version: "3.3"
           bundler-cache: true
 
+      - name: Restore Jekyll cache
+        uses: actions/cache@v4
+        with:
+          path: .jekyll-cache
+          key: ${{ runner.os }}-jekyll-${{ hashFiles('Gemfile.lock', '_config.yml', '_layouts/**', '_includes/**', '_data/**', 'assets/css/**', 'assets/js/**', '*.html', 'landing/**') }}
+          restore-keys: |
+            ${{ runner.os }}-jekyll-${{ hashFiles('Gemfile.lock') }}-
+            ${{ runner.os }}-jekyll-
+
       - name: Build site
         run: bundle exec jekyll build
 
@@ -49,4 +58,3 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
-
