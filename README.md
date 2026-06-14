@@ -82,7 +82,6 @@ Current shared section types:
 - `timeline`
 - `quote`
 - `people`
-- `practical`
 
 If you need a genuinely new section type, add:
 

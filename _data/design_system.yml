@@ -292,15 +292,6 @@ patterns:
       - >-
         Spacing quote sekce se má řídit systémovým section rhythm, ne
         jednorázovým local hackem.
-  - name: Specs Table
-    class: spec-table
-    kind: Structured list
-    description: >-
-      Praktický přehled parametrů s horní linkou a řádky, ne jako samostatné
-      floating cards.
-    rules:
-      - Desktop používá tři sloupce s horizontálním rytmem.
-      - Mobile a tablet skládá položky do méně sloupců bez ztráty čitelnosti.
   - name: Final CTA
     class: final
     kind: Closing band
@@ -336,7 +327,6 @@ examples:
       Centered band pattern používá symetrický sekční rytmus a nechává obsah
       sedět uvnitř jednoho čistého bloku.
   timeline:
-    sticky: true
     theme: soft
     cards: 3
     eyebrow: Timeline

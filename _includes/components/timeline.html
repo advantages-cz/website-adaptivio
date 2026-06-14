@@ -1,14 +1,9 @@
-{% assign is_sticky = include.section.sticky %}
-{% if is_sticky %}
 {% assign sticky_theme = include.section.theme | default: 'soft' %}
 {% assign sticky_cards = include.section.cards | default: 3 %}
 {% assign theme_class = 'stickysection--' | append: sticky_theme %}
 {% assign cards_class = 'stickysection--cards-' | append: sticky_cards %}
-{% assign timeline_svg_id = include.section.id | default: 'timeline' %}
-{% endif %}
-<section class="flow{% if is_sticky %} flow--timeline-sticky stickysection {{ theme_class }} {{ cards_class }}{% endif %}"{% if include.section.id %} id="{{ include.section.id }}"{% endif %}>
+<section class="flow flow--timeline-sticky stickysection {{ theme_class }} {{ cards_class }}"{% if include.section.id %} id="{{ include.section.id }}"{% endif %}>
   <div class="wrap">
-    {% if is_sticky %}
     <div class="stickysection-scene timeline-scene" data-stickysection-scene>
       <div class="stickysection-pin timeline-pin">
         {% include components/section-head.html section=include.section class="section-head--split timeline-head" %}
@@ -120,17 +115,5 @@
         </div>
       </div>
     </div>
-    {% else %}
-    {% include components/section-head.html section=include.section class="section-head--split" %}
-    <div class="timeline">
-      {% for item in include.section.items %}
-      <article>
-        <strong>{{ item.step }}</strong>
-        <h3>{{ item.title }}</h3>
-        <p>{{ item.copy }}</p>
-      </article>
-      {% endfor %}
-    </div>
-    {% endif %}
   </div>
 </section>
