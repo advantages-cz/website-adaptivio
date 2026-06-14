@@ -1721,6 +1721,7 @@ section {
 
   .intro-metrics {
     grid-template-columns: repeat(2, minmax(0, 1fr));
+    align-items: stretch;
   }
 
   .intro-metric strong {
@@ -1733,11 +1734,16 @@ section {
     max-width: none;
   }
 
+  .intro-metric {
+    height: 100%;
+    min-height: var(--stickysection-card-height);
+  }
+
   .intro {
     --stickysection-section-padding-block: var(--section-space-mobile);
     --stickysection-grid-gap: 20px;
-    --stickysection-card-height: auto;
-    --stickysection-card-height-tablet: auto;
+    --stickysection-card-height: 220px;
+    --stickysection-card-height-tablet: 220px;
     --stickysection-card-padding: 24px 22px 22px;
     --stickysection-content-gap: 24px;
   }
