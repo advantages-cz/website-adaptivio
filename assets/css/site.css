@@ -741,6 +741,10 @@ section {
   overflow: visible;
 }
 
+.timeline-map-svg--mobile {
+  display: none;
+}
+
 .timeline-map-route {
   fill: none;
   stroke-width: 2.2;
@@ -812,6 +816,21 @@ section {
   font-size: 11px;
   font-weight: 700;
   letter-spacing: 0.08em;
+}
+
+.timeline-map-day-text {
+  display: none;
+  fill: rgba(0, 0, 0, 0.48);
+  font-family: var(--font-ui);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.timeline-map-day-badge-fill {
+  display: none;
+  fill: rgba(255, 255, 255, 0.82);
 }
 
 .timeline:not(.timeline--sticky) article {
@@ -1361,12 +1380,20 @@ section {
   }
 
   .timeline--sticky {
+    --timeline-mobile-gutter: clamp(84px, 18vw, 108px);
     display: block;
     padding-top: 0;
+    position: relative;
   }
 
   .timeline-map {
-    display: none;
+    display: block;
+    top: 8px;
+    left: 0;
+    width: var(--timeline-mobile-gutter);
+    height: calc(100% - 12px);
+    aspect-ratio: auto;
+    overflow: visible;
   }
 
   .timeline--sticky .timeline-card {
@@ -1374,7 +1401,7 @@ section {
     display: block;
     height: auto;
     min-height: 0;
-    margin-left: 72px;
+    margin-left: var(--timeline-mobile-gutter);
   }
 
   .timeline--sticky .timeline-card + .timeline-card {
@@ -1382,8 +1409,8 @@ section {
   }
 
   .timeline--sticky .timeline-step {
-    opacity: 1;
-    pointer-events: auto;
+    opacity: 0;
+    pointer-events: none;
     top: 0;
     left: -72px;
     width: 44px;
@@ -1396,6 +1423,34 @@ section {
     width: 1px;
     height: calc(100% + 36px);
     transform: none;
+  }
+
+  .timeline-map-svg--desktop {
+    display: none;
+  }
+
+  .timeline-map-svg--mobile {
+    display: block;
+    inset: auto;
+    top: 0;
+    left: 50%;
+    width: auto;
+    height: 100%;
+    max-width: none;
+    transform: translateX(-50%);
+  }
+
+  .timeline-map-svg--mobile .timeline-map-day-text {
+    display: block;
+    fill: rgba(0, 0, 0, 0.36);
+  }
+
+  .timeline-map-svg--mobile .timeline-map-day-badge-fill {
+    display: block;
+  }
+
+  .timeline-map-svg--mobile .timeline-map-label {
+    display: none;
   }
 
   .stickysection-card,

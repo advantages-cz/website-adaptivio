@@ -14,7 +14,7 @@
         {% include components/section-head.html section=include.section class="section-head--split timeline-head" %}
         <div class="sequence-list stickysection-grid timeline timeline--sticky">
           <div class="timeline-map" aria-hidden="true">
-            <svg class="timeline-map-svg" viewBox="0 -48 1160 306" preserveAspectRatio="none">
+            <svg class="timeline-map-svg timeline-map-svg--desktop" viewBox="0 -48 1160 306" preserveAspectRatio="none">
               <path class="timeline-map-route timeline-map-route--ghost" d="M18 62C106 56 184 66 248 94C290 112 318 136 340 162C360 186 372 206 392 206C414 206 424 186 422 164C420 138 400 124 402 108C406 86 438 82 470 94C500 106 510 120 522 120C538 120 546 104 556 90C572 68 588 58 606 58C634 58 660 84 686 116C714 150 740 168 764 168C786 168 804 152 826 126C852 94 876 60 906 38C932 18 964 8 998 14C1028 20 1048 36 1048 54C1048 70 1030 82 1002 88C970 96 954 98 954 106C954 114 974 116 1004 116C1032 116 1052 120 1062 128" />
               <path class="timeline-map-route timeline-map-route--active" data-timeline-route d="M18 62C106 56 184 66 248 94C290 112 318 136 340 162C360 186 372 206 392 206C414 206 424 186 422 164C420 138 400 124 402 108C406 86 438 82 470 94C500 106 510 120 522 120C538 120 546 104 556 90C572 68 588 58 606 58C634 58 660 84 686 116C714 150 740 168 764 168C786 168 804 152 826 126C852 94 876 60 906 38C932 18 964 8 998 14C1028 20 1048 36 1048 54C1048 70 1030 82 1002 88C970 96 954 98 954 106C954 114 974 116 1004 116C1032 116 1052 120 1062 128" />
               <g class="timeline-map-stops">
@@ -42,6 +42,54 @@
                   <circle class="timeline-map-pin-halo" cx="0" cy="0" r="28" />
                   <circle class="timeline-map-pin-dot" cx="0" cy="0" r="11" />
                   <line class="timeline-map-pin-stem" x1="0" y1="11" x2="0" y2="31" />
+                  <g class="timeline-map-label" transform="translate(24 -14)">
+                    <path class="timeline-map-label-box" d="M0 8L10 0H100L110 8V28L100 36H10L0 28Z" />
+                    <line class="timeline-map-label-connector" x1="-8" y1="18" x2="0" y2="18" />
+                    <text class="timeline-map-label-text" x="55" y="22" text-anchor="middle">DEN 3</text>
+                  </g>
+                </g>
+              </g>
+            </svg>
+            <svg class="timeline-map-svg timeline-map-svg--mobile" viewBox="0 0 220 520" preserveAspectRatio="xMidYMin meet">
+              <path class="timeline-map-route timeline-map-route--ghost" d="M108 24C94 60 90 92 104 128C118 162 140 184 142 216C144 246 122 262 116 292C110 324 126 350 136 382C148 420 144 456 122 496" />
+              <path class="timeline-map-route timeline-map-route--active" data-timeline-route d="M108 24C94 60 90 92 104 128C118 162 140 184 142 216C144 246 122 262 116 292C110 324 126 350 136 382C148 420 144 456 122 496" />
+              <g class="timeline-map-stops">
+                <g class="timeline-map-pin timeline-map-pin--day-1" data-timeline-stop data-stop-at="0.08" transform="translate(108 48)">
+                  <circle class="timeline-map-pin-halo" cx="0" cy="0" r="28" />
+                  <circle class="timeline-map-pin-dot" cx="0" cy="0" r="11" />
+                  <line class="timeline-map-pin-stem" x1="0" y1="11" x2="0" y2="31" />
+                  <g class="timeline-map-day-badge" transform="translate(0 48)">
+                    <rect class="timeline-map-day-badge-fill" x="-28" y="-12" width="56" height="20" rx="10" ry="10" />
+                    <text class="timeline-map-day-text" x="0" y="4" text-anchor="middle">DEN 1</text>
+                  </g>
+                  <g class="timeline-map-label" transform="translate(24 -14)">
+                    <path class="timeline-map-label-box" d="M0 8L10 0H100L110 8V28L100 36H10L0 28Z" />
+                    <line class="timeline-map-label-connector" x1="-8" y1="18" x2="0" y2="18" />
+                    <text class="timeline-map-label-text" x="55" y="22" text-anchor="middle">DEN 1</text>
+                  </g>
+                </g>
+                <g class="timeline-map-pin timeline-map-pin--day-2" data-timeline-stop data-stop-at="0.53" transform="translate(114 250)">
+                  <circle class="timeline-map-pin-halo" cx="0" cy="0" r="28" />
+                  <circle class="timeline-map-pin-dot" cx="0" cy="0" r="11" />
+                  <line class="timeline-map-pin-stem" x1="0" y1="11" x2="0" y2="31" />
+                  <g class="timeline-map-day-badge" transform="translate(0 48)">
+                    <rect class="timeline-map-day-badge-fill" x="-28" y="-12" width="56" height="20" rx="10" ry="10" />
+                    <text class="timeline-map-day-text" x="0" y="4" text-anchor="middle">DEN 2</text>
+                  </g>
+                  <g class="timeline-map-label" transform="translate(-134 -14)">
+                    <path class="timeline-map-label-box" d="M0 8L10 0H100L110 8V28L100 36H10L0 28Z" />
+                    <line class="timeline-map-label-connector" x1="110" y1="18" x2="118" y2="18" />
+                    <text class="timeline-map-label-text" x="55" y="22" text-anchor="middle">DEN 2</text>
+                  </g>
+                </g>
+                <g class="timeline-map-pin timeline-map-pin--day-3" data-timeline-stop data-stop-at="0.91" transform="translate(118 458)">
+                  <circle class="timeline-map-pin-halo" cx="0" cy="0" r="28" />
+                  <circle class="timeline-map-pin-dot" cx="0" cy="0" r="11" />
+                  <line class="timeline-map-pin-stem" x1="0" y1="11" x2="0" y2="31" />
+                  <g class="timeline-map-day-badge" transform="translate(0 48)">
+                    <rect class="timeline-map-day-badge-fill" x="-28" y="-12" width="56" height="20" rx="10" ry="10" />
+                    <text class="timeline-map-day-text" x="0" y="4" text-anchor="middle">DEN 3</text>
+                  </g>
                   <g class="timeline-map-label" transform="translate(24 -14)">
                     <path class="timeline-map-label-box" d="M0 8L10 0H100L110 8V28L100 36H10L0 28Z" />
                     <line class="timeline-map-label-connector" x1="-8" y1="18" x2="0" y2="18" />
