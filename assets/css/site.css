@@ -152,16 +152,17 @@ button:focus-visible,
 .brand-copy {
   display: grid;
   gap: 2px;
-  padding-left: 18px;
-  border-left: 1px solid currentColor;
+  padding-left: 0;
+  border-left: 0;
   font-size: 13px;
   line-height: 1.25;
-  opacity: .82;
+  opacity: 1;
 }
 
 .brand-copy strong {
   display: block;
-  font-size: 15px;
+  font-size: 24px;
+  font-weight: 400;
   line-height: 1;
   white-space: nowrap;
   opacity: 1;
