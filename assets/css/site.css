@@ -957,6 +957,15 @@ section {
 }
 
 .quote-section {
+  --stickysection-scene-runway: calc((var(--stickysection-runway-viewport) - 112px) + 620px);
+  --stickysection-content-gap: 72px;
+  --stickysection-card-height: auto;
+  --stickysection-card-height-tablet: auto;
+  --stickysection-card-padding: 0;
+  --stickysection-card-radius: 0;
+  --stickysection-card-surface: transparent;
+  --stickysection-card-shadow: none;
+  --stickysection-card-border: transparent;
   background:
     radial-gradient(circle at 14% 22%, rgba(255, 101, 18, 0.14), transparent 0 34%),
     radial-gradient(circle at 86% 24%, rgba(129, 234, 252, 0.18), transparent 0 38%),
@@ -964,31 +973,54 @@ section {
 }
 
 .quote-section .wrap {
-  display: grid;
-  gap: 24px;
   padding: 0;
 }
 
+.quote-scene,
+.quote-pin,
+.quote-head {
+  display: grid;
+}
+
+.quote-pin {
+  gap: 0;
+  align-content: center;
+  position: relative;
+}
+
 .quote-section .eyebrow,
-.quote-section .big-quote,
-.quote-section .copy {
+.quote-section .big-quote {
   max-width: var(--section-head-title-max);
+}
+
+.quote-head {
+  gap: 20px;
+  align-content: start;
 }
 
 .big-quote {
   margin: 0;
-  max-width: 15ch;
-  font-size: 72px;
+  max-width: 8.6ch;
+  font-size: clamp(58px, 4.7vw, 76px);
   font-weight: 700;
-  line-height: var(--leading-heading);
+  line-height: 1.04;
+  letter-spacing: -0.04em;
   text-wrap: balance;
 }
 
-.quote-section .copy {
-  max-width: 52ch;
-  color: rgba(0, 0, 0, 0.68);
-  font-size: 22px;
-  line-height: var(--leading-lead);
+.quote-body {
+  max-width: 36ch;
+  border: 0;
+}
+
+.quote-body .copy {
+  margin: 0;
+  max-width: 36ch;
+  color: rgba(0, 0, 0, 0.66);
+  font-size: 27px;
+  line-height: 1.58;
+  letter-spacing: -0.025em;
+  text-wrap: pretty;
 }
 
 .people-row {
@@ -1203,9 +1235,8 @@ section {
 
 @media (min-width: 1280px) {
   .quote-section {
-    min-height: clamp(540px, 72svh, 820px);
-    display: grid;
-    align-items: center;
+    --stickysection-pin-padding-block: clamp(28px, calc((100svh - 820px) * 0.18), 84px);
+    --stickysection-content-gap: 84px;
   }
 
   .final {
@@ -1277,6 +1308,67 @@ section {
   .stickysection-card {
     height: 100%;
   }
+
+  .quote-scene {
+    position: relative;
+    min-height: var(--stickysection-scene-runway);
+  }
+
+  .quote-pin {
+    position: sticky;
+    top: var(--stickysection-pin-top);
+    min-height: var(--stickysection-pin-min-height);
+    padding-block: var(--stickysection-pin-padding-block);
+    box-sizing: border-box;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    column-gap: var(--stickysection-content-gap);
+    align-items: center;
+    justify-content: center;
+  }
+
+  .quote-pin::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 2px;
+    height: min(46vh, 460px);
+    transform: translate(-50%, -50%);
+    background: linear-gradient(180deg, rgba(255, 101, 18, 0.16) 0%, rgba(255, 101, 18, 0.92) 22%, rgba(0, 0, 0, 0.92) 78%, rgba(0, 0, 0, 0.18) 100%);
+    pointer-events: none;
+  }
+
+  .quote-head {
+    position: relative;
+    align-self: center;
+    justify-items: end;
+    text-align: right;
+    width: 100%;
+    max-width: 540px;
+    margin-left: auto;
+    padding-right: 44px;
+  }
+
+  .quote-section .eyebrow {
+    position: absolute;
+    right: 44px;
+    top: 0;
+    margin: 0;
+    transform: translateY(calc(-100% - 24px));
+  }
+
+  .big-quote {
+    align-self: center;
+  }
+
+  .quote-body {
+    align-self: center;
+    justify-self: start;
+    width: 100%;
+    max-width: 540px;
+    margin-top: 0;
+    padding-left: 44px;
+  }
 }
 
 @media (min-width: 1280px) and (min-height: 820px) {
@@ -1330,6 +1422,22 @@ section {
     --stickysection-content-gap: 32px;
   }
 
+  .quote-section {
+    --stickysection-content-gap: 28px;
+  }
+
+  .quote-body {
+    margin-top: var(--stickysection-content-gap);
+    max-width: 38ch;
+    padding-left: 0;
+  }
+
+  .quote-body .copy {
+    max-width: 38ch;
+    font-size: 25px;
+    line-height: 1.56;
+  }
+
   .stickysection-card-indicator {
     top: 22px;
     right: 22px;
@@ -1381,6 +1489,61 @@ section {
 }
 
 @media (min-width: 768px) and (max-width: 1279px) {
+  .quote-section {
+    --stickysection-section-padding-block: 72px;
+    --stickysection-content-gap: 32px;
+  }
+
+  .quote-scene {
+    min-height: auto;
+  }
+
+  .quote-pin {
+    position: static;
+    min-height: 0;
+    padding-block: 0;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    row-gap: 0;
+    align-content: start;
+    justify-items: start;
+  }
+
+  .quote-pin::after {
+    display: none;
+  }
+
+  .quote-head {
+    width: 66.666%;
+    justify-items: start;
+    text-align: left;
+    align-content: start;
+    gap: 18px;
+    padding-right: 0;
+  }
+
+  .quote-section .eyebrow {
+    margin: 0;
+  }
+
+  .big-quote {
+    max-width: 14ch;
+    font-size: clamp(56px, 7.2vw, 72px);
+    line-height: 1.02;
+  }
+
+  .quote-body {
+    width: 66.666%;
+    margin-top: var(--stickysection-content-gap);
+    max-width: none;
+  }
+
+  .quote-body .copy {
+    max-width: none;
+    font-size: 25px;
+    line-height: 1.54;
+  }
+
   .timeline.timeline--sticky {
     grid-template-columns: repeat(3, minmax(0, 1fr));
     grid-auto-rows: minmax(var(--stickysection-card-height-tablet), auto);
@@ -1573,6 +1736,27 @@ section {
     --stickysection-card-height-tablet: auto;
     --stickysection-card-padding: 24px 22px 22px;
     --stickysection-content-gap: 24px;
+  }
+
+  .quote-head {
+    gap: 18px;
+  }
+
+  .quote-section {
+    --stickysection-section-padding-block: var(--section-space-mobile);
+    --stickysection-content-gap: 20px;
+  }
+
+  .quote-body {
+    margin-top: var(--stickysection-content-gap);
+    max-width: none;
+  }
+
+  .quote-body .copy {
+    max-width: none;
+    font-size: 22px;
+    line-height: 1.56;
+    letter-spacing: -0.01em;
   }
 
   .spec-table {

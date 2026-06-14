@@ -95,15 +95,26 @@
       const passed = clamp(pinTop - rect.top, 0, total);
       const ratio = passed / total;
       const index = Math.min(section.cards.length - 1, Math.floor(ratio * section.cards.length));
+      const isSingleCard = section.cards.length === 1;
       const step = 1 / section.cards.length;
-      const travel = 96;
-      const entrySpan = Math.min(0.42, step * 1.22);
+      const singleCard = isSingleCard ? section.cards[0] : null;
+      const singleCardHeight = singleCard?.offsetHeight || 0;
+      const travel = isSingleCard
+        ? Math.max(140, window.innerHeight - pinTop - singleCardHeight)
+        : 96;
+      const entrySpan = isSingleCard ? 1.12 : Math.min(0.42, step * 1.22);
       const cardProgresses = [];
 
       for (const [cardIndex, card] of section.cards.entries()) {
-        const start = cardIndex === 0 ? -entrySpan * 1.8 : cardIndex * step * 0.9;
+        const start = isSingleCard
+          ? -0.12
+          : cardIndex === 0
+            ? -entrySpan * 1.8
+            : cardIndex * step * 0.9;
         const rawProgress = clamp((ratio - start) / entrySpan, 0, 1);
-        const progress = easeOutCubic(rawProgress);
+        const progress = isSingleCard
+          ? rawProgress
+          : easeOutCubic(rawProgress);
         cardProgresses[cardIndex] = progress;
         const y = (1 - progress) * travel;
         const scale = 0.94 + progress * 0.06;

@@ -1,8 +1,15 @@
-<section class="quote-section">
+<section class="quote-section stickysection stickysection--paper stickysection--cards-2">
   <div class="wrap">
-    <p class="eyebrow">{{ include.section.eyebrow }}</p>
-    <blockquote class="big-quote">{{ include.section.title }}</blockquote>
-    <p class="copy">{{ include.section.copy }}</p>
+    <div class="stickysection-scene quote-scene" data-stickysection-scene>
+      <div class="stickysection-pin quote-pin">
+        <div class="quote-head">
+          <p class="eyebrow">{{ include.section.eyebrow }}</p>
+          <blockquote class="big-quote">{{ include.section.title }}</blockquote>
+        </div>
+        <div class="quote-body stickysection-card is-active" data-stickysection-card>
+          <p class="copy">{{ include.section.copy }}</p>
+        </div>
+      </div>
+    </div>
   </div>
 </section>
-

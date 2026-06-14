@@ -287,6 +287,7 @@ patterns:
     description: Vyšší meziblok s velkým blockquote a navazující copy.
     rules:
       - Na desktopu se obsah chová jako center band uvnitř vyšší sekce.
+      - Sticky varianta může připnout eyebrow a headline a animovat jen navazující copy blok.
       - Na mobilu se band zkracuje a zůstává kompaktní.
       - >-
         Spacing quote sekce se má řídit systémovým section rhythm, ne
