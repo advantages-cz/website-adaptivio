@@ -229,9 +229,8 @@
     if (!canAnimateStickySections()) {
       resetStickySectionCards();
       for (const section of stickySections) {
-        const counterProgress = reducedMotion ? 1 : getCounterProgress(section.scene);
         for (const counter of section.counters || []) {
-          counter.element.textContent = String(Math.round(counter.target * counterProgress));
+          counter.element.textContent = String(counter.target);
         }
         setTimelineMapReveal(section, 1);
       }
