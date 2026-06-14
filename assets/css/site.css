@@ -1453,7 +1453,7 @@ section {
 
   .hero::after {
     background:
-      linear-gradient(180deg, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.18) 34%, rgba(0, 0, 0, 0.82) 100%);
+      linear-gradient(180deg, rgba(0, 0, 0, 0.62) 0%, rgba(0, 0, 0, 0.42) 36%, rgba(0, 0, 0, 0.88) 100%);
   }
 
   .hero-copy {
