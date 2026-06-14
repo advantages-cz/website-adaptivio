@@ -212,8 +212,9 @@
     .hero {
       position: relative;
       min-height: 100svh;
+      padding: calc(var(--nav) + 24px) 0 40px;
       display: grid;
-      align-items: end;
+      align-items: center;
       overflow: hidden;
       color: var(--white);
       background:
@@ -266,8 +267,6 @@
     .hero-copy {
       width: min(var(--max), calc(100% - 44px));
       margin: 0 auto;
-      min-height: 100svh;
-      padding: calc(var(--nav) + 24px) 0 40px;
       display: grid;
       grid-template-columns: minmax(0, 640px);
       align-content: center;
@@ -321,7 +320,7 @@
     }
 
     .hero-lead {
-      max-width: 24ch;
+      max-width: 30ch;
       margin: 24px 0 0;
       color: rgba(255, 255, 255, 0.9);
       font-size: 20px;
@@ -1493,9 +1492,7 @@
       }
 
       .hero-copy {
-        min-height: 100svh;
-        padding-top: calc(var(--nav) + 28px);
-        padding-bottom: 36px;
+        align-content: center;
       }
 
       .hero-metrics .wrap {
@@ -1506,9 +1503,6 @@
 
     @media (max-height: 860px) and (min-width: 761px) {
       .hero-copy {
-        min-height: 100svh;
-        padding-top: calc(var(--nav) + 20px);
-        padding-bottom: 20px;
         align-content: center;
       }
 
@@ -1518,7 +1512,7 @@
       }
 
       .hero-lead {
-        max-width: 24ch;
+        max-width: 28ch;
         margin-top: 16px;
         font-size: 19px;
       }
@@ -1723,12 +1717,13 @@
 
       .hero {
         min-height: 92svh;
+        padding-top: calc(var(--nav) + 24px);
+        padding-bottom: 32px;
+        align-items: end;
       }
 
       .hero-copy {
-        min-height: 92svh;
-        padding-top: calc(var(--nav) + 24px);
-        padding-bottom: 32px;
+        align-content: end;
       }
 
       h1 {
@@ -1741,7 +1736,7 @@
       h3 { font-size: 24px; }
 
       .hero-lead {
-        max-width: 22ch;
+        max-width: 24ch;
         margin-top: 16px;
         font-size: 19px;
       }
