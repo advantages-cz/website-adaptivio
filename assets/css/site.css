@@ -387,7 +387,6 @@ section {
 }
 
 .intro {
-  padding: 96px 0 88px;
   background: var(--paper);
 }
 
@@ -896,10 +895,6 @@ section {
 }
 
 .quote-section {
-  padding: var(--section-space-desktop) 0;
-  min-height: clamp(540px, 72svh, 820px);
-  display: grid;
-  align-items: center;
   background:
     radial-gradient(circle at 14% 22%, rgba(255, 101, 18, 0.14), transparent 0 34%),
     radial-gradient(circle at 86% 24%, rgba(129, 234, 252, 0.18), transparent 0 38%),
@@ -1014,9 +1009,6 @@ section {
 .final {
   --eyebrow-color: var(--white);
   --eyebrow-rule: color-mix(in srgb, var(--blue) 72%, white);
-  min-height: 82svh;
-  display: grid;
-  align-items: end;
   color: var(--white);
   background:
     radial-gradient(circle at 16% 18%, rgba(255, 101, 18, 0.28), transparent 0 34%),
@@ -1028,7 +1020,7 @@ section {
 }
 
 .final-inner {
-  padding: 130px 0 76px;
+  padding: 0;
   max-width: 900px;
 }
 
@@ -1072,6 +1064,22 @@ section {
 }
 
 @media (min-width: 1280px) {
+  .intro {
+    padding: 96px 0 88px;
+  }
+
+  .quote-section {
+    min-height: clamp(540px, 72svh, 820px);
+    display: grid;
+    align-items: center;
+  }
+
+  .final {
+    min-height: 82svh;
+    display: grid;
+    align-items: end;
+  }
+
   .timeline--sticky {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
@@ -1331,7 +1339,7 @@ section {
   }
 
   .stickysection {
-    --stickysection-section-padding-block: var(--stickysection-space-8);
+    --stickysection-section-padding-block: var(--section-space-mobile);
     --stickysection-grid-gap: var(--stickysection-space-2);
     --stickysection-card-gap: var(--stickysection-space-1-5);
     --stickysection-card-padding: 26px 22px 24px;
@@ -1353,11 +1361,6 @@ section {
     display: block;
     object-fit: cover;
     object-position: center 21%;
-  }
-
-  .quote-section {
-    min-height: auto;
-    align-items: start;
   }
 
   .quote-section .wrap {
