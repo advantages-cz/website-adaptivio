@@ -205,11 +205,7 @@ permalink: /system/
     </section>
     <section class="flow system-example-section">
       <div class="wrap">
-        <div class="section-head">
-          <p class="eyebrow">{{ ds.examples.timeline.eyebrow }}</p>
-          <h2>{{ ds.examples.timeline.title }}</h2>
-          <p class="copy">{{ ds.examples.timeline.copy }}</p>
-        </div>
+        {% include components/section-head.html section=ds.examples.timeline class="section-head--split" %}
         <div class="timeline">
           {% for item in ds.examples.timeline.steps %}
           <article>

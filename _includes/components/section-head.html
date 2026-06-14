@@ -1,0 +1,20 @@
+<div class="section-head{% if include.class %} {{ include.class }}{% endif %}">
+  <p class="eyebrow">{{ include.section.eyebrow }}</p>
+  <div class="section-heading-primary{% if include.title_class %} {{ include.title_class }}{% endif %}">
+    <h2>{{ include.section.title }}</h2>
+    {% if include.section.copy_html %}
+    <div class="copy{% if include.copy_class %} {{ include.copy_class }}{% endif %}">
+      {{ include.section.copy_html }}
+    </div>
+    {% elsif include.section.copy %}
+    <p class="copy{% if include.copy_class %} {{ include.copy_class }}{% endif %}">{{ include.section.copy }}</p>
+    {% endif %}
+  </div>
+  {% if include.section.perex_html %}
+  <div class="copy section-perex{% if include.perex_class %} {{ include.perex_class }}{% endif %}">
+    {{ include.section.perex_html }}
+  </div>
+  {% elsif include.section.perex %}
+  <p class="copy section-perex{% if include.perex_class %} {{ include.perex_class }}{% endif %}">{{ include.section.perex }}</p>
+  {% endif %}
+</div>

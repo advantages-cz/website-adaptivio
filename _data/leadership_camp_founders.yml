@@ -25,7 +25,7 @@ intro:
   eyebrow: Co běžná porada neukáže
   title: Malý projekt jako zrcadlo týmu.
   copy: Camp není další školení do kalendáře. Je to situace, ve které je vidět iniciativa, naslouchání, odvaha ověřovat i schopnost převést neurčitý problém do konkrétního dalšího kroku.
-  lead: Účastníci během tří dnů zmapují svou osobní výbavu, najdou problém, který stojí za pozornost, vytvoří jednoduchou zkušební verzi řešení a ověří ji přímo v terénu u lidí, kteří mají důvod říct ano, ne nebo zatím ne.
+  perex: Účastníci během tří dnů zmapují svou osobní výbavu, najdou problém, který stojí za pozornost, vytvoří jednoduchou zkušební verzi řešení a ověří ji přímo v terénu u lidí, kteří mají důvod říct ano, ne nebo zatím ne.
   metrics:
     - value: "3"
       label: dny mimo běžný provoz
@@ -41,7 +41,7 @@ sections:
     cards: 3
     eyebrow: Proč teď
     title: Práce nemizí. Přeskládává se.
-    copy: Budoucnost firmy nezačíná jen u strategie. Začíná i u lidí, jejichž schopnosti běžný provoz často neumí ukázat.
+    perex: Budoucnost firmy nezačíná jen u strategie. Začíná i u lidí, jejichž schopnosti běžný provoz často neumí ukázat.
     card_class: story-row
     items:
       - label: Role
@@ -57,7 +57,7 @@ sections:
     id: prubeh
     eyebrow: Jak to probíhá
     title: Tři dny, které zvednou tým ze židlí.
-    copy: Účastníci nejdřív pojmenují svou osobní výbavu. Pak hledají problém, který stojí za pozornost. A nakonec vyjdou do terénu ověřit, co obstojí mimo místnost.
+    perex: Účastníci nejdřív pojmenují svou osobní výbavu. Pak hledají problém, který stojí za pozornost. A nakonec vyjdou do terénu ověřit, co obstojí mimo místnost.
     items:
       - step: "1"
         title: Výbava a problém
@@ -73,7 +73,7 @@ sections:
     cards: 3
     eyebrow: Kontext změny
     title: Dovednosti se mění rychleji než popisy pracovních míst.
-    copy_html: <span class="proof-stat"><strong>40 %</strong> dovedností</span>Podle World Economic Forum se do roku 2030 promění téměř 40 % pracovních dovedností. Mezeru v dovednostech přitom 63 % zaměstnavatelů označuje za hlavní překážku transformace.
+    perex_html: <span class="proof-stat"><strong>40 %</strong> dovedností</span>Podle World Economic Forum se do roku 2030 promění téměř 40 % pracovních dovedností. Mezeru v dovednostech přitom 63 % zaměstnavatelů označuje za hlavní překážku transformace.
     source: "Zdroj: World Economic Forum, Future of Jobs Report 2025."
     items:
       - label: Nové příležitosti
@@ -91,7 +91,7 @@ sections:
     cards: 3
     eyebrow: Co z toho firma má
     title: Lepší pohled na sebe a lidi kolem sebe.
-    copy: Výstupem není jen dobrý pocit ze společného zážitku. Firma získá situaci, ke které se dá vracet při dalších projektech, změnách i běžné týmové práci.
+    perex: Výstupem není jen dobrý pocit ze společného zážitku. Firma získá situaci, ke které se dá vracet při dalších projektech, změnách i běžné týmové práci.
     card_class: outcome-row
     items:
       - label: Člověk
@@ -112,7 +112,7 @@ sections:
     cards: 3
     eyebrow: Pro koho
     title: Pro firmy, které tuší, že další porada už nestačí.
-    copy: Pro organizace, které potřebují své lidi znovu přiblížit zákazníkovi, realitě a vlastní odpovědnosti. V základní variantě camp neřeší citlivé interní projekty. Pokud firma chce pracovat přímo se svými tématy, připravíme variantu s interním zadáním.
+    perex: Pro organizace, které potřebují své lidi znovu přiblížit zákazníkovi, realitě a vlastní odpovědnosti. V základní variantě camp neřeší citlivé interní projekty. Pokud firma chce pracovat přímo se svými tématy, připravíme variantu s interním zadáním.
     items:
       - label: Složení týmu
         title: Smíšené týmy, které potřebují vidět víc než role.
@@ -127,7 +127,7 @@ sections:
     id: lektori
     eyebrow: Kdo camp vede
     title: Podnikání, technologie, vzdělávání a práce s lidmi.
-    copy: Camp vedou Tomáš Vavrda a Taťána Beránková Císařová. Spojují podnikatelskou zkušenost, technologickou změnu a vzdělávání postavené na zážitku, reflexi a odvaze zkusit věci dřív, než si člověk začne úplně věřit.
+    perex: Camp vedou Tomáš Vavrda a Taťána Beránková Císařová. Spojují podnikatelskou zkušenost, technologickou změnu a vzdělávání postavené na zážitku, reflexi a odvaze zkusit věci dřív, než si člověk začne úplně věřit.
     items:
       - tone: light
         label: Podnikání a technologie

@@ -1,10 +1,6 @@
 <section class="practical">
   <div class="wrap">
-    <div class="section-head">
-      <p class="eyebrow">{{ include.section.eyebrow }}</p>
-      <h2>{{ include.section.title }}</h2>
-      <p class="copy">{{ include.section.copy }}</p>
-    </div>
+    {% include components/section-head.html section=include.section %}
     <div class="spec-table">
       {% for item in include.section.items %}
       <article>
@@ -15,4 +11,3 @@
     </div>
   </div>
 </section>
-

@@ -201,11 +201,12 @@ patterns:
   - name: Section Head
     class: section-head
     kind: Reusable heading block
-    description: Kombinace eyebrow, headline a copy/lead, která se skládá podle breakpointů.
+    description: Kombinace eyebrow, headline, volitelného copy pod headline a volitelného perexu v pravém sloupci, která se skládá podle breakpointů.
     rules:
-      - Desktop a tablet mohou použít dvousloupcové rozložení s lead rule.
+      - Pořadí obsahu je eyebrow, headline, copy, perex.
+      - Desktop a tablet mohou použít dvousloupcové rozložení s perex rule.
       - Mobile skládá obsah do jednoho sloupce bez levé rule.
-      - Headline je dominantní prvek, copy zůstává užší a podpůrná.
+      - Headline je dominantní prvek, copy zůstává podpůrná pod headline a perex je editoriální doprovod vpravo.
   - name: Stickysection
     class: stickysection
     kind: Editorial scene
@@ -266,7 +267,7 @@ examples:
   timeline:
     eyebrow: Timeline
     title: Tři kroky v jednom proudu.
-    copy: Process strip drží tři očíslované kroky v jedné ose a překládá je citlivě mezi desktopem a mobilem.
+    perex: Process strip drží tři očíslované kroky v jedné ose a překládá je citlivě mezi desktopem a mobilem.
     steps:
       - step: "1"
         title: Pojmenování

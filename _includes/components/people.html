@@ -2,11 +2,7 @@
   <div class="wrap">
     <div class="stickysection-scene" data-stickysection-scene>
       <div class="stickysection-pin">
-        <div class="section-head stickysection-head">
-          <p class="eyebrow">{{ include.section.eyebrow }}</p>
-          <h2>{{ include.section.title }}</h2>
-          <p class="copy">{{ include.section.copy }}</p>
-        </div>
+        {% include components/section-head.html section=include.section class="section-head--split stickysection-head" %}
         <div class="stickysection-grid">
           {% for item in include.section.items %}
           <article class="stickysection-card people-row{% if forloop.first %} is-active{% endif %}" data-stickysection-card data-people-tone="{{ item.tone }}">
@@ -27,4 +23,3 @@
     </div>
   </div>
 </section>
-
