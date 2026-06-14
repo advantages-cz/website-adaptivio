@@ -29,11 +29,11 @@ intro:
   id: film
   eyebrow: Co běžná porada neukáže
   title: Malý projekt jako zrcadlo týmu.
-  copy: >-
+  perex: >-
     Malý projekt rychle ukáže, jak spolu nasloucháte, ověřujete domněnky,
     přebíráte odpovědnost a měníte nejistotu v další krok. Ne jako test lidí,
     ale jako společnou zkušenost, ke které se dá vracet.
-  perex: >-
+  copy: >-
     Během tří dnů se odrazíte od tématu, na kterém vám záleží, a vytvoříte z něj
     společně něco nového. Nepracujete na interním projektu. Začnete od nuly:
     pojmenujete problém, najdete lidi, kterým může jeho řešení pomoct, postavíte
@@ -54,7 +54,7 @@ sections:
     cards: 3
     eyebrow: Proč teď
     title: Práce nemizí. Přeskládává se.
-    copy: >-
+    perex: >-
       Budoucnost vaší firmy nezačíná jen u strategie. Začíná i u lidí, kteří
       umějí číst situaci, učit se z praxe a pohnout věcmi, když popis práce
       přestane stačit.
@@ -84,7 +84,7 @@ sections:
     cards: 3
     eyebrow: Jak to probíhá
     title: Tři dny, které zvednou tým ze židlí.
-    copy: >-
+    perex: >-
       Nejdřív pojmenujete svou osobní výbavu. Pak najdete problém, který stojí
       za pozornost. Nakonec vyjdete do terénu ověřit, co obstojí mimo místnost.
     items:
@@ -228,9 +228,9 @@ sections:
   - type: practical
     eyebrow: Prakticky
     title: Zakázkový camp pro celou firmu nebo tým.
-    copy: >-
+    perex: >-
       Konkrétní podobu ladíme podle skupiny, firemního kontextu a návazné práce.
-      Před campem s vámi pojmenujeme potřeby a očekávání, po campu pomůžeme
+    copy: Před campem s vámi pojmenujeme potřeby a očekávání, po campu pomůžeme
       převést zkušenost zpět do praxe.
     items:
       - label: Formát
