@@ -945,7 +945,7 @@
     }
 
     @media (min-width: 1280px) and (prefers-reduced-motion: no-preference) {
-      .stickysection-card {
+      html.has-stickysection-motion .stickysection-card {
         --stickysection-card-y: 96px;
         --stickysection-card-scale: .94;
         --stickysection-card-opacity: .22;
@@ -955,7 +955,7 @@
         will-change: transform, opacity;
       }
 
-      .stickysection-card.is-active {
+      html.has-stickysection-motion .stickysection-card.is-active {
         border-color: var(--stickysection-card-border);
         box-shadow: var(--stickysection-card-shadow);
       }
@@ -2421,6 +2421,9 @@
       const canAnimateStickySections = () => {
         return !reducedMotion && window.innerWidth >= 1280;
       };
+      const syncStickySectionMotionState = () => {
+        document.documentElement.classList.toggle("has-stickysection-motion", canAnimateStickySections());
+      };
 
       const resetStickySectionCards = () => {
         for (const section of stickySections) {
@@ -2436,6 +2439,7 @@
 
       const updateStickySectionCards = () => {
         if (!stickySections.length) return;
+        syncStickySectionMotionState();
 
         if (!canAnimateStickySections()) {
           resetStickySectionCards();
