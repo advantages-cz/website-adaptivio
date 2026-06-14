@@ -3,8 +3,10 @@
     <img data-parallax="hero" src="{{ include.section.image | relative_url }}" alt="{{ include.section.image_alt }}">
   </div>
   <div class="hero-copy">
-    <p class="eyebrow">{{ include.section.eyebrow }}</p>
-    <h1 id="page-title">{{ include.section.title }}</h1>
+    <div class="section-heading-primary section-heading-primary--display">
+      <p class="eyebrow">{{ include.section.eyebrow }}</p>
+      <h1 id="page-title">{{ include.section.title }}</h1>
+    </div>
     <p class="hero-lead" id="page-summary">{{ include.section.lead }}</p>
     <div class="hero-actions">
       <a class="button" href="{{ include.section.primary_cta.url }}">{{ include.section.primary_cta.label }}</a>
@@ -13,4 +15,3 @@
   </div>
   <div class="scroll-cue" aria-hidden="true">↓</div>
 </section>
-

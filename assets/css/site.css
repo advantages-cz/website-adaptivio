@@ -43,6 +43,8 @@
   --section-space-mobile: 64px;
   --section-head-gap-y: 22px;
   --section-head-stack-gap: 18px;
+  --section-head-stack-gap-display: 24px;
+  --section-head-stack-gap-xl: 32px;
   --section-head-margin-bottom: 42px;
   --section-head-split-columns: minmax(0, 1.2fr) minmax(380px, 0.8fr);
   --section-head-split-gap-x: clamp(32px, 3vw, 64px);
@@ -356,6 +358,14 @@ section {
 .section-heading-primary {
   display: grid;
   gap: var(--section-head-stack-gap);
+}
+
+.section-heading-primary--display {
+  gap: var(--section-head-stack-gap-display);
+}
+
+.section-heading-primary--xl {
+  gap: var(--section-head-stack-gap-xl);
 }
 
 .section-head .copy {
