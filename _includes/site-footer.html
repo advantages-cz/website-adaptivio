@@ -1,0 +1,30 @@
+{% assign company = site.data.company %}
+<footer class="site-footer" aria-labelledby="site-footer-title">
+  <div class="wrap site-footer-inner">
+    <div class="site-footer-brand">
+      <p class="eyebrow">Kontakt</p>
+      <h2 id="site-footer-title">{{ company.name }}</h2>
+    </div>
+    <div class="site-footer-grid">
+      <div class="site-footer-block">
+        <h3>Sídlo</h3>
+        <address>
+          {% for line in company.address_lines %}
+            <span>{{ line }}</span>
+          {% endfor %}
+        </address>
+      </div>
+      <div class="site-footer-block">
+        <h3>Spojení</h3>
+        <p><a href="mailto:{{ company.email }}">{{ company.email }}</a></p>
+        <p><a href="tel:{{ company.phone_href }}">{{ company.phone_display }}</a></p>
+      </div>
+      <div class="site-footer-block site-footer-block--compact">
+        <h3>Firemní údaje</h3>
+        <p>IČO: {{ company.ico }}</p>
+        <p>Spisová značka: {{ company.registry.file_number }}, {{ company.registry.court }}</p>
+        <p>Zapsáno {{ company.registry.registered_on }}</p>
+      </div>
+    </div>
+  </div>
+</footer>
