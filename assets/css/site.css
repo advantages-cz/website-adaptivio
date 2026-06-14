@@ -1387,7 +1387,7 @@ section {
   }
 
   .timeline-pin > .section-head + .sequence-list {
-    margin-top: 18px;
+    margin-top: 0;
   }
 
   .timeline-map {
@@ -1409,7 +1409,7 @@ section {
   }
 
   .timeline--sticky .timeline-card + .timeline-card {
-    margin-top: 36px;
+    margin-top: var(--stickysection-grid-gap);
   }
 
   .timeline--sticky .timeline-step {
@@ -1425,7 +1425,7 @@ section {
     top: 22px;
     left: -50.5px;
     width: 1px;
-    height: calc(100% + 36px);
+    height: calc(100% + var(--stickysection-grid-gap));
     transform: none;
   }
 
