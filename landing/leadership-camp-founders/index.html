@@ -139,13 +139,24 @@
     }
 
     .nav-links {
-      display: none;
+      display: flex;
+      align-items: center;
+      margin-left: auto;
+      opacity: 0;
+      pointer-events: none;
+      transform: translateY(-8px);
+      transition: opacity .18s ease, transform .18s ease;
+    }
+
+    .site-header.is-cta-visible .nav-links {
+      opacity: 1;
+      pointer-events: auto;
+      transform: translateY(0);
     }
 
     .nav-links a {
       text-decoration: none;
-      opacity: .74;
-      transition: opacity .18s ease, color .18s ease;
+      transition: color .18s ease;
     }
 
     .nav-links a:hover {
@@ -323,6 +334,13 @@
       flex-wrap: wrap;
       gap: 14px;
       margin-top: 32px;
+      transition: opacity .18s ease, transform .18s ease;
+    }
+
+    .hero-actions.is-hidden {
+      opacity: 0;
+      pointer-events: none;
+      transform: translateY(-8px);
     }
 
     .intro-metrics {
@@ -1511,6 +1529,10 @@
     }
 
     @media (max-width: 1240px) {
+      .nav-links {
+        display: none;
+      }
+
       .brand-copy {
         font-size: 12px;
       }
@@ -1936,13 +1958,9 @@
         <img src="../../assets/brand/logo/adaptivio-logo-black.svg" alt="Adaptivio">
         <span class="brand-copy">
           <strong>Leadership Camp</strong>
-          <span>Třídenní týmový camp pro firmy</span>
         </span>
       </a>
       <nav class="nav-links" aria-label="Hlavní navigace">
-        <a href="#prinos">Přínos</a>
-        <a href="#prubeh">Průběh</a>
-        <a href="#lektori">Kdo camp vede</a>
         <a class="button" href="https://forms.gle/leadership-camp-placeholder">Chci vědět víc</a>
       </nav>
     </div>
@@ -2267,6 +2285,8 @@
       const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
       const header = document.querySelector("[data-header]");
       const hero = document.querySelector('[data-parallax="hero"]');
+      const heroSection = document.querySelector(".hero");
+      const heroActions = document.querySelector(".hero-actions");
       const stickySections = [...document.querySelectorAll("[data-stickysection-scene]")].map(scene => ({
         scene,
         cards: [...scene.querySelectorAll("[data-stickysection-card]")]
@@ -2334,6 +2354,14 @@
       const update = () => {
         const y = window.scrollY;
         header.classList.toggle("is-solid", y > 40);
+
+        if (header && heroSection && heroActions) {
+          const heroBottom = heroSection.getBoundingClientRect().bottom;
+          const headerHeight = header.offsetHeight;
+          const showHeaderCta = heroBottom <= headerHeight + 24;
+          header.classList.toggle("is-cta-visible", showHeaderCta);
+          heroActions.classList.toggle("is-hidden", showHeaderCta);
+        }
 
         if (!reducedMotion && hero) {
           hero.style.setProperty("--parallax-y", `${clamp(y * 0.18, 0, 120)}px`);
