@@ -225,26 +225,37 @@ sections:
           pomáhá učitelům vstupovat do nové role.
         image: /assets/images/leadership-camp/tatana-berankova-cisarova.jpg
         image_alt: Taťána Beránková Císařová
-  - type: practical
+  - type: stickysection
+    theme: paper
+    cards: 4
     eyebrow: Prakticky
     title: Zakázkový camp pro celou firmu nebo tým.
     perex: >-
       Konkrétní podobu ladíme podle skupiny, firemního kontextu a návazné práce.
-    copy: Před campem s vámi pojmenujeme potřeby a očekávání, po campu pomůžeme
-      převést zkušenost zpět do praxe.
+    card_class: outcome-row
     items:
       - label: Formát
-        value: Třídenní týmový camp.
-      - label: Skupina
-        value: Typicky 10-20 lidí.
-      - label: Před campem
-        value: Mapování potřeb a očekávání.
-      - label: Během campu
-        value: Terén, prototyp, odborná porota a reflexe.
-      - label: Po campu
-        value: Následná reflexe s odstupem.
+        title: Třídenní camp pro tým 10-20 lidí
+        copy: >-
+          Zakázkový camp pro celou firmu nebo vybraný tým. Skupina 10-20 lidí
+          dává prostor pro skutečnou práci, terén i společnou reflexi.
+      - label: Průběh
+        title: Terén, prototyp a společná reflexe
+        copy: >-
+          Místo teorie od stolu jdete do terénu, stavíte první řešení,
+          ověřujete ho mimo místnost a vracíte se se zpětnou vazbou od poroty i
+          vlastního týmu.
+      - label: Před a po
+        title: Příprava a návaznost po campu
+        copy: >-
+          Před campem pojmenujeme potřeby a očekávání skupiny. Po campu
+          pomůžeme zkušenost usadit, vrátit ji do firemního kontextu a převést
+          do další práce.
       - label: Cena
-        value: Individuálně podle rozsahu a kontextu.
+        title: Cena podle rozsahu spolupráce
+        copy: >-
+          Konkrétní podobu i cenu ladíme podle skupiny, firemního kontextu a
+          návaznosti, kterou spolu chcete po campu otevřít.
 final_cta:
   eyebrow: Závěr
   title: Krize je drahý učitel, dotkněte se reality bezpečněji.
