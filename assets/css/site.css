@@ -135,6 +135,15 @@ button:focus-visible,
   filter: none;
 }
 
+.brand-symbol {
+  display: none;
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+  flex: 0 0 24px;
+  filter: none;
+}
+
 .brand-copy {
   display: grid;
   gap: 2px;
@@ -146,7 +155,10 @@ button:focus-visible,
 }
 
 .brand-copy strong {
+  display: block;
   font-size: 15px;
+  line-height: 1;
+  white-space: nowrap;
   opacity: 1;
 }
 
@@ -1283,6 +1295,54 @@ section {
 
   .wrap,
   .hero-copy { width: min(100%, calc(100% - 32px)); }
+
+  .nav {
+    gap: 14px;
+  }
+
+  .brand {
+    min-width: 0;
+    gap: 12px;
+    flex: 1 1 auto;
+  }
+
+  .brand-logo {
+    width: 116px;
+    flex: 0 0 auto;
+  }
+
+  .brand-copy {
+    min-width: 0;
+    padding-left: 12px;
+  }
+
+  .brand-copy strong {
+    font-size: 14px;
+  }
+
+  .nav-links .button {
+    min-height: 42px;
+    padding: 0 14px;
+    font-size: 14px;
+    white-space: nowrap;
+  }
+
+  .site-header.is-cta-visible .brand-logo {
+    display: none;
+  }
+
+  .site-header.is-cta-visible .brand-symbol {
+    display: block;
+    width: auto;
+    height: 26px;
+    flex: 0 0 auto;
+    filter: none;
+  }
+
+  .site-header.is-cta-visible .brand-copy {
+    padding-left: 0;
+    border-left: 0;
+  }
 
   section {
     padding: var(--section-space-mobile) 0;

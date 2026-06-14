@@ -1,7 +1,8 @@
 <header class="site-header" data-header>
   <div class="wrap nav">
     <a class="brand" href="#top" aria-label="{{ include.brand.name }}">
-      <img src="{{ '/assets/brand/logo/adaptivio-logo-black.svg' | relative_url }}" alt="Adaptivio">
+      <img class="brand-logo" src="{{ '/assets/brand/logo/adaptivio-logo-black.svg' | relative_url }}" alt="Adaptivio">
+      <img class="brand-symbol" src="{{ '/assets/brand/logo/adaptivio-symbol-black.svg' | relative_url }}" alt="" aria-hidden="true">
       <span class="brand-copy">
         <strong>{{ include.brand.name }}</strong>
       </span>
@@ -11,4 +12,3 @@
     </nav>
   </div>
 </header>
-
