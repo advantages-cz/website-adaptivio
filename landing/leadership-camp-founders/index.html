@@ -975,6 +975,15 @@
       margin-bottom: 42px;
     }
 
+    .flow .section-head .copy {
+      max-width: 30ch;
+      margin-top: 0;
+      padding-left: 20px;
+      border-left: 2px solid rgba(0, 0, 0, 0.16);
+      font-size: 19px;
+      line-height: var(--leading-copy);
+    }
+
     .section-head {
       max-width: 820px;
       margin-bottom: 54px;
@@ -986,35 +995,47 @@
     }
 
     .timeline {
+      --timeline-gap: 36px;
+      position: relative;
       display: grid;
       grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 36px;
-      border-top: 2px solid var(--ink);
+      gap: var(--timeline-gap);
+      padding-top: 34px;
     }
 
     .timeline article {
-      min-height: 300px;
-      padding: 22px 0;
+      position: relative;
+      min-height: 0;
+      padding: 0;
       display: grid;
+      grid-template-rows: 48px minmax(68px, auto) auto;
       align-content: start;
-      gap: 34px;
+      gap: 18px;
     }
 
-    .timeline article:last-child {
-      padding-right: 0;
+    .timeline article:not(:last-child)::before {
+      content: "";
+      position: absolute;
+      top: 23.5px;
+      left: 24px;
+      width: calc(100% + var(--timeline-gap));
+      height: 1px;
+      background: var(--ink);
     }
 
     .timeline strong {
-      display: inline-grid;
+      grid-row: 1;
+      display: grid;
       place-items: center;
       width: 48px;
       height: 48px;
-      margin-bottom: 28px;
       border-radius: 999px;
       background: var(--ink);
       color: var(--white);
       font-size: 18px;
       font-weight: 700;
+      position: relative;
+      z-index: 1;
     }
 
     .timeline article:nth-child(2) strong {
@@ -1027,12 +1048,45 @@
     }
 
     .timeline h3 {
+      grid-row: 2;
       max-width: 13ch;
-      margin-bottom: 18px;
+      min-height: 2.05em;
+      margin: 0;
       font-size: 26px;
+      line-height: var(--leading-card-heading);
+    }
+
+    @media (min-width: 1280px) {
+      .flow .section-head {
+        display: grid;
+        max-width: none;
+        grid-template-columns: minmax(0, 1.2fr) minmax(380px, 0.8fr);
+        align-items: end;
+        column-gap: clamp(32px, 3vw, 64px);
+        row-gap: 8px;
+      }
+
+      .flow .section-head .eyebrow {
+        grid-column: 1 / -1;
+        margin: 0;
+      }
+
+      .flow .section-head h2 {
+        grid-column: 1;
+        grid-row: 2;
+        margin: 0;
+        max-width: 11ch;
+      }
+
+      .flow .section-head .copy {
+        grid-column: 2;
+        grid-row: 2;
+        align-self: end;
+      }
     }
 
     .timeline p {
+      grid-row: 3;
       margin: 0;
       color: var(--muted);
       font-size: 18px;
@@ -1329,6 +1383,10 @@
         font-size: 18px;
       }
 
+      .flow .section-head .copy {
+        max-width: 34ch;
+      }
+
       .intro-copy {
         max-width: 34ch;
       }
@@ -1530,6 +1588,35 @@
     }
 
     @media (min-width: 768px) and (max-width: 1279px) {
+      .flow .section-head {
+        display: grid;
+        max-width: none;
+        grid-template-columns: minmax(0, 1.15fr) minmax(280px, 0.85fr);
+        align-items: end;
+        column-gap: 32px;
+        row-gap: 8px;
+      }
+
+      .flow .section-head .eyebrow {
+        grid-column: 1 / -1;
+        margin: 0;
+      }
+
+      .flow .section-head h2 {
+        grid-column: 1;
+        grid-row: 2;
+        max-width: 14ch;
+        margin: 0;
+      }
+
+      .flow .section-head .copy {
+        grid-column: 2;
+        grid-row: 2;
+        align-self: end;
+        max-width: 28ch;
+        margin: 0;
+      }
+
       .stickysection {
         --stickysection-lead-inset: var(--stickysection-space-2);
         --stickysection-static-head-gap: var(--stickysection-space-5);
@@ -1620,6 +1707,11 @@
       .people-row h3 {
         max-width: none;
       }
+
+      .flow .section-head .copy {
+        max-width: 28ch;
+        font-size: 18px;
+      }
     }
 
     @media (max-width: 767px) {
@@ -1669,6 +1761,12 @@
 
       .stickysection-card p {
         font-size: 17px;
+      }
+
+      .flow .section-head .copy {
+        margin-top: 18px;
+        padding-left: 0;
+        border-left: 0;
       }
     }
 
@@ -1835,6 +1933,11 @@
         grid-template-columns: 1fr;
       }
 
+      .timeline {
+        gap: 36px;
+        padding-top: 0;
+      }
+
       .story-row h3,
       .outcome-row h3,
       .stickysection-card h3,
@@ -1861,11 +1964,39 @@
 
       .timeline article {
         min-height: auto;
-        padding: 24px 0;
+        display: grid;
+        grid-template-columns: 44px minmax(0, 1fr);
+        grid-template-rows: auto auto;
+        column-gap: 28px;
+        row-gap: 16px;
+        padding: 0;
       }
 
       .timeline strong {
-        margin-bottom: 24px;
+        grid-column: 1;
+        grid-row: 1;
+        width: 44px;
+        height: 44px;
+        margin-left: 0;
+      }
+
+      .timeline h3,
+      .timeline p {
+        grid-column: 2;
+      }
+
+      .timeline h3 {
+        grid-row: 1;
+        align-self: center;
+        max-width: none;
+        min-height: 0;
+      }
+
+      .timeline article:not(:last-child)::before {
+        top: 22px;
+        left: 21.5px;
+        width: 1px;
+        height: calc(100% + 36px);
       }
 
       .stickysection .stickysection-pin {
@@ -2049,24 +2180,18 @@
         </div>
         <div class="timeline">
           <article>
-            <div>
-              <strong>1</strong>
-              <h3>Výbava a problém</h3>
-            </div>
+            <strong>1</strong>
+            <h3>Výbava a problém</h3>
             <p>Lidé vystoupí z běžných rolí, pojmenují své schopnosti a hledají oblast, kde mají energii a motivaci něco ovlivnit.</p>
           </article>
           <article>
-            <div>
-              <strong>2</strong>
-              <h3>Terén a první řešení</h3>
-            </div>
+            <strong>2</strong>
+            <h3>Terén a první řešení</h3>
             <p>Tým odděluje domněnky od reality, mluví se zákazníky, kolegy nebo uživateli a skládá první verzi řešení.</p>
           </article>
           <article>
-            <div>
-              <strong>3</strong>
-              <h3>Zkouška, <span class="nowrap">porota a reflexe</span></h3>
-            </div>
+            <strong>3</strong>
+            <h3>Zkouška, <span class="nowrap">porota a reflexe</span></h3>
             <p>Účastníci testují, prezentují před odbornou porotou, získávají syrovou zpětnou vazbu a pojmenovávají, co si odnášejí zpět do práce.</p>
           </article>
         </div>
