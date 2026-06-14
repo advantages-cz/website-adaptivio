@@ -58,10 +58,11 @@ The component has 3 layout modes:
 These values should be treated as the baseline and adjusted centrally, not ad hoc per section:
 
 - desktop scene runway:
-  `stickysection--cards-2`: `calc((100svh - 112px) + 820px)`
-  `stickysection--cards-3`: `calc((100svh - 112px) + 1040px)`
-  `stickysection--cards-4`: `calc((100svh - 112px) + 1260px)`
+  `stickysection--cards-2`: `calc((min(100svh, 760px) - 112px) + 560px)`
+  `stickysection--cards-3`: `calc((min(100svh, 760px) - 112px) + 700px)`
+  `stickysection--cards-4`: `calc((min(100svh, 760px) - 112px) + 860px)`
 - desktop pin top offset: `112px`
+- desktop pin min height: `calc(100svh - 112px)`
 - desktop card gap: `24px`
 - desktop card min/max height: `320px`
 - tall card min/max height: `420px`
@@ -72,9 +73,9 @@ These values should be treated as the baseline and adjusted centrally, not ad ho
 - mobile card padding: `26px 22px 24px`
 - lead rule width: `2px`
 - default lead copy width:
-  desktop sticky: `28ch`
-  two-column static: `28ch`
-  narrower two-column: `26ch`
+  desktop sticky: `42ch`
+  two-column static: `42ch`
+  narrower two-column: `100%`
 
 ## Typography
 
@@ -96,6 +97,7 @@ Motion belongs only to desktop sticky mode.
   `data-stickysection-scene`
   `data-stickysection-card`
 - When sticky mode is disabled, JS must remove custom properties and leave cards fully visible.
+- In sticky desktop mode, shorter content may be vertically balanced inside the pin via shared pin height and symmetric block padding, not section-specific offsets.
 
 ## Variants
 

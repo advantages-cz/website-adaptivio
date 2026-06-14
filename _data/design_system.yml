@@ -140,6 +140,9 @@ stickysection:
     - name: Lead copy width
       value: 42ch
       usage: Výchozí maximální šířka sticky perexu v aktuální implementaci.
+    - name: Desktop pin min height
+      value: "calc(100svh - 112px)"
+      usage: Sticky pin drží minimálně výšku viewportu pod headerem, aby šel kratší obsah vycentrovat bez lokálních hacků.
   motion:
     - name: Desktop only
       value: "min-width: 1280px and prefers-reduced-motion: no-preference"
@@ -150,9 +153,9 @@ stickysection:
     - name: JS hooks
       value: "data-stickysection-scene / data-stickysection-card"
       usage: Jediné povolené generické hooky pro JS.
-    - name: Tall viewport offset
-      value: "clamp(40px, calc((100svh - 820px) * 0.35), 132px)"
-      usage: Na vysokých desktop viewports se pinned obsah může posunout níže bez měnění struktury sekce.
+    - name: Tall viewport pin padding
+      value: "clamp(24px, calc((100svh - 820px) * 0.18), 72px)"
+      usage: Na vysokých desktop viewports dostává sticky pin symetrický vertikální padding, takže kratší head i grid nepůsobí přilepeně nahoře.
 
 patterns:
   - name: Hero

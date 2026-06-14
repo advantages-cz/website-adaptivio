@@ -450,9 +450,10 @@ section {
   --stickysection-space-12: calc(var(--stickysection-space) * 12);
   --stickysection-columns: 3;
   --stickysection-pin-top: 112px;
+  --stickysection-pin-min-height: calc(100svh - var(--stickysection-pin-top));
   --stickysection-runway-viewport: min(100svh, 760px);
   --stickysection-scene-runway: calc((var(--stickysection-runway-viewport) - 112px) + 1040px);
-  --stickysection-tall-offset: 0px;
+  --stickysection-pin-padding-block: 0px;
   --stickysection-section-padding-block: var(--stickysection-space-12);
   --stickysection-card-height: 320px;
   --stickysection-card-height-tablet: 0px;
@@ -835,10 +836,11 @@ section {
   .stickysection-pin {
     position: sticky;
     top: var(--stickysection-pin-top);
-    height: auto;
-    padding-top: var(--stickysection-tall-offset);
+    min-height: var(--stickysection-pin-min-height);
+    padding-block: var(--stickysection-pin-padding-block);
+    box-sizing: border-box;
     grid-template-rows: auto auto;
-    align-content: start;
+    align-content: center;
   }
 
   .stickysection .section-head.stickysection-head,
@@ -905,7 +907,7 @@ section {
 
 @media (min-width: 1280px) and (min-height: 820px) {
   .stickysection {
-    --stickysection-tall-offset: clamp(40px, calc((100svh - 820px) * 0.35), 132px);
+    --stickysection-pin-padding-block: clamp(24px, calc((100svh - 820px) * 0.18), 72px);
   }
 }
 
