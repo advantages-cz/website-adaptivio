@@ -4,6 +4,7 @@ title: Adaptivio Design System
 permalink: /system/
 ---
 {% assign ds = site.data.design_system %}
+{% assign asset_version = site.time | date: '%s' %}
 <!doctype html>
 <html lang="cs">
 <head>
@@ -11,7 +12,7 @@ permalink: /system/
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <title>{{ ds.meta.title }}</title>
   <meta name="description" content="{{ ds.meta.description }}">
-  <link rel="stylesheet" href="{{ '/assets/css/site.css' | relative_url }}">
+  <link rel="stylesheet" href="{{ '/assets/css/site.css' | relative_url }}?v={{ asset_version }}">
 </head>
 <body class="system-page">
   <main class="wrap system-layout">
@@ -189,6 +190,6 @@ permalink: /system/
       {% include components/quote.html section=ds.examples.quote %}
     </div>
   </main>
-  <script src="{{ '/assets/js/site.js' | relative_url }}"></script>
+  <script src="{{ '/assets/js/site.js' | relative_url }}?v={{ asset_version }}"></script>
 </body>
 </html>
