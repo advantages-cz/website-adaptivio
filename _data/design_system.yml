@@ -1,6 +1,6 @@
 meta:
   title: Adaptivio Design System
-  description: Základní vizuální systém, sekční rytmus a komponentové patterny odvozené z aktuální landing page.
+  description: Základní vizuální systém, sekční rytmus a komponentové patterny odvozené z aktuální landing page, doplněné o tokenovou a accessibility disciplínu.
 
 principles:
   - name: Editorial clarity
@@ -11,6 +11,10 @@ principles:
     description: Sticky motion patří jen desktopu od 1280px. Všechny editorial sticky sekce sdílí stejný jazyk tříd, tokenů a JS hooků.
   - name: Variants over one-offs
     description: Nálada a kontrast se mění přes modifier třídy a CSS proměnné, ne přes sekci-specific layout classes.
+  - name: Semantic tokens over raw values
+    description: Komponenty mají ideálně sahat po významových tokenech jako accent-text nebo accent-surface. Hex hodnoty a jednorázové rgba patří do foundations, ne do komponentových rozhodnutí.
+  - name: Accessibility is part of the system
+    description: Kontrast, focus states a reduced-motion fallback nejsou doplněk. Jsou to systémové vlastnosti, které musí mít tokeny, komponenty i preview stránka pod kontrolou.
 
 foundations:
   colors:
@@ -22,13 +26,22 @@ foundations:
       usage: Základní podklad a světlé karty.
     - name: Orange
       value: "#FF6512"
-      usage: Primární akcent, CTA, highlight stavy.
+      usage: Primární akcent pro surfaces, CTA backgroundy a highlight stavy.
     - name: Blue
       value: "#81EAFC"
-      usage: Sekundární akcent, dark sticky sections, ambient gradients.
+      usage: Sekundární akcent, dark sticky sections, ambient gradients a focus ring.
     - name: Muted Ink
       value: "rgba(0, 0, 0, 0.66)"
       usage: Delší copy a podpůrné texty.
+    - name: Accent Surface
+      value: "var(--orange)"
+      usage: Významový token pro akcentní plochy.
+    - name: Accent Text
+      value: "var(--orange)"
+      usage: Významový token pro akcentní text nebo dekorativní akcent tam, kde kontrast dovolí jeho přímé použití.
+    - name: Accent On Surface
+      value: "var(--ink)"
+      usage: Text a ikony nad oranžovou plochou.
 
   typography:
     - name: Display leading
@@ -59,7 +72,7 @@ foundations:
       usage: Výchozí vertikální padding pro běžné sekce a center bands na desktopu.
     - name: Mobile section space
       value: 56px
-      usage: Kompaktní vertikální padding sekcí na mobilu.
+      usage: Kompaktní vertikální padding sekcí na mobilu od 767px dolů.
     - name: Hero bottom space
       value: 32px
       usage: Spodní odsazení hero bandu.
@@ -156,6 +169,25 @@ stickysection:
     - name: Tall viewport pin padding
       value: "clamp(24px, calc((100svh - 820px) * 0.18), 72px)"
       usage: Na vysokých desktop viewports dostává sticky pin symetrický vertikální padding, takže kratší head i grid nepůsobí přilepeně nahoře.
+
+accessibility:
+  - name: Text contrast
+    requirement: "Běžný text minimálně 4.5:1, velký text minimálně 3:1"
+    note: Akcentní oranžová #FF6512 se na bílém podkladu nemá spoléhat jako jediný nosič malého textu. U malých labelů ji používej jen jako jemný konstrukční detail, typicky přes tenkou linku nebo subtlní oddělovač.
+  - name: Keyboard focus
+    requirement: "Interaktivní prvky musí mít viditelný focus-visible stav"
+    note: Focus ring je samostatný token, ne vedlejší efekt hoveru.
+  - name: Motion fallback
+    requirement: "Scroll-driven motion jen při prefers-reduced-motion: no-preference"
+    note: Stickysection už má desktop-only motion gate; nové motion patterny musí dodržet stejnou disciplínu.
+
+governance:
+  - name: Source of truth
+    description: Když se mění token nebo shared pattern, změna musí projít přes data, CSS i preview stránku, aby dokumentace nezestárla vedle implementace.
+  - name: Component-first reuse
+    description: Nová landing sekce má nejdřív zkusit existující komponenty a modifiery. Nový section type je až poslední krok.
+  - name: Semantic naming
+    description: Preferuj názvy podle role v systému, ne podle momentální barvy nebo konkrétní stránky. To zvyšuje šanci, že token přežije redesign.
 
 patterns:
   - name: Hero

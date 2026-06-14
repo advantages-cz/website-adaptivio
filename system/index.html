@@ -74,6 +74,22 @@ permalink: /system/
     </section>
     <section>
       <div class="section-head">
+        <p class="eyebrow">Accessibility</p>
+        <h2>Systémové guardraily</h2>
+        <p class="copy">Kontrast, focus a motion fallback patří do definice systému, ne až do QA na konci.</p>
+      </div>
+      <div class="token-grid">
+        {% for item in ds.accessibility %}
+        <article class="token-card">
+          <strong>{{ item.name }}</strong>
+          <span>{{ item.requirement }}</span>
+          <p>{{ item.note }}</p>
+        </article>
+        {% endfor %}
+      </div>
+    </section>
+    <section>
+      <div class="section-head">
         <p class="eyebrow">Layout modes</p>
         <h2>Jak se sekce skládají</h2>
       </div>
@@ -138,6 +154,20 @@ permalink: /system/
               {{ rule }}{% unless forloop.last %} {% endunless %}
             {% endfor %}
           </p>
+        </article>
+        {% endfor %}
+      </div>
+    </section>
+    <section>
+      <div class="section-head">
+        <p class="eyebrow">Governance</p>
+        <h2>Jak systém udržovat zdravý</h2>
+      </div>
+      <div class="token-grid">
+        {% for item in ds.governance %}
+        <article class="token-card">
+          <strong>{{ item.name }}</strong>
+          <p>{{ item.description }}</p>
         </article>
         {% endfor %}
       </div>
