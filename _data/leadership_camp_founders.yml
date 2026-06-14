@@ -119,16 +119,19 @@ sections:
     source: "Zdroj: World Economic Forum, Future of Jobs Report 2025."
     items:
       - label: Nové příležitosti
+        indicator: up
         title: 170 mil.
         copy: >-
           nových rolí má vzniknout do roku 2030 kvůli technologickým,
           ekonomickým a demografickým změnám.
       - label: Mizející pozice
+        indicator: down
         title: 92 mil.
         copy: >-
           rolí má ve stejném období zaniknout, protože některé činnosti a
           pracovní modely přestanou dávat smysl.
       - label: Celkový dopad
+        indicator: up
         title: 78 mil.
         copy: >-
           pracovních míst má celkově přibýt. Rozhodovat ale nebude jistota

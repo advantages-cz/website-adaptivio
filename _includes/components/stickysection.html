@@ -9,6 +9,9 @@
         <div class="sequence-list stickysection-grid">
           {% for item in include.section.items %}
           <article class="sequence-item stickysection-card{% if include.section.card_class %} {{ include.section.card_class }}{% endif %}{% if forloop.first %} is-active{% endif %}" data-stickysection-card>
+            {% if item.indicator %}
+            <span class="stickysection-card-indicator stickysection-card-indicator--{{ item.indicator }}" aria-hidden="true"></span>
+            {% endif %}
             <div class="stickysection-card-content">
               <span class="tag sequence-state-label">{{ item.label }}</span>
               <h3>{{ item.title }}</h3>
