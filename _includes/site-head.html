@@ -1,5 +1,8 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="{{ include.meta.theme_color | default: '#FF6512' }}">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <title>{{ include.meta.title | default: page.title | default: site.title }}</title>
 <meta name="description" content="{{ include.meta.description | default: site.description }}">
 {% assign asset_version = site.time | date: '%s' %}
