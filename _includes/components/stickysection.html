@@ -19,11 +19,11 @@
         <div class="sequence-list stickysection-grid">
           {% for item in include.section.items %}
           <article class="sequence-item stickysection-card{% if include.section.card_class %} {{ include.section.card_class }}{% endif %}{% if forloop.first %} is-active{% endif %}" data-stickysection-card>
-            <div>
+            <div class="stickysection-card-content">
               <span class="tag sequence-state-label">{{ item.label }}</span>
               <h3>{{ item.title }}</h3>
+              <p>{{ item.copy }}</p>
             </div>
-            <p>{{ item.copy }}</p>
           </article>
           {% endfor %}
         </div>
