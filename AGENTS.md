@@ -1,119 +1,76 @@
-# Stickysection Component
+# Adaptivio Web
 
-This repository uses `stickysection-*` as the shared component language for editorial sections that combine:
+This repository is a small Jekyll site for the Adaptivio web and landing pages.
 
-- a headline block
-- a short lead/perex
-- a set of 1 to N content cards
-- optional desktop-only scroll-driven motion
+Keep this file short and repo-specific. Prefer pointing agents to the real source of truth in the codebase instead of duplicating long component documentation here.
 
-## Purpose
+## Project Shape
 
-`stickysection` is not a one-off section style. It is the base pattern for sections that should feel structured, readable, and reusable across multiple landing page slices.
+- Jekyll structure:
+  - `_layouts/` for page layouts
+  - `_includes/` for shared partials and components
+  - `_data/` for YAML-driven page content and design-system metadata
+  - `assets/css/site.css` for shared styling
+  - `assets/js/site.js` for shared client behavior
+- Primary landing pages are data-driven.
+- The current landing flow is routed through `_layouts/landing.html` and reads content from `_data/<key>.yml`.
+- Example page entry:
+  - `landing/leadership-camp-founders/index.html`
+  - `_data/leadership_camp_founders.yml`
 
-## Naming
+## Component Model
 
-Use only these generic names for the component:
+- Reusable sections live in `_includes/components/`.
+- Current shared landing components include:
+  - `hero`
+  - `intro`
+  - `stickysection`
+  - `timeline`
+  - `quote`
+  - `people`
+  - `practical`
+  - `final-cta`
+- When extending a landing page, prefer composing existing includes before creating a new section type.
+- If a new section type is truly needed, update both the relevant include and the section switch in `_layouts/landing.html`.
 
-- `stickysection`
-- `stickysection--soft`
-- `stickysection--dark`
-- `stickysection--paper`
-- `stickysection--cards-2`
-- `stickysection--cards-3`
-- `stickysection--cards-4`
-- `stickysection--tall`
-- `stickysection-scene`
-- `stickysection-pin`
-- `stickysection-head`
-- `stickysection-grid`
-- `stickysection-card`
+## Design System
 
-Do not introduce section-specific layout classes such as `audience-*`, `prokoho-*`, `benefits-*`, etc. Content-specific classes are allowed only for data or semantics outside the component layout system.
+- This repo already contains a design-system dataset and preview page:
+  - `_data/design_system.yml`
+  - `system/index.html`
+- Treat those files, together with `assets/css/site.css`, as the source of truth for tokens, patterns, and current UI rules.
+- Do not restate large chunks of design-system documentation in `AGENTS.md`. Keep only the smallest set of rules agents need to work safely.
 
-## Layout Model
+## Stickysection Guardrails
 
-The component has 3 layout modes:
+`stickysection` is a shared editorial section pattern, not a one-off section.
 
-1. Desktop sticky mode: `min-width: 1280px`
-   The head and cards live inside `stickysection-pin`.
-   `stickysection-pin` is sticky.
-   Cards animate from below based on scroll progress.
+- Use the generic `stickysection-*` naming system already present in the repo.
+- Do not invent section-specific layout class families when the shared stickysection model can be reused.
+- Keep sticky motion desktop-only.
+- Preserve the generic JS hooks:
+  - `data-stickysection-scene`
+  - `data-stickysection-card`
+- If changing stickysection behavior, update HTML, CSS, JS, and design-system docs together.
 
-2. Two-column static mode: `768px` to `1279px`
-   The head stays in two columns.
-   Headline stays left.
-   Perex stays right.
-   Cards become a 2-column grid with the last card spanning full width when useful.
-   No sticky behavior and no card transforms.
+For current stickysection details, inspect:
 
-3. Single-column static mode: `max-width: 767px`
-   The head becomes a vertical stack.
-   Perex drops below the headline.
-   Decorative vertical lead rule is removed.
-   Cards become a 1-column stack.
+- `_includes/components/stickysection.html`
+- `assets/css/site.css`
+- `assets/js/site.js`
+- `_data/design_system.yml`
 
-## Metrics
+## Working Rules For Agents
 
-These values should be treated as the baseline and adjusted centrally, not ad hoc per section:
+- Prefer minimal, surgical changes over broad rewrites.
+- Preserve the existing visual language unless the task explicitly asks for redesign.
+- Keep content structure data-driven when a page already uses YAML-backed sections.
+- Before adding a new class, check whether an existing component, modifier, or token already solves the problem.
+- Avoid duplicating markup for different breakpoints.
+- Avoid hardcoding one-off responsive fixes before checking the shared component model.
 
-- desktop scene runway:
-  `stickysection--cards-2`: `calc((min(100svh, 760px) - 112px) + 560px)`
-  `stickysection--cards-3`: `calc((min(100svh, 760px) - 112px) + 700px)`
-  `stickysection--cards-4`: `calc((min(100svh, 760px) - 112px) + 860px)`
-- desktop pin top offset: `112px`
-- desktop pin min height: `calc(100svh - 112px)`
-- desktop card gap: `24px`
-- desktop card min/max height: `320px`
-- tall card min/max height: `420px`
-- desktop card padding: `34px 32px 30px`
-- tablet card gap: `24px`
-- tablet card padding: `28px 26px 26px`
-- tall tablet card min height: `340px`
-- mobile card padding: `26px 22px 24px`
-- lead rule width: `2px`
-- default lead copy width:
-  desktop sticky: `42ch`
-  two-column static: `42ch`
-  narrower two-column: `100%`
+## Build Notes
 
-## Typography
-
-- `stickysection-head h2` is the dominant headline.
-- `stickysection-head .copy` is a lead, not body copy.
-- In two-column and desktop sticky modes, the lead may use a left rule.
-- In single-column mode, the lead should lose the left rule and sit naturally under the headline.
-- Card headlines should use full available width unless there is a strong editorial reason not to.
-
-## Motion
-
-Motion belongs only to desktop sticky mode.
-
-- Use CSS custom properties on cards for motion:
-  `--stickysection-card-y`
-  `--stickysection-card-scale`
-  `--stickysection-card-opacity`
-- JS should target generic data hooks only:
-  `data-stickysection-scene`
-  `data-stickysection-card`
-- When sticky mode is disabled, JS must remove custom properties and leave cards fully visible.
-- In sticky desktop mode, shorter content may be vertically balanced inside the pin via shared pin height and symmetric block padding, not section-specific offsets.
-
-## Variants
-
-Color and mood should be expressed through component variables on the root `stickysection` block, for example:
-
-- `--stickysection-bg`
-- `--stickysection-accent`
-- `--stickysection-card-border`
-- `--stickysection-card-copy`
-- `--stickysection-lead-rule`
-
-Visual themes should be implemented as modifiers like `stickysection--soft`, not as new layout classes.
-
-## Guardrails
-
-- Do not fix individual breakpoints with one-off selectors before checking the component model.
-- Do not duplicate headline/perex markup for different breakpoints.
-- Do not mix layout naming with section naming.
-- Do not add new breakpoint behavior unless it fits one of the 3 official modes above.
+- Jekyll build script: `scripts/build.sh`
+- Local deploy helper: `scripts/deploy-local.sh`
+- Ruby/Jekyll environment is expected; the build script already handles `rbenv`, `bundle`, and direct `jekyll` fallback.
