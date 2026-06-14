@@ -405,12 +405,18 @@ section {
 }
 
 .intro {
+  --stickysection-card-height: 200px;
+  --stickysection-card-height-tablet: 180px;
+  --stickysection-card-padding: 30px 28px 28px;
+  --stickysection-card-radius: 28px;
+  --stickysection-card-surface: rgba(255, 255, 255, 0.8);
+  --stickysection-card-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.5), 0 16px 40px rgba(129, 234, 252, 0.16);
+  --stickysection-card-border: rgba(255, 101, 18, 0.18);
+  --stickysection-grid-gap: 36px;
+  --stickysection-content-gap: 36px;
+  --stickysection-section-padding-block: 96px;
+  --stickysection-scene-runway: calc((var(--stickysection-runway-viewport) - 112px) + 240px);
   background: var(--paper);
-}
-
-.intro-grid {
-  display: grid;
-  gap: 0;
 }
 
 .intro .section-head,
@@ -477,43 +483,41 @@ section {
 }
 
 .intro-metrics {
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  column-gap: 36px;
-  border-top: 1px solid var(--ink);
+  gap: var(--stickysection-grid-gap);
   margin-top: 0;
 }
 
-.intro-metrics article {
-  min-height: 124px;
-  padding: 20px 0;
-  border-bottom: 1px solid var(--line);
+.intro-metric {
+  min-height: var(--stickysection-card-height);
+  padding: var(--stickysection-card-padding);
+  border-width: 1px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
-.intro-metrics article:nth-last-child(-n + 4) {
-  border-bottom: 0;
-}
-
-.intro-metrics strong {
+.intro-metric strong {
   display: block;
-  margin-bottom: 12px;
-  font-size: 30px;
+  margin-bottom: 18px;
+  font-size: clamp(40px, 4vw, 58px);
+  line-height: 0.95;
 }
 
-.intro-metrics span {
+.intro-metric span {
   display: block;
   color: var(--muted);
-  font-size: 17px;
-  line-height: var(--leading-copy);
-  max-width: 14ch;
+  font-size: 21px;
+  line-height: 1.35;
+  max-width: 16ch;
 }
 
-.intro-metrics article:last-child strong,
-.intro-metrics article:last-child span {
+.intro-metric:last-child strong,
+.intro-metric:last-child span {
   color: var(--ink);
 }
 
-.intro-metrics article.intro-metric--accent strong,
-.intro-metrics article.intro-metric--accent span {
+.intro-metric.intro-metric--accent strong,
+.intro-metric.intro-metric--accent span {
   color: var(--orange);
 }
 
@@ -1198,10 +1202,6 @@ section {
 }
 
 @media (min-width: 1280px) {
-  .intro {
-    padding: 96px 0 88px;
-  }
-
   .quote-section {
     min-height: clamp(540px, 72svh, 820px);
     display: grid;
@@ -1321,6 +1321,13 @@ section {
   .stickysection {
     --stickysection-static-head-gap: 48px;
     --stickysection-card-padding: 28px 26px 26px;
+  }
+
+  .intro {
+    --stickysection-card-height-tablet: 200px;
+    --stickysection-card-padding: 26px 24px 24px;
+    --stickysection-grid-gap: 24px;
+    --stickysection-content-gap: 32px;
   }
 
   .stickysection-card-indicator {
@@ -1547,15 +1554,25 @@ section {
 
   .intro-metrics {
     grid-template-columns: repeat(2, minmax(0, 1fr));
-    column-gap: 20px;
   }
 
-  .intro-metrics article:nth-last-child(-n + 4) {
-    border-bottom: 1px solid var(--line);
+  .intro-metric strong {
+    margin-bottom: 14px;
+    font-size: clamp(36px, 12vw, 48px);
   }
 
-  .intro-metrics article:nth-last-child(-n + 2) {
-    border-bottom: 0;
+  .intro-metric span {
+    font-size: 19px;
+    max-width: none;
+  }
+
+  .intro {
+    --stickysection-section-padding-block: var(--section-space-mobile);
+    --stickysection-grid-gap: 20px;
+    --stickysection-card-height: auto;
+    --stickysection-card-height-tablet: auto;
+    --stickysection-card-padding: 24px 22px 22px;
+    --stickysection-content-gap: 24px;
   }
 
   .spec-table {

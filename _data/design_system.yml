@@ -270,6 +270,7 @@ patterns:
         Background se v pinned režimu může natáhnout přes viewport, ale sekční
         spacing se stále řídí tokeny.
       - Když sticky skončí, sekce se vrací do běžného rytmu daného spacing tokeny.
+      - Intro může používat stejný sticky scene model a generic JS hooks bez vlastního motion systému.
   - name: Timeline
     class: timeline
     kind: Process strip
