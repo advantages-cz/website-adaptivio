@@ -1458,6 +1458,10 @@ section {
 
   .stickysection-card { min-height: var(--stickysection-card-height-tablet); }
   .stickysection--cards-3 .stickysection-card:nth-child(3) { grid-column: 1 / -1; }
+  .stickysection--cards-3 .stickysection-card:nth-child(3):not(.timeline-card) {
+    width: calc(50% + (var(--stickysection-grid-gap) / 2));
+    justify-self: center;
+  }
 
   .people .lecturer-layout {
     grid-template-columns: 1fr;
