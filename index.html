@@ -1,4 +1,10 @@
-{% assign home = site.data.homepage %}
+---
+layout: default
+title: Adaptivio
+data_key: homepage
+permalink: /
+---
+{% assign home = site.data[page.data_key] %}
 <!doctype html>
 <html lang="cs">
 <head>
