@@ -56,7 +56,7 @@ sections:
     title: Práce nemizí. Přeskládává se.
     copy: >-
       Budoucnost vaší firmy nezačíná jen u strategie. Začíná i u lidí, kteří
-      umějí číst situaci, učit se z reality a pohnout věcmi, když popis práce
+      umějí číst situaci, učit se z praxe a pohnout věcmi, když popis práce
       přestane stačit.
     card_class: story-row
     items:
@@ -152,7 +152,7 @@ sections:
           improvizaci, cit pro situaci, odvahu zeptat se, schopnost slyšet
           druhého člověka nebo dotáhnout nejasný nápad do prvního kroku.
       - label: Tým
-        title: Rychlejší učení z reality
+        title: Rychlejší učení z praxe
         copy: >-
           Vyzkoušíte si malé pokusy místo dlouhých debat, ověřování místo
           domněnek a zpětnou vazbu dřív, než projekt nabobtná a ztěžkne.
@@ -167,8 +167,8 @@ sections:
     title: Zkušenost, ke které se dá vracet.
     copy: >-
       Camp nevrací jen energii. Dá vám konkrétní situaci, na které uvidíte, jak
-      čtete realitu, jak spolupracujete a co si z toho chcete přenést do další
-      práce.
+      oddělujete domněnky od toho, co se opravdu děje, jak spolupracujete a co 
+      si z toho chcete přenést do další práce.
   - type: stickysection
     theme: soft
     cards: 3
@@ -224,7 +224,7 @@ sections:
         image_alt: Taťána Beránková Císařová
   - type: practical
     eyebrow: Prakticky
-    title: Zakázkový camp pro jednu firmu nebo tým.
+    title: Zakázkový camp pro celou firmu nebo tým.
     copy: >-
       Konkrétní podobu ladíme podle skupiny, firemního kontextu a návazné práce.
       Před campem s vámi pojmenujeme potřeby a očekávání, po campu pomůžeme
