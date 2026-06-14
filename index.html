@@ -1,3 +1,4 @@
+{% assign home = site.data.homepage %}
 <!doctype html>
 <html lang="cs">
 <head>
@@ -6,25 +7,25 @@
   <meta name="theme-color" content="#FF6512">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-  <title>Adaptivio</title>
-  <meta name="description" content="Něco se tiše skládá.">
+  <title>{{ home.meta.title }}</title>
+  <meta name="description" content="{{ home.meta.description }}">
   <link rel="icon" href="assets/brand/logo/favicon.svg" type="image/svg+xml">
-  <link rel="canonical" href="https://adaptivio.com/">
+  <link rel="canonical" href="{{ home.meta.canonical | absolute_url }}">
   <meta property="og:locale" content="cs_CZ">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Adaptivio">
-  <meta property="og:title" content="Adaptivio">
-  <meta property="og:description" content="Něco se tiše skládá.">
-  <meta property="og:url" content="https://adaptivio.com/">
-  <meta property="og:image" content="https://adaptivio.com/assets/social/adaptivio-og-home.jpg">
+  <meta property="og:title" content="{{ home.meta.title }}">
+  <meta property="og:description" content="{{ home.meta.description }}">
+  <meta property="og:url" content="{{ home.meta.canonical | absolute_url }}">
+  <meta property="og:image" content="{{ home.meta.og_image | absolute_url }}">
   <meta property="og:image:type" content="image/jpeg">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
-  <meta property="og:image:alt" content="Brandovy social preview Adaptivio">
+  <meta property="og:image:alt" content="{{ home.meta.og_image_alt }}">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Adaptivio">
-  <meta name="twitter:description" content="Něco se tiše skládá.">
-  <meta name="twitter:image" content="https://adaptivio.com/assets/social/adaptivio-og-home.jpg">
+  <meta name="twitter:title" content="{{ home.meta.title }}">
+  <meta name="twitter:description" content="{{ home.meta.description }}">
+  <meta name="twitter:image" content="{{ home.meta.og_image | absolute_url }}">
   <style>
     @font-face {
       font-family: "Matter Trial";
@@ -213,9 +214,9 @@
 </head>
 <body>
   <main>
-    <section class="holding" aria-label="Adaptivio připravuje nový web">
+    <section class="holding" aria-label="{{ home.accessibility.section_label }}">
       <div class="holding-mark" aria-hidden="true">
-        <svg viewBox="-80 -80 342.8851318 301.7322845" role="img" aria-label="Adaptivio symbol" xmlns="http://www.w3.org/2000/svg">
+        <svg viewBox="-80 -80 342.8851318 301.7322845" role="img" aria-label="{{ home.accessibility.symbol_label }}" xmlns="http://www.w3.org/2000/svg">
           <defs>
             <path id="animated-soft-mark-shape" d="M158.2571411,66.8937149c-16.0483856,0-22.2452087,11.4404984-32.2550507,11.4404984 C100.7377014,78.3342133,152.2187958,0,103.2804031,0C55.4534225,0,0,70.2304688,0,111.7015228 c0,21.7685394,11.9169693,30.0307617,24.945982,30.0307617c30.8248158,0,51.6401978-23.0392685,74.6794662-23.0392685 c23.0390625,0,22.2452164,19.5442429,46.7147293,19.5442429c21.609436,0,36.5449524-18.2728958,36.5449524-39.0882797 C182.8851318,80.2411346,171.921936,66.8937149,158.2571411,66.8937149z">
               <animate attributeName="d" dur="21s" repeatCount="indefinite" calcMode="spline"
@@ -276,7 +277,7 @@
           <use class="mark-core" href="#animated-soft-mark-shape"/>
         </svg>
       </div>
-      <h1>Něco se tiše skládá.</h1>
+      <h1>{{ home.hero.title }}</h1>
     </section>
   </main>
 </body>

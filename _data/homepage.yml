@@ -1,0 +1,11 @@
+meta:
+  title: Adaptivio
+  description: Něco se tiše tvoří.
+  canonical: /
+  og_image: /assets/social/adaptivio-og-home.jpg
+  og_image_alt: Adaptivio domovská stránka
+accessibility:
+  section_label: Adaptivio připravuje nový web
+  symbol_label: Symbol Adaptivio
+hero:
+  title: Něco se tiše tvoří.
