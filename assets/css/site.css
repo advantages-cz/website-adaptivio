@@ -1269,7 +1269,7 @@ section {
   }
 
   .wrap,
-  .hero-copy { width: min(100%, calc(100% - 20px)); }
+  .hero-copy { width: min(100%, calc(100% - 32px)); }
 
   section {
     padding: var(--section-space-mobile) 0;
