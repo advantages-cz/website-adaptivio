@@ -1,0 +1,16 @@
+<section class="hero" data-parallax-root>
+  <div class="hero-media">
+    <img data-parallax="hero" src="{{ include.section.image | relative_url }}" alt="{{ include.section.image_alt }}">
+  </div>
+  <div class="hero-copy">
+    <p class="eyebrow">{{ include.section.eyebrow }}</p>
+    <h1 id="page-title">{{ include.section.title }}</h1>
+    <p class="hero-lead" id="page-summary">{{ include.section.lead }}</p>
+    <div class="hero-actions">
+      <a class="button" href="{{ include.section.primary_cta.url }}">{{ include.section.primary_cta.label }}</a>
+      <a class="button secondary" href="{{ include.section.secondary_cta.url }}">{{ include.section.secondary_cta.label }}</a>
+    </div>
+  </div>
+  <div class="scroll-cue" aria-hidden="true">↓</div>
+</section>
+

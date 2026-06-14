@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="cs">
+<head>
+  {% assign content_data = site.data[page.data_key] %}
+  {% include site-head.html meta=content_data.meta %}
+</head>
+<body>
+  {% include site-header.html brand=content_data.brand %}
+  <main id="top">
+    <article aria-labelledby="page-title" aria-describedby="page-summary">
+      {% include components/hero.html section=content_data.hero %}
+      {% include components/intro.html section=content_data.intro %}
+      {% for section in content_data.sections %}
+        {% case section.type %}
+        {% when 'stickysection' %}
+          {% include components/stickysection.html section=section %}
+        {% when 'timeline' %}
+          {% include components/timeline.html section=section %}
+        {% when 'quote' %}
+          {% include components/quote.html section=section %}
+        {% when 'people' %}
+          {% include components/people.html section=section %}
+        {% when 'practical' %}
+          {% include components/practical.html section=section %}
+        {% endcase %}
+      {% endfor %}
+      {% include components/final-cta.html section=content_data.final_cta %}
+    </article>
+  </main>
+  <footer>
+    <div class="wrap"></div>
+  </footer>
+  <script src="{{ '/assets/js/site.js' | relative_url }}"></script>
+</body>
+</html>

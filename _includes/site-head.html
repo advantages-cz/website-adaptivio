@@ -1,0 +1,19 @@
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>{{ include.meta.title | default: page.title | default: site.title }}</title>
+<meta name="description" content="{{ include.meta.description | default: site.description }}">
+<link rel="icon" href="{{ '/assets/brand/logo/favicon.svg' | relative_url }}" type="image/svg+xml">
+<link rel="canonical" href="{{ include.meta.canonical | absolute_url }}">
+<meta property="og:locale" content="cs_CZ">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Adaptivio">
+<meta property="og:title" content="{{ include.meta.title | default: page.title | default: site.title }}">
+<meta property="og:description" content="{{ include.meta.description | default: site.description }}">
+<meta property="og:url" content="{{ include.meta.canonical | absolute_url }}">
+<meta property="og:image" content="{{ include.meta.og_image | absolute_url }}">
+<meta property="og:image:alt" content="{{ include.meta.og_image_alt | default: 'Adaptivio' }}">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="{{ include.meta.title | default: page.title | default: site.title }}">
+<meta name="twitter:description" content="{{ include.meta.description | default: site.description }}">
+<meta name="twitter:image" content="{{ include.meta.og_image | absolute_url }}">
+<link rel="stylesheet" href="{{ '/assets/css/site.css' | relative_url }}">

@@ -1,0 +1,244 @@
+meta:
+  title: Adaptivio Design System
+  description: Základní vizuální systém, sekční rytmus a komponentové patterny odvozené z aktuální landing page.
+
+principles:
+  - name: Editorial clarity
+    description: Sekce mají působit čistě, čitelně a rozhodně. Headline blok, lead a obsah mají jasné pořadí a žádné breakpoint-specific duplikace.
+  - name: Shared section rhythm
+    description: Vertikální spacing se řídí centrálními tokeny. Když sekce není sticky scene, obsah má sedět v předvídatelném bandu se symetrickým rytmem.
+  - name: Sticky is a system
+    description: Sticky motion patří jen desktopu od 1280px. Všechny editorial sticky sekce sdílí stejný jazyk tříd, tokenů a JS hooků.
+  - name: Variants over one-offs
+    description: Nálada a kontrast se mění přes modifier třídy a CSS proměnné, ne přes sekci-specific layout classes.
+
+foundations:
+  colors:
+    - name: Ink
+      value: "#000000"
+      usage: Primární text, dark surfaces, timeline body.
+    - name: Paper
+      value: "#FFFFFF"
+      usage: Základní podklad a světlé karty.
+    - name: Orange
+      value: "#FF6512"
+      usage: Primární akcent, CTA, highlight stavy.
+    - name: Blue
+      value: "#81EAFC"
+      usage: Sekundární akcent, dark sticky sections, ambient gradients.
+    - name: Muted Ink
+      value: "rgba(0, 0, 0, 0.66)"
+      usage: Delší copy a podpůrné texty.
+
+  typography:
+    - name: Display leading
+      value: "1.08"
+      usage: Hero a dominantní sekční headline.
+    - name: Heading leading
+      value: "1.12"
+      usage: H2, H3 a big quote titulky.
+    - name: Lead leading
+      value: "1.42"
+      usage: Výrazné lead/perex bloky.
+    - name: Copy leading
+      value: "1.68"
+      usage: Delší text a vysvětlující copy.
+    - name: UI small leading
+      value: "1.48"
+      usage: Eyebrows, metadata a malé popisky.
+    - name: Font family
+      value: '"Matter Trial", Arial, Helvetica, sans-serif'
+      usage: Jednotná display i UI typografie.
+
+  spacing:
+    - name: Base unit
+      value: 8px
+      usage: Základní rytmus pro stickysection a vnitřní spacing.
+    - name: Desktop section space
+      value: 96px
+      usage: Výchozí vertikální padding pro běžné sekce a center bands na desktopu.
+    - name: Mobile section space
+      value: 56px
+      usage: Kompaktní vertikální padding sekcí na mobilu.
+    - name: Hero bottom space
+      value: 32px
+      usage: Spodní odsazení hero bandu.
+    - name: Sticky head to cards gap
+      value: 48px
+      usage: Desktop i tablet mezera mezi sticky headem a gridem.
+    - name: Sticky grid gap
+      value: 24px
+      usage: Mezery mezi sticky kartami.
+    - name: Centered band rule
+      value: Symmetric vertical gap
+      usage: Když sekce není sticky scene a má větší výšku, obsah má být vertikálně vycentrovaný se stejným dojmem nad a pod.
+
+layout_modes:
+  - name: Centered band
+    min_width: "0px"
+    description: Nesticky sekce jako quote, final nebo standard content band používají centrální section spacing tokeny a obsah sedí uvnitř jednoho bandu.
+  - name: Sticky desktop
+    min_width: "1280px"
+    description: Head a grid žijí uvnitř stickysection-pin. Pin zůstává sticky a karty se animují podle scroll progresu.
+  - name: Static tablet
+    min_width: "768px"
+    max_width: "1279px"
+    description: Head zůstává ve dvou sloupcích. Sticky se vypíná a grid se skládá do dvou sloupců.
+  - name: Static mobile
+    max_width: "767px"
+    description: Headline, perex i obsah se skládají do jednoho sloupce a dekorativní lead rule mizí.
+
+stickysection:
+  classes:
+    - stickysection
+    - stickysection--soft
+    - stickysection--dark
+    - stickysection--paper
+    - stickysection--cards-2
+    - stickysection--cards-3
+    - stickysection--cards-4
+    - stickysection--tall
+    - stickysection-scene
+    - stickysection-pin
+    - stickysection-head
+    - stickysection-grid
+    - stickysection-card
+  metrics:
+    - name: Pin top offset
+      value: 112px
+      usage: Začátek sticky pinu pod headerem.
+    - name: Viewport cap for runway
+      value: 760px
+      usage: Desktop sticky runway nepoužívá neomezeně vysoký viewport; růst se po této výšce zastropuje.
+    - name: Cards-2 runway
+      value: "calc((min(100svh, 760px) - 112px) + 560px)"
+      usage: Krátká sticky scéna pro 2 karty.
+    - name: Cards-3 runway
+      value: "calc((min(100svh, 760px) - 112px) + 700px)"
+      usage: Výchozí sticky scéna pro 3 karty.
+    - name: Cards-4 runway
+      value: "calc((min(100svh, 760px) - 112px) + 860px)"
+      usage: Délka sticky scény pro 4 karty.
+    - name: Desktop card height
+      value: 320px
+      usage: Výchozí minimální výška sticky karet.
+    - name: Tall card height
+      value: 420px
+      usage: Vyšší karty pro people a podobné obsahy.
+    - name: Tablet card min height
+      value: 340px
+      usage: Kompaktnější výška sticky karet na tabletu.
+    - name: Desktop card padding
+      value: "34px 32px 30px"
+      usage: Vnitřní spacing sticky karet na desktopu.
+    - name: Tablet card padding
+      value: "28px 26px 26px"
+      usage: Vnitřní spacing sticky karet na tabletu.
+    - name: Mobile card padding
+      value: "26px 22px 24px"
+      usage: Vnitřní spacing sticky karet na mobilu.
+    - name: Lead copy width
+      value: 42ch
+      usage: Výchozí maximální šířka sticky perexu v aktuální implementaci.
+  motion:
+    - name: Desktop only
+      value: "min-width: 1280px and prefers-reduced-motion: no-preference"
+      usage: Motion se zapíná jen ve sticky desktop režimu.
+    - name: Card transform vars
+      value: "--stickysection-card-y / --stickysection-card-scale / --stickysection-card-opacity"
+      usage: CSS proměnné pro scroll-driven vstup karet.
+    - name: JS hooks
+      value: "data-stickysection-scene / data-stickysection-card"
+      usage: Jediné povolené generické hooky pro JS.
+    - name: Tall viewport offset
+      value: "clamp(40px, calc((100svh - 820px) * 0.35), 132px)"
+      usage: Na vysokých desktop viewports se pinned obsah může posunout níže bez měnění struktury sekce.
+
+patterns:
+  - name: Hero
+    class: hero
+    kind: Immersive band
+    description: Úvodní fullscreen blok s fotografií, overlayem, H1, leadem a primárními CTA.
+    rules:
+      - Hero je jediný fullscreen surface.
+      - Text neleží v kartě, ale přímo nad médiem.
+      - Pod headline musí zůstat čitelný další krok přes lead a CTA.
+  - name: Section Head
+    class: section-head
+    kind: Reusable heading block
+    description: Kombinace eyebrow, headline a copy/lead, která se skládá podle breakpointů.
+    rules:
+      - Desktop a tablet mohou použít dvousloupcové rozložení s lead rule.
+      - Mobile skládá obsah do jednoho sloupce bez levé rule.
+      - Headline je dominantní prvek, copy zůstává užší a podpůrná.
+  - name: Stickysection
+    class: stickysection
+    kind: Editorial scene
+    description: Hlavní reusable pattern pro sekce s kartami a případnou desktop scroll motion.
+    rules:
+      - Layout naming zůstává generické a obsahové sekce nesmí tvořit vlastní layout třídy.
+      - Background se v pinned režimu může natáhnout přes viewport, ale sekční spacing se stále řídí tokeny.
+      - Když sticky skončí, sekce se vrací do běžného rytmu daného spacing tokeny.
+  - name: Timeline
+    class: timeline
+    kind: Process strip
+    description: Tři kroky procesu s číslovanými body a spojnicemi na desktopu, vertikální osou na mobilu.
+    rules:
+      - Desktop má horizontální spojnice mezi body.
+      - Mobile timeline se překládá na 44px osu se svislou linkou.
+  - name: Quote
+    class: quote-section
+    kind: Centered band
+    description: Vyšší meziblok s velkým blockquote a navazující copy.
+    rules:
+      - Na desktopu se obsah chová jako center band uvnitř vyšší sekce.
+      - Na mobilu se band zkracuje a zůstává kompaktní.
+      - Spacing quote sekce se má řídit systémovým section rhythm, ne jednorázovým local hackem.
+  - name: Specs Table
+    class: spec-table
+    kind: Structured list
+    description: Praktický přehled parametrů s horní linkou a řádky, ne jako samostatné floating cards.
+    rules:
+      - Desktop používá tři sloupce s horizontálním rytmem.
+      - Mobile a tablet skládá položky do méně sloupců bez ztráty čitelnosti.
+  - name: Final CTA
+    class: final
+    kind: Closing band
+    description: Závěrečný dark band s headline, leadem a CTA.
+    rules:
+      - Působí jako uzavírací scéna, ne jako sticky sekce.
+      - Obsah má zůstat čistý a jednosměrný, bez dalších podsekcí.
+
+examples:
+  sticky:
+    eyebrow: Stickysection
+    title: Strukturovaná scéna pro editorial karty.
+    copy: Sticky pattern drží headline a lead v jedné scéně a karty skládá do sdíleného gridu. Na desktopu může pinovat, na menších breakpointech se rozpadá do statického layoutu.
+    cards:
+      - label: Head
+        title: Jeden headline blok
+        copy: Eyebrow, titulek a perex používají sdílené metriky a lead rule.
+      - label: Grid
+        title: Sdílené karty
+        copy: Karty drží shodný spacing, padding, výšku i motion tokeny.
+      - label: Motion
+        title: Desktop only
+        copy: Scroll-driven vstup patří jen sticky desktop režimu a vypíná se mimo něj.
+  quote:
+    eyebrow: Quote
+    title: Zkušenost, ke které se dá vracet.
+    copy: Centered band pattern používá symetrický sekční rytmus a nechává obsah sedět uvnitř jednoho čistého bloku.
+  timeline:
+    eyebrow: Timeline
+    title: Tři kroky v jednom proudu.
+    copy: Process strip drží tři očíslované kroky v jedné ose a překládá je citlivě mezi desktopem a mobilem.
+    steps:
+      - step: "1"
+        title: Pojmenování
+        copy: Nejprve se zpřesní situace a rozhodující otázka.
+      - step: "2"
+        title: Ověření
+        copy: Pak se odděluje dojem od reality a hledá se funkční tvar řešení.
+      - step: "3"
+        title: Přenos
+        copy: Nakonec se zkušenost vrací zpět do další práce jako společný jazyk.

@@ -1,0 +1,18 @@
+<section class="practical">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">{{ include.section.eyebrow }}</p>
+      <h2>{{ include.section.title }}</h2>
+      <p class="copy">{{ include.section.copy }}</p>
+    </div>
+    <div class="spec-table">
+      {% for item in include.section.items %}
+      <article>
+        <strong>{{ item.label }}</strong>
+        <span>{{ item.value }}</span>
+      </article>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+

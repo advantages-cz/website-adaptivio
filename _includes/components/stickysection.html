@@ -1,0 +1,36 @@
+{% assign theme_class = 'stickysection--' | append: include.section.theme %}
+{% assign cards_class = 'stickysection--cards-' | append: include.section.cards %}
+{% assign section_id = include.section.id %}
+<section{% if section_id %} id="{{ section_id }}"{% endif %} class="stickysection {{ theme_class }} {{ cards_class }}{% if include.section.tall %} stickysection--tall{% endif %}">
+  <div class="wrap">
+    <div class="stickysection-scene" data-stickysection-scene>
+      <div class="stickysection-pin">
+        <div class="section-head stickysection-head">
+          <p class="eyebrow">{{ include.section.eyebrow }}</p>
+          <h2>{{ include.section.title }}</h2>
+          <p class="copy">
+            {% if include.section.copy_html %}
+              {{ include.section.copy_html }}
+            {% else %}
+              {{ include.section.copy }}
+            {% endif %}
+          </p>
+        </div>
+        <div class="sequence-list stickysection-grid">
+          {% for item in include.section.items %}
+          <article class="sequence-item stickysection-card{% if include.section.card_class %} {{ include.section.card_class }}{% endif %}{% if forloop.first %} is-active{% endif %}" data-stickysection-card>
+            <div>
+              <span class="tag sequence-state-label">{{ item.label }}</span>
+              <h3>{{ item.title }}</h3>
+            </div>
+            <p>{{ item.copy }}</p>
+          </article>
+          {% endfor %}
+        </div>
+        {% if include.section.source %}
+        <span class="proof-source">{{ include.section.source }}</span>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</section>

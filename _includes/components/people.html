@@ -1,0 +1,30 @@
+<section class="people stickysection stickysection--paper stickysection--cards-2 stickysection--tall"{% if include.section.id %} id="{{ include.section.id }}"{% endif %}>
+  <div class="wrap">
+    <div class="stickysection-scene" data-stickysection-scene>
+      <div class="stickysection-pin">
+        <div class="section-head stickysection-head">
+          <p class="eyebrow">{{ include.section.eyebrow }}</p>
+          <h2>{{ include.section.title }}</h2>
+          <p class="copy">{{ include.section.copy }}</p>
+        </div>
+        <div class="stickysection-grid">
+          {% for item in include.section.items %}
+          <article class="stickysection-card people-row{% if forloop.first %} is-active{% endif %}" data-stickysection-card data-people-tone="{{ item.tone }}">
+            <div class="lecturer-layout">
+              <div class="lecturer-media">
+                <img src="{{ item.image | relative_url }}" alt="{{ item.image_alt }}">
+              </div>
+              <div class="lecturer-meta">
+                <strong class="sequence-state-label">{{ item.label }}</strong>
+                <h3>{{ item.title }}</h3>
+                <p>{{ item.copy }}</p>
+              </div>
+            </div>
+          </article>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+

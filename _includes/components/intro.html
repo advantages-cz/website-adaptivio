@@ -1,0 +1,21 @@
+<section class="intro" id="{{ include.section.id }}">
+  <div class="wrap intro-grid">
+    <div class="section-head">
+      <p class="eyebrow">{{ include.section.eyebrow }}</p>
+      <div class="intro-title">
+        <h2>{{ include.section.title }}</h2>
+        <p class="copy intro-copy">{{ include.section.copy }}</p>
+      </div>
+      <p class="lead">{{ include.section.lead }}</p>
+    </div>
+    <div class="intro-metrics" aria-label="Zakladni parametry campu">
+      {% for item in include.section.metrics %}
+      <article>
+        <strong>{{ item.value }}</strong>
+        <span>{{ item.label }}</span>
+      </article>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+

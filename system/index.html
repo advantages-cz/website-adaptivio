@@ -1,0 +1,204 @@
+---
+layout: default
+title: Adaptivio Design System
+permalink: /system/
+---
+{% assign ds = site.data.design_system %}
+<!doctype html>
+<html lang="cs">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>{{ ds.meta.title }}</title>
+  <meta name="description" content="{{ ds.meta.description }}">
+  <link rel="stylesheet" href="{{ '/assets/css/site.css' | relative_url }}">
+</head>
+<body class="system-page">
+  <main class="wrap system-layout">
+    <section class="section-head">
+      <p class="eyebrow">Základ</p>
+      <h1>{{ ds.meta.title }}</h1>
+      <p class="copy">{{ ds.meta.description }}</p>
+    </section>
+    <section>
+      <div class="section-head">
+        <p class="eyebrow">Barvy</p>
+        <h2>Základní tokeny</h2>
+      </div>
+      <div class="token-grid">
+        {% for color in ds.foundations.colors %}
+        <article class="token-card">
+          <div class="token-swatch" style="background: {{ color.value }};"></div>
+          <strong>{{ color.name }}</strong>
+          <span>{{ color.value }}</span>
+          <p>{{ color.usage }}</p>
+        </article>
+        {% endfor %}
+      </div>
+    </section>
+    <section>
+      <div class="section-head">
+        <p class="eyebrow">Principy</p>
+        <h2>Jak systém rozhoduje</h2>
+      </div>
+      <div class="token-grid">
+        {% for item in ds.principles %}
+        <article class="token-card">
+          <strong>{{ item.name }}</strong>
+          <p>{{ item.description }}</p>
+        </article>
+        {% endfor %}
+      </div>
+    </section>
+    <section>
+      <div class="section-head">
+        <p class="eyebrow">Typografie a rytmus</p>
+        <h2>Základní pravidla</h2>
+      </div>
+      <div class="token-grid">
+        {% for item in ds.foundations.typography %}
+        <article class="token-card">
+          <strong>{{ item.name }}</strong>
+          <span>{{ item.value }}</span>
+          <p>{{ item.usage }}</p>
+        </article>
+        {% endfor %}
+        {% for item in ds.foundations.spacing %}
+        <article class="token-card">
+          <strong>{{ item.name }}</strong>
+          <span>{{ item.value }}</span>
+          <p>{{ item.usage }}</p>
+        </article>
+        {% endfor %}
+      </div>
+    </section>
+    <section>
+      <div class="section-head">
+        <p class="eyebrow">Layout modes</p>
+        <h2>Jak se sekce skládají</h2>
+      </div>
+      <div class="token-grid">
+        {% for item in ds.layout_modes %}
+        <article class="token-card">
+          <strong>{{ item.name }}</strong>
+          <span>
+            {% if item.min_width %}min {{ item.min_width }}{% endif %}
+            {% if item.max_width %}{% if item.min_width %} / {% endif %}max {{ item.max_width }}{% endif %}
+          </span>
+          <p>{{ item.description }}</p>
+        </article>
+        {% endfor %}
+      </div>
+    </section>
+    <section>
+      <div class="section-head">
+        <p class="eyebrow">Stickysection</p>
+        <h2>Sdílená editorial scéna</h2>
+      </div>
+      <div class="token-grid">
+        {% for item in ds.stickysection.metrics %}
+        <article class="token-card">
+          <strong>{{ item.name }}</strong>
+          <span>{{ item.value }}</span>
+          <p>{{ item.usage }}</p>
+        </article>
+        {% endfor %}
+      </div>
+      <div class="token-grid system-stack">
+        {% for item in ds.stickysection.motion %}
+        <article class="token-card">
+          <strong>{{ item.name }}</strong>
+          <span>{{ item.value }}</span>
+          <p>{{ item.usage }}</p>
+        </article>
+        {% endfor %}
+      </div>
+      <div class="token-card system-stack">
+        <strong>Allowed classes</strong>
+        <p>
+          {% for item in ds.stickysection.classes %}
+            <code>{{ item }}</code>{% unless forloop.last %}, {% endunless %}
+          {% endfor %}
+        </p>
+      </div>
+    </section>
+    <section>
+      <div class="section-head">
+        <p class="eyebrow">Komponenty</p>
+        <h2>Reuse slovník pro celý web</h2>
+      </div>
+      <div class="token-grid">
+        {% for item in ds.patterns %}
+        <article class="token-card">
+          <strong>{{ item.name }}</strong>
+          <span><code>{{ item.class }}</code> / {{ item.kind }}</span>
+          <p>{{ item.description }}</p>
+          <p>
+            {% for rule in item.rules %}
+              {{ rule }}{% unless forloop.last %} {% endunless %}
+            {% endfor %}
+          </p>
+        </article>
+        {% endfor %}
+      </div>
+    </section>
+    <section>
+      <div class="section-head">
+        <p class="eyebrow">Příklady</p>
+        <h2>Živé ukázky patternů</h2>
+        <p class="copy">Tahle stránka má sloužit i jako kontrola, že se dokumentace a skutečný rendering nerozcházejí.</p>
+      </div>
+    </section>
+    <section class="stickysection stickysection--soft stickysection--cards-3 system-example-section">
+      <div class="wrap">
+        <div class="stickysection-scene">
+          <div class="stickysection-pin">
+            <div class="section-head stickysection-head">
+              <p class="eyebrow">{{ ds.examples.sticky.eyebrow }}</p>
+              <h2>{{ ds.examples.sticky.title }}</h2>
+              <p class="copy">{{ ds.examples.sticky.copy }}</p>
+            </div>
+            <div class="stickysection-grid">
+              {% for item in ds.examples.sticky.cards %}
+              <article class="stickysection-card is-active">
+                <div>
+                  <span class="tag sequence-state-label">{{ item.label }}</span>
+                  <h3>{{ item.title }}</h3>
+                </div>
+                <p>{{ item.copy }}</p>
+              </article>
+              {% endfor %}
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="flow system-example-section">
+      <div class="wrap">
+        <div class="section-head">
+          <p class="eyebrow">{{ ds.examples.timeline.eyebrow }}</p>
+          <h2>{{ ds.examples.timeline.title }}</h2>
+          <p class="copy">{{ ds.examples.timeline.copy }}</p>
+        </div>
+        <div class="timeline">
+          {% for item in ds.examples.timeline.steps %}
+          <article>
+            <strong>{{ item.step }}</strong>
+            <h3>{{ item.title }}</h3>
+            <p>{{ item.copy }}</p>
+          </article>
+          {% endfor %}
+        </div>
+      </div>
+    </section>
+    <section class="quote-section system-example-section">
+      <div class="wrap">
+        <p class="eyebrow">{{ ds.examples.quote.eyebrow }}</p>
+        <blockquote class="big-quote">{{ ds.examples.quote.title }}</blockquote>
+        <p class="copy">{{ ds.examples.quote.copy }}</p>
+      </div>
+    </section>
+  </main>
+  <script src="{{ '/assets/js/site.js' | relative_url }}"></script>
+</body>
+</html>
