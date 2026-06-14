@@ -735,7 +735,12 @@ section {
   display: grid;
   gap: 24px;
   padding: 0;
-  max-width: 1120px;
+}
+
+.quote-section .eyebrow,
+.quote-section .big-quote,
+.quote-section .copy {
+  max-width: var(--section-head-title-max);
 }
 
 .big-quote {
