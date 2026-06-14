@@ -12,6 +12,11 @@
   const clamp = (value, min, max) => Math.min(max, Math.max(min, value));
   const easeOutCubic = value => 1 - Math.pow(1 - value, 3);
   const canAnimateStickySections = () => !reducedMotion && window.innerWidth >= 1280;
+  const getLayoutMode = () => {
+    if (window.innerWidth <= 767) return "mobile";
+    if (window.innerWidth <= 1279) return "tablet";
+    return "desktop";
+  };
 
   const syncStickySectionMotionState = () => {
     document.documentElement.classList.toggle("has-stickysection-motion", canAnimateStickySections());
@@ -117,6 +122,7 @@
 
   let ticking = false;
   let resizeTimeout = null;
+  let lastLayoutMode = getLayoutMode();
   const requestUpdate = () => {
     if (ticking) return;
     ticking = true;
@@ -127,6 +133,15 @@
   };
 
   const requestResizeUpdate = () => {
+    const nextLayoutMode = getLayoutMode();
+    const layoutChanged = nextLayoutMode !== lastLayoutMode;
+    lastLayoutMode = nextLayoutMode;
+
+    if (layoutChanged) {
+      resetStickySectionCards();
+      syncStickySectionMotionState();
+    }
+
     requestUpdate();
 
     if (resizeTimeout) {
@@ -134,7 +149,10 @@
     }
 
     resizeTimeout = window.setTimeout(() => {
+      resetStickySectionCards();
+      syncStickySectionMotionState();
       requestUpdate();
+      window.requestAnimationFrame(requestUpdate);
     }, 140);
   };
 
