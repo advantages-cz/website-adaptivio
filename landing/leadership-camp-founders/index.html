@@ -513,6 +513,38 @@
       font-weight: 700;
     }
 
+    .quote-section {
+      min-height: 82svh;
+      display: grid;
+      align-items: end;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at 14% 22%, rgba(255, 101, 18, 0.14), transparent 0 34%),
+        radial-gradient(circle at 86% 24%, rgba(129, 234, 252, 0.18), transparent 0 38%),
+        linear-gradient(180deg, rgba(255, 255, 255, 0.98) 0%, rgba(249, 247, 242, 0.98) 100%);
+    }
+
+    .quote-section .wrap {
+      display: grid;
+      gap: 24px;
+      padding: 130px 0 76px;
+      max-width: 1120px;
+    }
+
+    .quote-section .big-quote {
+      max-width: 15ch;
+      color: var(--ink);
+      font-size: 72px;
+      text-wrap: balance;
+    }
+
+    .quote-section .copy {
+      max-width: 52ch;
+      color: rgba(0, 0, 0, 0.68);
+      font-size: 22px;
+      line-height: var(--leading-lead);
+    }
+
     .split-dark {
       color: var(--white);
       background:
@@ -1847,6 +1879,20 @@
         font-size: 32px;
       }
 
+      .quote-section {
+        min-height: auto;
+        align-items: start;
+      }
+
+      .quote-section .wrap {
+        padding: 56px 0;
+      }
+
+      .quote-section .copy {
+        font-size: 18px;
+        line-height: var(--leading-copy);
+      }
+
       .story-row,
       .proof-stats article,
       .outcome-row,
@@ -2151,7 +2197,7 @@
       </div>
     </section>
 
-    <section class="outcomes stickysection stickysection--paper stickysection--cards-4" id="prinos">
+    <section class="outcomes stickysection stickysection--paper stickysection--cards-3" id="prinos">
       <div class="wrap">
         <div class="stickysection-scene" data-stickysection-scene>
           <div class="stickysection-pin">
@@ -2182,16 +2228,17 @@
                 </div>
                 <p>Firma zahlédne potenciál, který v běžném provozu snadno zůstane skrytý, a získá jazyk pro další práci s odpovědností, iniciativou a zákaznickou realitou.</p>
               </article>
-              <article class="sequence-item stickysection-card outcome-row" data-stickysection-card>
-                <div class="outcome-title">
-                  <span class="tag sequence-state-label">Přenos</span>
-                  <h3>Zkušenost, ke které se dá vracet</h3>
-                </div>
-                <p>Camp nevrací jen energii. Dává firmě konkrétní situaci, na které je vidět, jak lidé čtou realitu, spolupracují a co si z toho lze přenést do další práce.</p>
-              </article>
             </div>
           </div>
         </div>
+      </div>
+    </section>
+
+    <section class="quote-section">
+      <div class="wrap">
+        <p class="eyebrow">Přenos do další práce</p>
+        <blockquote class="big-quote">Zkušenost, ke které se dá vracet.</blockquote>
+        <p class="copy">Camp nevrací jen energii. Dává firmě konkrétní situaci, na které je vidět, jak lidé čtou realitu, spolupracují a co si z toho lze přenést do další práce.</p>
       </div>
     </section>
 
