@@ -1352,6 +1352,14 @@ section {
   h2 { font-size: 38px; }
   .big-quote { font-size: 46px; }
 
+  .final h2 {
+    font-size: clamp(42px, 10vw, 54px);
+  }
+
+  .final .lead {
+    font-size: 22px;
+  }
+
   .section-head {
     margin-bottom: 34px;
   }
