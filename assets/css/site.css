@@ -1445,6 +1445,35 @@ section {
     padding: var(--section-space-mobile) 0;
   }
 
+  .hero {
+    min-height: 100dvh;
+    align-items: end;
+    padding-bottom: max(var(--hero-pad-bottom), calc(env(safe-area-inset-bottom) + 24px));
+  }
+
+  .hero::after {
+    background:
+      linear-gradient(180deg, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.18) 34%, rgba(0, 0, 0, 0.82) 100%);
+  }
+
+  .hero-copy {
+    align-self: end;
+    padding-bottom: 44px;
+  }
+
+  .hero-lead {
+    max-width: 24ch;
+  }
+
+  .scroll-cue {
+    right: 50%;
+    bottom: 12px;
+    width: 56px;
+    height: 56px;
+    transform: translateX(50%);
+    font-size: 22px;
+  }
+
   h1 { font-size: clamp(42px, 12vw, 58px); }
   h2 { font-size: 38px; }
   .big-quote { font-size: 46px; }
