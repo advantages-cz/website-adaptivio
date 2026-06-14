@@ -6,7 +6,15 @@
   const heroActions = document.querySelector(".hero-actions");
   const stickySections = [...document.querySelectorAll("[data-stickysection-scene]")].map(scene => ({
     scene,
-    cards: [...scene.querySelectorAll("[data-stickysection-card]")]
+    cards: [...scene.querySelectorAll("[data-stickysection-card]")],
+    routes: [...scene.querySelectorAll("[data-timeline-route]")].map(path => ({
+      path,
+      length: 0
+    })),
+    stops: [...scene.querySelectorAll("[data-timeline-stop]")].map(stop => ({
+      stop,
+      at: Number(stop.getAttribute("data-stop-at")) || 0
+    }))
   }));
 
   const clamp = (value, min, max) => Math.min(max, Math.max(min, value));
@@ -20,6 +28,27 @@
 
   const syncStickySectionMotionState = () => {
     document.documentElement.classList.toggle("has-stickysection-motion", canAnimateStickySections());
+  };
+
+  const setupTimelineRoutes = () => {
+    for (const section of stickySections) {
+      for (const route of section.routes || []) {
+        route.length = route.path.getTotalLength();
+        route.path.style.strokeDasharray = `${route.length.toFixed(2)}`;
+        route.path.style.strokeDashoffset = `${route.length.toFixed(2)}`;
+      }
+    }
+  };
+
+  const setTimelineMapReveal = (section, progress) => {
+    for (const route of section.routes || []) {
+      const dashOffset = route.length * (1 - progress);
+      route.path.style.strokeDashoffset = `${dashOffset.toFixed(2)}`;
+    }
+
+    for (const stop of section.stops || []) {
+      stop.stop.classList.toggle("is-reached", progress >= stop.at);
+    }
   };
 
   const resetStickySectionCards = () => {
@@ -38,6 +67,8 @@
           timelineItem.style.removeProperty("--timeline-line-progress");
         }
       }
+
+      setTimelineMapReveal(section, 0);
     }
   };
 
@@ -47,6 +78,9 @@
 
     if (!canAnimateStickySections()) {
       resetStickySectionCards();
+      for (const section of stickySections) {
+        setTimelineMapReveal(section, 1);
+      }
       return;
     }
 
@@ -95,6 +129,10 @@
         const lineTarget = card.closest(".timeline-card") || card;
         lineTarget.style.setProperty("--timeline-line-progress", nextProgress.toFixed(3));
       }
+
+      const routeDelay = 0.12;
+      const routeProgress = clamp((ratio - routeDelay) / (1 - routeDelay), 0, 1);
+      setTimelineMapReveal(section, routeProgress);
     }
   };
 
@@ -156,6 +194,7 @@
     }, 140);
   };
 
+  setupTimelineRoutes();
   update();
   window.addEventListener("scroll", requestUpdate, { passive: true });
   window.addEventListener("resize", requestResizeUpdate);

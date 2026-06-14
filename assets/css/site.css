@@ -717,7 +717,101 @@ section {
 }
 
 .timeline--sticky {
+  position: relative;
+  isolation: isolate;
   padding-top: 0;
+}
+
+.timeline-map {
+  position: absolute;
+  top: calc((var(--timeline-axis-card-gap) * -1) - 96px);
+  left: 3%;
+  width: 90%;
+  aspect-ratio: 1160 / 306;
+  height: auto;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.timeline-map-svg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+}
+
+.timeline-map-route {
+  fill: none;
+  stroke-width: 2.2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-dasharray: 9 9;
+  vector-effect: non-scaling-stroke;
+}
+
+.timeline-map-route--ghost {
+  stroke: rgba(0, 0, 0, 0.16);
+  opacity: 0.95;
+}
+
+.timeline-map-route--active {
+  stroke: var(--ink);
+  opacity: 0.82;
+}
+
+.timeline-map-pin {
+  opacity: 0.24;
+  transition: opacity 220ms ease, transform 220ms ease;
+}
+
+.timeline-map-pin.is-reached {
+  opacity: 1;
+}
+
+.timeline-map-pin-halo {
+  fill: rgba(255, 255, 255, 0.92);
+}
+
+.timeline-map-pin-dot {
+  fill: var(--ink);
+}
+
+.timeline-map-pin-stem {
+  stroke: var(--ink);
+  stroke-width: 3;
+  stroke-linecap: round;
+}
+
+.timeline-map-pin--day-2 .timeline-map-pin-dot {
+  fill: var(--orange);
+}
+
+.timeline-map-pin--day-3 .timeline-map-pin-dot {
+  fill: var(--blue);
+}
+
+.timeline-map-label-box {
+  fill: rgba(255, 252, 246, 0.94);
+  stroke: rgba(0, 0, 0, 0.18);
+  stroke-width: 1.15;
+  stroke-dasharray: 3 3;
+  vector-effect: non-scaling-stroke;
+}
+
+.timeline-map-label-connector {
+  stroke: rgba(0, 0, 0, 0.28);
+  stroke-width: 1.15;
+  stroke-linecap: round;
+  vector-effect: non-scaling-stroke;
+}
+
+.timeline-map-label-text {
+  fill: var(--ink);
+  font-family: var(--font-ui);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
 }
 
 .timeline:not(.timeline--sticky) article {
@@ -754,28 +848,23 @@ section {
 .timeline article:nth-child(3) strong { background: var(--blue); color: var(--ink); }
 
 .timeline--sticky .timeline-card {
-  --timeline-line-progress: 0;
+  --timeline-node-shift: 0px;
   overflow: visible;
   height: 100%;
-}
-
-.timeline--sticky .timeline-card:not(:last-child)::before {
-  content: "";
-  position: absolute;
-  top: calc((var(--timeline-axis-card-gap) * -1) - 0.5px);
-  left: 48px;
-  width: calc(100% + var(--timeline-gap) - 48px);
-  height: 1px;
-  background: var(--ink);
-  transform: scaleX(var(--timeline-line-progress));
-  transform-origin: left center;
-  z-index: 0;
+  z-index: 1;
 }
 
 .timeline--sticky .timeline-step {
   position: absolute;
-  top: calc((var(--timeline-axis-card-gap) * -1) - 24px);
+  top: 0;
   left: 0;
+  z-index: 2;
+  box-shadow: 0 0 0 10px rgba(255, 255, 255, 0.92);
+}
+
+.timeline--sticky .timeline-card .timeline-step {
+  opacity: 0;
+  pointer-events: none;
 }
 
 .quote-section {
@@ -1116,18 +1205,12 @@ section {
     margin-left: 0;
   }
 
-  .timeline--sticky .timeline-step {
-    top: calc((var(--timeline-axis-card-gap) * -1) - 24px);
+  .timeline-map {
+    top: calc((var(--timeline-axis-card-gap) * -1) - 82px);
     left: 0;
-    width: 48px;
-    height: 48px;
-  }
-
-  .timeline--sticky .timeline-card:not(:last-child)::before {
-    top: calc((var(--timeline-axis-card-gap) * -1) - 0.5px);
-    left: 48px;
-    width: calc(100% + var(--timeline-gap) - 48px);
-    height: 1px;
+    width: 100%;
+    aspect-ratio: 1160 / 306;
+    height: auto;
   }
 }
 
@@ -1282,7 +1365,12 @@ section {
     padding-top: 0;
   }
 
+  .timeline-map {
+    display: none;
+  }
+
   .timeline--sticky .timeline-card {
+    --timeline-node-shift: 0px;
     display: block;
     height: auto;
     min-height: 0;
@@ -1294,6 +1382,8 @@ section {
   }
 
   .timeline--sticky .timeline-step {
+    opacity: 1;
+    pointer-events: auto;
     top: 0;
     left: -72px;
     width: 44px;

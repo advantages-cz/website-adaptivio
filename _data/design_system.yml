@@ -274,10 +274,10 @@ patterns:
     class: timeline
     kind: Process strip
     description: >-
-      Tři kroky procesu s číslovanými body a spojnicemi na desktopu, vertikální
-      osou na mobilu.
+      Tři kroky procesu s číslovanými body a lehce klikatou trasou na desktopu,
+      vertikální osou na mobilu.
     rules:
-      - Desktop má horizontální spojnice mezi body.
+      - Desktop může vést kroky po zalomené trase, ne nutně po jedné rovné ose.
       - Mobile timeline se překládá na 44px osu se svislou linkou.
       - Sticky varianta používá stejný scroll scene model a generic JS hooks jako stickysection.
   - name: Quote
@@ -340,7 +340,7 @@ examples:
     eyebrow: Timeline
     title: Tři kroky v jednom proudu.
     copy: >-
-      Process strip drží tři očíslované kroky v jedné ose a překládá je
+      Process strip drží tři očíslované kroky v jedné trase a překládá je
       citlivě mezi desktopem a mobilem.
     items:
       - step: "1"
