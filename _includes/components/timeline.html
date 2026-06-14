@@ -16,6 +16,9 @@
           <article class="sequence-item stickysection-card timeline-card{% if forloop.first %} is-active{% endif %}" data-stickysection-card>
             <strong class="timeline-step">{{ item.step }}</strong>
             <div class="stickysection-card-content">
+              {% if item.label %}
+              <span class="tag">{{ item.label }}</span>
+              {% endif %}
               <h3>{{ item.title }}</h3>
               <p>{{ item.copy }}</p>
             </div>

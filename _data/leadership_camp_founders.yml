@@ -88,17 +88,20 @@ sections:
       Nejdřív pojmenujete svou osobní výbavu. Pak najdete problém, který stojí
       za pozornost. Nakonec vyjdete do terénu ověřit, co obstojí mimo místnost.
     items:
-      - step: "1"
+      - step: "1. den"
+        label: Dovnitř
         title: Výbava a problém
         copy: >-
           Vystoupíte z běžných rolí, pojmenujete své schopnosti a vyberete
           oblast, ve které máte energii i motivaci něco změnit.
-      - step: "2"
+      - step: "2. den"
+        label: Ven
         title: Terén a první řešení
         copy: >-
           Oddělíte domněnky od reality, promluvíte se zákazníky, kolegy nebo
           uživateli a složíte první verzi řešení.
-      - step: "3"
+      - step: "3. den"
+        label: Zpět
         title: Zkouška, porota a reflexe
         copy: >-
           Řešení otestujete, představíte odborné porotě, dostanete syrovou
