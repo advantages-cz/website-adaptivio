@@ -54,7 +54,7 @@ sections:
     cards: 3
     eyebrow: Proč teď
     title: Práce nemizí. Přeskládává se.
-    perex: >-
+    copy: >-
       Budoucnost vaší firmy nezačíná jen u strategie. Začíná i u lidí, kteří
       umějí číst situaci, učit se z reality a pohnout věcmi, když popis práce
       přestane stačit.
@@ -81,7 +81,7 @@ sections:
     id: prubeh
     eyebrow: Jak to probíhá
     title: Tři dny, které zvednou tým ze židlí.
-    perex: >-
+    copy: >-
       Nejdřív pojmenujete svou osobní výbavu. Pak najdete problém, který stojí
       za pozornost. Nakonec vyjdete do terénu ověřit, co obstojí mimo místnost.
     items:
@@ -185,7 +185,7 @@ sections:
           Pro chvíle, kdy vstupujete do nové etapy, měníte způsob práce,
           reorganizujete nebo hledáte, co s vámi udělá AI.
       - label: Typ lidí
-        title: Lidé, kteří ovlivňují druhé, i když neřídí tým.
+        title: Lidé, kteří ovlivňují druhé, i&nbsp;když neřídí tým.
         copy: >-
           Pro lidi, kteří možná nemají manažerský titul, ale každý den ovlivňují
           zákazníka, kolegu nebo uživatele.
