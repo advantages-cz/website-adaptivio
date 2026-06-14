@@ -93,6 +93,7 @@
   };
 
   let ticking = false;
+  let resizeTimeout = null;
   const requestUpdate = () => {
     if (ticking) return;
     ticking = true;
@@ -102,7 +103,20 @@
     });
   };
 
+  const requestResizeUpdate = () => {
+    requestUpdate();
+
+    if (resizeTimeout) {
+      window.clearTimeout(resizeTimeout);
+    }
+
+    resizeTimeout = window.setTimeout(() => {
+      requestUpdate();
+    }, 140);
+  };
+
   update();
   window.addEventListener("scroll", requestUpdate, { passive: true });
-  window.addEventListener("resize", requestUpdate);
+  window.addEventListener("resize", requestResizeUpdate);
+  window.addEventListener("load", requestUpdate);
 })();
