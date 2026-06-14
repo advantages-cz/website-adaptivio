@@ -1386,6 +1386,10 @@ section {
     position: relative;
   }
 
+  .timeline-pin > .section-head + .sequence-list {
+    margin-top: 18px;
+  }
+
   .timeline-map {
     display: block;
     top: 8px;
@@ -1433,11 +1437,11 @@ section {
     display: block;
     inset: auto;
     top: 0;
-    left: 50%;
-    width: auto;
+    left: 0;
+    width: 100%;
     height: 100%;
     max-width: none;
-    transform: translateX(-50%);
+    transform: none;
   }
 
   .timeline-map-svg--mobile .timeline-map-day-text {
