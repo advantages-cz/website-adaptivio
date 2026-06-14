@@ -7,6 +7,10 @@
   const stickySections = [...document.querySelectorAll("[data-stickysection-scene]")].map(scene => ({
     scene,
     cards: [...scene.querySelectorAll("[data-stickysection-card]")],
+    counters: [...scene.querySelectorAll("[data-countup-to]")].map(counter => ({
+      element: counter,
+      target: Number(counter.getAttribute("data-countup-to")) || 0
+    })),
     routes: [...scene.querySelectorAll("[data-timeline-route]")].map(path => ({
       path,
       length: 0
@@ -20,6 +24,17 @@
   const clamp = (value, min, max) => Math.min(max, Math.max(min, value));
   const easeOutCubic = value => 1 - Math.pow(1 - value, 3);
   const canAnimateStickySections = () => !reducedMotion && window.innerWidth >= 1280;
+  const getCounterProgress = scene => {
+    const completionPoint = 0.94;
+    return clamp(easeOutCubic(getSceneProgress(scene)) / completionPoint, 0, 1);
+  };
+  const getSceneProgress = scene => {
+    const rect = scene.getBoundingClientRect();
+    const viewportHeight = window.innerHeight || document.documentElement.clientHeight || 1;
+    const total = Math.max(rect.height + viewportHeight, 1);
+    const passed = clamp(viewportHeight - rect.top, 0, total);
+    return passed / total;
+  };
   const getLayoutMode = () => {
     if (window.innerWidth <= 767) return "mobile";
     if (window.innerWidth <= 1279) return "tablet";
@@ -68,6 +83,10 @@
         }
       }
 
+      for (const counter of section.counters || []) {
+        counter.element.textContent = reducedMotion ? String(counter.target) : "0";
+      }
+
       setTimelineMapReveal(section, 0);
     }
   };
@@ -79,6 +98,10 @@
     if (!canAnimateStickySections()) {
       resetStickySectionCards();
       for (const section of stickySections) {
+        const counterProgress = reducedMotion ? 1 : getCounterProgress(section.scene);
+        for (const counter of section.counters || []) {
+          counter.element.textContent = String(Math.round(counter.target * counterProgress));
+        }
         setTimelineMapReveal(section, 1);
       }
       return;
@@ -144,6 +167,11 @@
       const routeDelay = 0.12;
       const routeProgress = clamp((ratio - routeDelay) / (1 - routeDelay), 0, 1);
       setTimelineMapReveal(section, routeProgress);
+      const counterProgress = getCounterProgress(section.scene);
+
+      for (const counter of section.counters || []) {
+        counter.element.textContent = String(Math.round(counter.target * counterProgress));
+      }
     }
   };
 

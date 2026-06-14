@@ -111,7 +111,7 @@ sections:
     eyebrow: Kontext změny
     title: Dovednosti se mění rychleji než popisy pracovních míst.
     perex_html: >-
-      <span class="proof-stat"><strong>40 %</strong> dovedností</span>Podle
+      <span class="proof-stat"><strong><span data-countup-to="40">0</span> %</strong> dovedností</span>Podle
       World Economic Forum se do roku 2030 promění téměř 40 % pracovních
       dovedností. Mezeru v dovednostech přitom 63 % zaměstnavatelů označuje za
       hlavní překážku transformace.
