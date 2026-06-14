@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" role="img" aria-label="Adaptivio favicon">
+  <defs>
+    <linearGradient id="favicon-bg" x1="31.621%" y1="12.868%" x2="83.637%" y2="89.147%">
+      <stop offset="0%" stop-color="#050505"/>
+      <stop offset="36%" stop-color="#FF6512"/>
+      <stop offset="67%" stop-color="#FFC8AD"/>
+      <stop offset="100%" stop-color="#81EAFC"/>
+    </linearGradient>
+    <radialGradient id="favicon-glow-orange" cx="0%" cy="0%" r="1" gradientTransform="translate(0.245 0.198) rotate(51.213) scale(0.97 1.103)">
+      <stop offset="0%" stop-color="#FF6512" stop-opacity="0.88"/>
+      <stop offset="100%" stop-color="#FF6512" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="favicon-glow-blue" cx="0%" cy="0%" r="1" gradientTransform="translate(0.822 0.792) rotate(214.114) scale(0.844 0.977)">
+      <stop offset="0%" stop-color="#81EAFC" stop-opacity="0.76"/>
+      <stop offset="100%" stop-color="#81EAFC" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="256" height="256" rx="64" fill="url(#favicon-bg)"/>
+  <rect width="256" height="256" rx="64" fill="url(#favicon-glow-orange)"/>
+  <rect width="256" height="256" rx="64" fill="url(#favicon-glow-blue)"/>
+  <path fill="#FFFFFF" d="M191.938 120.769c-22.445 0-31.109 16.001-45.111 16.001-35.328 0 36.669-109.624-31.8-109.624-66.868 0-144.411 98.269-144.411 156.278 0 30.444 16.665 41.995 34.903 41.995 43.104 0 72.222-32.214 104.436-32.214 32.214 0 31.104 27.358 65.342 27.358 30.222 0 51.111-25.563 51.111-54.681 0-26.451-15.337-45.113-34.47-45.113Z" transform="translate(37.5 31.5) scale(0.79)"/>
+</svg>
