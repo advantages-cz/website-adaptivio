@@ -1,6 +1,8 @@
 meta:
   title: Leadership Camp Founders | Adaptivio
-  description: Leadership Camp je třídenní týmová zkušenost pro firmy, které chtějí uvidět schopnosti svých lidí mimo běžné role a porady.
+  description: >-
+    Leadership Camp je třídenní týmová zkušenost pro firmy, které chtějí
+    uvidět schopnosti svých lidí mimo běžné role a porady.
   canonical: /landing/leadership-camp-founders/
   og_image: /assets/social/leadership-camp-og.jpg
   og_image_alt: Leadership Camp Founders od Adaptivio
@@ -11,7 +13,9 @@ brand:
 hero:
   eyebrow: Leadership Camp pro firmy
   title: Tři dny mimo běžné role.
-  lead: Praktická týmová zkušenost, ve které uvidíte, co ve vašich lidech opravdu je, když zmizí obvyklé škatulky, porady a hotová zadání shora.
+  lead: >-
+    Praktická týmová zkušenost, ve které uvidíte, co ve vašich lidech opravdu
+    je, když zmizí obvyklé škatulky, porady a hotová zadání shora.
   image: /assets/images/leadership-camp/hero.jpeg
   image_alt: Účastníci Leadership Campu při společné práci v místnosti
   primary_cta:
@@ -24,8 +28,14 @@ intro:
   id: film
   eyebrow: Co běžná porada neukáže
   title: Malý projekt jako zrcadlo týmu.
-  copy: Camp není další školení do kalendáře. Je to situace, ve které je vidět iniciativa, naslouchání, odvaha ověřovat i schopnost převést neurčitý problém do konkrétního dalšího kroku.
-  perex: Účastníci během tří dnů zmapují svou osobní výbavu, najdou problém, který stojí za pozornost, vytvoří jednoduchou zkušební verzi řešení a ověří ji přímo v terénu u lidí, kteří mají důvod říct ano, ne nebo zatím ne.
+  copy: >-
+    Camp není další školení do kalendáře. Je to situace, ve které je vidět
+    iniciativa, naslouchání, odvaha ověřovat i schopnost převést neurčitý
+    problém do konkrétního dalšího kroku.
+  perex: >-
+    Účastníci během tří dnů zmapují svou osobní výbavu, najdou problém, který
+    stojí za pozornost, vytvoří jednoduchou zkušební verzi řešení a ověří ji
+    přímo v terénu u lidí, kteří mají důvod říct ano, ne nebo zatím ne.
   metrics:
     - value: "3"
       label: dny mimo běžný provoz
@@ -41,78 +51,125 @@ sections:
     cards: 3
     eyebrow: Proč teď
     title: Práce nemizí. Přeskládává se.
-    perex: Budoucnost firmy nezačíná jen u strategie. Začíná i u lidí, jejichž schopnosti běžný provoz často neumí ukázat.
+    perex: >-
+      Budoucnost firmy nezačíná jen u strategie. Začíná i u lidí, jejichž
+      schopnosti běžný provoz často neumí ukázat.
     card_class: story-row
     items:
       - label: Role
         title: Lidé nejsou jen své pozice.
-        copy: Obchodník jako obchodník, specialista jako specialista, manažer jako manažer. Camp na tři dny změní pravidla hry a nechá lidi vystoupit z běžných škatulek.
+        copy: >-
+          Obchodník jako obchodník, specialista jako specialista, manažer jako
+          manažer. Camp na tři dny změní pravidla hry a nechá lidi vystoupit z
+          běžných škatulek.
       - label: Realita
         title: Domněnka musí ven z místnosti.
-        copy: Tým mluví se zákazníky, kolegy nebo uživateli. Rychle zjistí, co je pěkný nápad a co má sílu pohnout druhým člověkem k akci.
+        copy: >-
+          Tým mluví se zákazníky, kolegy nebo uživateli. Rychle zjistí, co je
+          pěkný nápad a co má sílu pohnout druhým člověkem k akci.
       - label: Zážitek
         title: Schopnosti se ukážou v pohybu.
-        copy: Na malém projektu se rychle ukáže, kdo umí naslouchat, kdo vidí příležitost, kdo rozhýbe ostatní a kdo dokáže z neurčitého zadání udělat konkrétní další krok.
+        copy: >-
+          Na malém projektu se rychle ukáže, kdo umí naslouchat, kdo vidí
+          příležitost, kdo rozhýbe ostatní a kdo dokáže z neurčitého zadání
+          udělat konkrétní další krok.
   - type: timeline
     id: prubeh
     eyebrow: Jak to probíhá
     title: Tři dny, které zvednou tým ze židlí.
-    perex: Účastníci nejdřív pojmenují svou osobní výbavu. Pak hledají problém, který stojí za pozornost. A nakonec vyjdou do terénu ověřit, co obstojí mimo místnost.
+    perex: >-
+      Účastníci nejdřív pojmenují svou osobní výbavu. Pak hledají problém,
+      který stojí za pozornost. A nakonec vyjdou do terénu ověřit, co obstojí
+      mimo místnost.
     items:
       - step: "1"
         title: Výbava a problém
-        copy: Lidé vystoupí z běžných rolí, pojmenují své schopnosti a hledají oblast, kde mají energii a motivaci něco ovlivnit.
+        copy: >-
+          Lidé vystoupí z běžných rolí, pojmenují své schopnosti a hledají
+          oblast, kde mají energii a motivaci něco ovlivnit.
       - step: "2"
         title: Terén a první řešení
-        copy: Tým odděluje domněnky od reality, mluví se zákazníky, kolegy nebo uživateli a skládá první verzi řešení.
+        copy: >-
+          Tým odděluje domněnky od reality, mluví se zákazníky, kolegy nebo
+          uživateli a skládá první verzi řešení.
       - step: "3"
         title: Zkouška, porota a reflexe
-        copy: Účastníci testují, prezentují před odbornou porotou, získávají syrovou zpětnou vazbu a pojmenovávají, co si odnášejí zpět do práce.
+        copy: >-
+          Účastníci testují, prezentují před odbornou porotou, získávají
+          syrovou zpětnou vazbu a pojmenovávají, co si odnášejí zpět do práce.
   - type: stickysection
     theme: dark
     cards: 3
     eyebrow: Kontext změny
     title: Dovednosti se mění rychleji než popisy pracovních míst.
-    perex_html: <span class="proof-stat"><strong>40 %</strong> dovedností</span>Podle World Economic Forum se do roku 2030 promění téměř 40 % pracovních dovedností. Mezeru v dovednostech přitom 63 % zaměstnavatelů označuje za hlavní překážku transformace.
+    perex_html: >-
+      <span class="proof-stat"><strong>40 %</strong> dovedností</span>Podle
+      World Economic Forum se do roku 2030 promění téměř 40 % pracovních
+      dovedností. Mezeru v dovednostech přitom 63 % zaměstnavatelů označuje za
+      hlavní překážku transformace.
     source: "Zdroj: World Economic Forum, Future of Jobs Report 2025."
     items:
       - label: Nové příležitosti
         title: 170 mil.
-        copy: nově vznikajících rolí do roku 2030 v důsledku technologických, ekonomických a demografických změn.
+        copy: >-
+          nově vznikajících rolí do roku 2030 v důsledku technologických,
+          ekonomických a demografických změn.
       - label: Mizející pozice
         title: 92 mil.
-        copy: rolí má ve stejném období zaniknout, protože některé činnosti a pracovní modely přestanou být potřeba.
+        copy: >-
+          rolí má ve stejném období zaniknout, protože některé činnosti a
+          pracovní modely přestanou být potřeba.
       - label: Celkový dopad
         title: 78 mil.
-        copy: je čistý přírůstek pracovních míst. Rozhodující nebude stabilita pozice, ale schopnost průběžně měnit způsob práce.
+        copy: >-
+          je čistý přírůstek pracovních míst. Rozhodující nebude stabilita
+          pozice, ale schopnost průběžně měnit způsob práce.
   - type: stickysection
     id: prinos
     theme: paper
     cards: 3
     eyebrow: Co z toho firma má
     title: Lepší pohled na sebe a lidi kolem sebe.
-    perex: Výstupem není jen dobrý pocit ze společného zážitku. Firma získá situaci, ke které se dá vracet při dalších projektech, změnách i běžné týmové práci.
+    perex: >-
+      Výstupem není jen dobrý pocit ze společného zážitku. Firma získá situaci,
+      ke které se dá vracet při dalších projektech, změnách i běžné týmové
+      práci.
     card_class: outcome-row
     items:
       - label: Člověk
         title: Schopnosti mimo pracovní škatulky
-        copy: Účastníci si často poprvé pojmenují, že jejich obyčejná improvizace je ve skutečnosti schopnost rychle číst situaci a reagovat na potřebu druhého člověka.
+        copy: >-
+          Účastníci si často poprvé pojmenují, že jejich obyčejná improvizace
+          je ve skutečnosti schopnost rychle číst situaci a reagovat na potřebu
+          druhého člověka.
       - label: Tým
         title: Rychlejší učení z reality
-        copy: Tým si vyzkouší malé pokusy místo dlouhých debat, ověřování místo domněnek a zpětnou vazbu dřív, než se projekt rozroste.
+        copy: >-
+          Tým si vyzkouší malé pokusy místo dlouhých debat, ověřování místo
+          domněnek a zpětnou vazbu dřív, než se projekt rozroste.
       - label: Firma
         title: Společný jazyk pro další práci
-        copy: Firma zahlédne potenciál, který v běžném provozu snadno zůstane skrytý, a získá jazyk pro další práci s odpovědností, iniciativou a zákaznickou realitou.
+        copy: >-
+          Firma zahlédne potenciál, který v běžném provozu snadno zůstane
+          skrytý, a získá jazyk pro další práci s odpovědností, iniciativou a
+          zákaznickou realitou.
   - type: quote
     eyebrow: Přenos do další práce
     title: Zkušenost, ke které se dá vracet.
-    copy: Camp nevrací jen energii. Dává firmě konkrétní situaci, na které je vidět, jak lidé čtou realitu, spolupracují a co si z toho lze přenést do další práce.
+    copy: >-
+      Camp nevrací jen energii. Dává firmě konkrétní situaci, na které je
+      vidět, jak lidé čtou realitu, spolupracují a co si z toho lze přenést do
+      další práce.
   - type: stickysection
     theme: soft
     cards: 3
     eyebrow: Pro koho
     title: Pro firmy, které tuší, že další porada už nestačí.
-    perex: Pro organizace, které potřebují své lidi znovu přiblížit zákazníkovi, realitě a vlastní odpovědnosti. V základní variantě camp neřeší citlivé interní projekty. Pokud firma chce pracovat přímo se svými tématy, připravíme variantu s interním zadáním.
+    perex: >-
+      Pro organizace, které potřebují své lidi znovu přiblížit zákazníkovi,
+      realitě a vlastní odpovědnosti. V základní variantě camp neřeší citlivé
+      interní projekty. Pokud firma chce pracovat přímo se svými tématy,
+      připravíme variantu s interním zadáním.
     items:
       - label: Složení týmu
         title: Smíšené týmy, které potřebují vidět víc než role.
@@ -122,29 +179,44 @@ sections:
         copy: Pro firmy v nové etapě, při reorganizaci nebo při dopadu AI na práci.
       - label: Typ lidí
         title: Lidé, kteří reálně ovlivňují druhé, i když nejsou manažeři.
-        copy: Pro lidi, kteří možná nejsou manažeři, ale každý den ovlivňují zákazníka, kolegu nebo uživatele.
+        copy: >-
+          Pro lidi, kteří možná nejsou manažeři, ale každý den ovlivňují
+          zákazníka, kolegu nebo uživatele.
   - type: people
     id: lektori
     eyebrow: Kdo camp vede
     title: Podnikání, technologie, vzdělávání a práce s lidmi.
-    perex: Camp vedou Tomáš Vavrda a Taťána Beránková Císařová. Spojují podnikatelskou zkušenost, technologickou změnu a vzdělávání postavené na zážitku, reflexi a odvaze zkusit věci dřív, než si člověk začne úplně věřit.
+    perex: >-
+      Camp vedou Tomáš Vavrda a Taťána Beránková Císařová. Spojují
+      podnikatelskou zkušenost, technologickou změnu a vzdělávání postavené na
+      zážitku, reflexi a odvaze zkusit věci dřív, než si člověk začne úplně
+      věřit.
     items:
       - tone: light
         label: Podnikání a technologie
         title: Tomáš Vavrda
-        copy: Podnikatel, zakladatel Adaptivio a technologického frameworku ORIGAM. Prošel více než 150 projekty a dlouhodobě se zabývá tím, jak lidé a organizace zvládají změnu, složitost a nové způsoby práce.
+        copy: >-
+          Podnikatel, zakladatel Adaptivio a technologického frameworku ORIGAM.
+          Prošel více než 150 projekty a dlouhodobě se zabývá tím, jak lidé a
+          organizace zvládají změnu, složitost a nové způsoby práce.
         image: /assets/images/leadership-camp/tomas-vavrda.jpg
         image_alt: Tomáš Vavrda
       - tone: dark
         label: Vzdělávání a práce s lidmi
         title: Taťána Beránková Císařová
-        copy: Pedagožka, inovátorka ve vzdělávání a učitelka ekonomiky. Společně s Tomášem šest let vede týmy studentů generace Z k podnikavosti a pomáhá učitelům vstupovat do nové role.
+        copy: >-
+          Pedagožka, inovátorka ve vzdělávání a učitelka ekonomiky. Společně s
+          Tomášem šest let vede týmy studentů generace Z k podnikavosti a
+          pomáhá učitelům vstupovat do nové role.
         image: /assets/images/leadership-camp/tatana-berankova-cisarova.jpg
         image_alt: Taťána Beránková Císařová
   - type: practical
     eyebrow: Prakticky
     title: Zakázkový camp pro jednu firmu nebo tým.
-    copy: Konkrétní podobu ladíme podle skupiny, firemního kontextu a návazné práce. Před campem mapujeme potřeby a očekávání, po campu pomáháme zkušenost přenést zpět do praxe.
+    copy: >-
+      Konkrétní podobu ladíme podle skupiny, firemního kontextu a návazné
+      práce. Před campem mapujeme potřeby a očekávání, po campu pomáháme
+      zkušenost přenést zpět do praxe.
     items:
       - label: Formát
         value: Třídenní týmový camp.

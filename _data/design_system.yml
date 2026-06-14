@@ -1,20 +1,36 @@
 meta:
   title: Adaptivio Design System
-  description: Základní vizuální systém, sekční rytmus a komponentové patterny odvozené z aktuální landing page, doplněné o tokenovou a accessibility disciplínu.
+  description: >-
+    Základní vizuální systém, sekční rytmus a komponentové patterny odvozené
+    z aktuální landing page, doplněné o tokenovou a accessibility disciplínu.
 
 principles:
   - name: Editorial clarity
-    description: Sekce mají působit čistě, čitelně a rozhodně. Headline blok, lead a obsah mají jasné pořadí a žádné breakpoint-specific duplikace.
+    description: >-
+      Sekce mají působit čistě, čitelně a rozhodně. Headline blok, lead a
+      obsah mají jasné pořadí a žádné breakpoint-specific duplikace.
   - name: Shared section rhythm
-    description: Vertikální spacing se řídí centrálními tokeny. Když sekce není sticky scene, obsah má sedět v předvídatelném bandu se symetrickým rytmem.
+    description: >-
+      Vertikální spacing se řídí centrálními tokeny. Když sekce není sticky
+      scene, obsah má sedět v předvídatelném bandu se symetrickým rytmem.
   - name: Sticky is a system
-    description: Sticky motion patří jen desktopu od 1280px. Všechny editorial sticky sekce sdílí stejný jazyk tříd, tokenů a JS hooků.
+    description: >-
+      Sticky motion patří jen desktopu od 1280px. Všechny editorial sticky
+      sekce sdílí stejný jazyk tříd, tokenů a JS hooků.
   - name: Variants over one-offs
-    description: Nálada a kontrast se mění přes modifier třídy a CSS proměnné, ne přes sekci-specific layout classes.
+    description: >-
+      Nálada a kontrast se mění přes modifier třídy a CSS proměnné, ne přes
+      sekci-specific layout classes.
   - name: Semantic tokens over raw values
-    description: Komponenty mají ideálně sahat po významových tokenech jako accent-text nebo accent-surface. Hex hodnoty a jednorázové rgba patří do foundations, ne do komponentových rozhodnutí.
+    description: >-
+      Komponenty mají ideálně sahat po významových tokenech jako accent-text
+      nebo accent-surface. Hex hodnoty a jednorázové rgba patří do foundations,
+      ne do komponentových rozhodnutí.
   - name: Accessibility is part of the system
-    description: Kontrast, focus states a reduced-motion fallback nejsou doplněk. Jsou to systémové vlastnosti, které musí mít tokeny, komponenty i preview stránka pod kontrolou.
+    description: >-
+      Kontrast, focus states a reduced-motion fallback nejsou doplněk. Jsou to
+      systémové vlastnosti, které musí mít tokeny, komponenty i preview stránka
+      pod kontrolou.
 
 foundations:
   colors:
@@ -38,7 +54,9 @@ foundations:
       usage: Významový token pro akcentní plochy.
     - name: Accent Text
       value: "var(--orange)"
-      usage: Významový token pro akcentní text nebo dekorativní akcent tam, kde kontrast dovolí jeho přímé použití.
+      usage: >-
+        Významový token pro akcentní text nebo dekorativní akcent tam, kde
+        kontrast dovolí jeho přímé použití.
     - name: Accent On Surface
       value: "var(--ink)"
       usage: Text a ikony nad oranžovou plochou.
@@ -84,22 +102,32 @@ foundations:
       usage: Mezery mezi sticky kartami.
     - name: Centered band rule
       value: Symmetric vertical gap
-      usage: Když sekce není sticky scene a má větší výšku, obsah má být vertikálně vycentrovaný se stejným dojmem nad a pod.
+      usage: >-
+        Když sekce není sticky scene a má větší výšku, obsah má být vertikálně
+        vycentrovaný se stejným dojmem nad a pod.
 
 layout_modes:
   - name: Centered band
     min_width: "0px"
-    description: Nesticky sekce jako quote, final nebo standard content band používají centrální section spacing tokeny a obsah sedí uvnitř jednoho bandu.
+    description: >-
+      Nesticky sekce jako quote, final nebo standard content band používají
+      centrální section spacing tokeny a obsah sedí uvnitř jednoho bandu.
   - name: Sticky desktop
     min_width: "1280px"
-    description: Head a grid žijí uvnitř stickysection-pin. Pin zůstává sticky a karty se animují podle scroll progresu.
+    description: >-
+      Head a grid žijí uvnitř stickysection-pin. Pin zůstává sticky a karty se
+      animují podle scroll progresu.
   - name: Static tablet
     min_width: "768px"
     max_width: "1279px"
-    description: Head zůstává ve dvou sloupcích. Sticky se vypíná a grid se skládá do dvou sloupců.
+    description: >-
+      Head zůstává ve dvou sloupcích. Sticky se vypíná a grid se skládá do dvou
+      sloupců.
   - name: Static mobile
     max_width: "767px"
-    description: Headline, perex i obsah se skládají do jednoho sloupce a dekorativní lead rule mizí.
+    description: >-
+      Headline, perex i obsah se skládají do jednoho sloupce a dekorativní lead
+      rule mizí.
 
 stickysection:
   classes:
@@ -122,7 +150,9 @@ stickysection:
       usage: Začátek sticky pinu pod headerem.
     - name: Viewport cap for runway
       value: 760px
-      usage: Desktop sticky runway nepoužívá neomezeně vysoký viewport; růst se po této výšce zastropuje.
+      usage: >-
+        Desktop sticky runway nepoužívá neomezeně vysoký viewport; růst se po
+        této výšce zastropuje.
     - name: Cards-2 runway
       value: "calc((min(100svh, 760px) - 112px) + 560px)"
       usage: Krátká sticky scéna pro 2 karty.
@@ -155,7 +185,9 @@ stickysection:
       usage: Výchozí maximální šířka sticky perexu v aktuální implementaci.
     - name: Desktop pin min height
       value: "calc(100svh - 112px)"
-      usage: Sticky pin drží minimálně výšku viewportu pod headerem, aby šel kratší obsah vycentrovat bez lokálních hacků.
+      usage: >-
+        Sticky pin drží minimálně výšku viewportu pod headerem, aby šel kratší
+        obsah vycentrovat bez lokálních hacků.
   motion:
     - name: Desktop only
       value: "min-width: 1280px and prefers-reduced-motion: no-preference"
@@ -168,26 +200,39 @@ stickysection:
       usage: Jediné povolené generické hooky pro JS.
     - name: Tall viewport pin padding
       value: "clamp(24px, calc((100svh - 820px) * 0.18), 72px)"
-      usage: Na vysokých desktop viewports dostává sticky pin symetrický vertikální padding, takže kratší head i grid nepůsobí přilepeně nahoře.
+      usage: >-
+        Na vysokých desktop viewports dostává sticky pin symetrický vertikální
+        padding, takže kratší head i grid nepůsobí přilepeně nahoře.
 
 accessibility:
   - name: Text contrast
     requirement: "Běžný text minimálně 4.5:1, velký text minimálně 3:1"
-    note: Akcentní oranžová #FF6512 se na bílém podkladu nemá spoléhat jako jediný nosič malého textu. U malých labelů ji používej jen jako jemný konstrukční detail, typicky přes tenkou linku nebo subtlní oddělovač.
+    note: >-
+      Akcentní oranžová #FF6512 se na bílém podkladu nemá spoléhat jako jediný
+      nosič malého textu. U malých labelů ji používej jen jako jemný
+      konstrukční detail, typicky přes tenkou linku nebo subtlní oddělovač.
   - name: Keyboard focus
     requirement: "Interaktivní prvky musí mít viditelný focus-visible stav"
     note: Focus ring je samostatný token, ne vedlejší efekt hoveru.
   - name: Motion fallback
     requirement: "Scroll-driven motion jen při prefers-reduced-motion: no-preference"
-    note: Stickysection už má desktop-only motion gate; nové motion patterny musí dodržet stejnou disciplínu.
+    note: >-
+      Stickysection už má desktop-only motion gate; nové motion patterny musí
+      dodržet stejnou disciplínu.
 
 governance:
   - name: Source of truth
-    description: Když se mění token nebo shared pattern, změna musí projít přes data, CSS i preview stránku, aby dokumentace nezestárla vedle implementace.
+    description: >-
+      Když se mění token nebo shared pattern, změna musí projít přes data, CSS
+      i preview stránku, aby dokumentace nezestárla vedle implementace.
   - name: Component-first reuse
-    description: Nová landing sekce má nejdřív zkusit existující komponenty a modifiery. Nový section type je až poslední krok.
+    description: >-
+      Nová landing sekce má nejdřív zkusit existující komponenty a modifiery.
+      Nový section type je až poslední krok.
   - name: Semantic naming
-    description: Preferuj názvy podle role v systému, ne podle momentální barvy nebo konkrétní stránky. To zvyšuje šanci, že token přežije redesign.
+    description: >-
+      Preferuj názvy podle role v systému, ne podle momentální barvy nebo
+      konkrétní stránky. To zvyšuje šanci, že token přežije redesign.
 
 patterns:
   - name: Hero
@@ -201,24 +246,36 @@ patterns:
   - name: Section Head
     class: section-head
     kind: Reusable heading block
-    description: Kombinace eyebrow, headline, volitelného copy pod headline a volitelného perexu v pravém sloupci, která se skládá podle breakpointů.
+    description: >-
+      Kombinace eyebrow, headline, volitelného copy pod headline a volitelného
+      perexu v pravém sloupci, která se skládá podle breakpointů.
     rules:
       - Pořadí obsahu je eyebrow, headline, copy, perex.
       - Desktop a tablet mohou použít dvousloupcové rozložení s perex rule.
       - Mobile skládá obsah do jednoho sloupce bez levé rule.
-      - Headline je dominantní prvek, copy zůstává podpůrná pod headline a perex je editoriální doprovod vpravo.
+      - >-
+        Headline je dominantní prvek, copy zůstává podpůrná pod headline a
+        perex je editoriální doprovod vpravo.
   - name: Stickysection
     class: stickysection
     kind: Editorial scene
-    description: Hlavní reusable pattern pro sekce s kartami a případnou desktop scroll motion.
+    description: >-
+      Hlavní reusable pattern pro sekce s kartami a případnou desktop scroll
+      motion.
     rules:
-      - Layout naming zůstává generické a obsahové sekce nesmí tvořit vlastní layout třídy.
-      - Background se v pinned režimu může natáhnout přes viewport, ale sekční spacing se stále řídí tokeny.
+      - >-
+        Layout naming zůstává generické a obsahové sekce nesmí tvořit vlastní
+        layout třídy.
+      - >-
+        Background se v pinned režimu může natáhnout přes viewport, ale sekční
+        spacing se stále řídí tokeny.
       - Když sticky skončí, sekce se vrací do běžného rytmu daného spacing tokeny.
   - name: Timeline
     class: timeline
     kind: Process strip
-    description: Tři kroky procesu s číslovanými body a spojnicemi na desktopu, vertikální osou na mobilu.
+    description: >-
+      Tři kroky procesu s číslovanými body a spojnicemi na desktopu, vertikální
+      osou na mobilu.
     rules:
       - Desktop má horizontální spojnice mezi body.
       - Mobile timeline se překládá na 44px osu se svislou linkou.
@@ -229,11 +286,15 @@ patterns:
     rules:
       - Na desktopu se obsah chová jako center band uvnitř vyšší sekce.
       - Na mobilu se band zkracuje a zůstává kompaktní.
-      - Spacing quote sekce se má řídit systémovým section rhythm, ne jednorázovým local hackem.
+      - >-
+        Spacing quote sekce se má řídit systémovým section rhythm, ne
+        jednorázovým local hackem.
   - name: Specs Table
     class: spec-table
     kind: Structured list
-    description: Praktický přehled parametrů s horní linkou a řádky, ne jako samostatné floating cards.
+    description: >-
+      Praktický přehled parametrů s horní linkou a řádky, ne jako samostatné
+      floating cards.
     rules:
       - Desktop používá tři sloupce s horizontálním rytmem.
       - Mobile a tablet skládá položky do méně sloupců bez ztráty čitelnosti.
@@ -249,7 +310,10 @@ examples:
   sticky:
     eyebrow: Stickysection
     title: Strukturovaná scéna pro editorial karty.
-    copy: Sticky pattern drží headline a lead v jedné scéně a karty skládá do sdíleného gridu. Na desktopu může pinovat, na menších breakpointech se rozpadá do statického layoutu.
+    copy: >-
+      Sticky pattern drží headline a lead v jedné scéně a karty skládá do
+      sdíleného gridu. Na desktopu může pinovat, na menších breakpointech se
+      rozpadá do statického layoutu.
     cards:
       - label: Head
         title: Jeden headline blok
@@ -263,11 +327,15 @@ examples:
   quote:
     eyebrow: Quote
     title: Zkušenost, ke které se dá vracet.
-    copy: Centered band pattern používá symetrický sekční rytmus a nechává obsah sedět uvnitř jednoho čistého bloku.
+    copy: >-
+      Centered band pattern používá symetrický sekční rytmus a nechává obsah
+      sedět uvnitř jednoho čistého bloku.
   timeline:
     eyebrow: Timeline
     title: Tři kroky v jednom proudu.
-    perex: Process strip drží tři očíslované kroky v jedné ose a překládá je citlivě mezi desktopem a mobilem.
+    perex: >-
+      Process strip drží tři očíslované kroky v jedné ose a překládá je
+      citlivě mezi desktopem a mobilem.
     steps:
       - step: "1"
         title: Pojmenování
