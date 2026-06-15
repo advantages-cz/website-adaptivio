@@ -2981,9 +2981,9 @@ section {
     align-items: stretch;
   }
 
-  .intro-metric strong {
-    margin-bottom: 14px;
-    font-size: clamp(36px, 12vw, 48px);
+  .intro-metric span {
+    font-size: 19px;
+    max-width: none;
   }
 
   .intro-metric {
