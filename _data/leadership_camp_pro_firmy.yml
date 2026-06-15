@@ -14,7 +14,7 @@ brand:
   cta_url: "#odpovedni-formular"
 hero:
   eyebrow: Leadership Camp pro firmy
-  title: Tři dny mimo běžné role.
+  title: Tři dny mimo běžné role
   lead: >-
     Na tři dny vystoupíte z rolí, porad a domněnek a společně si sáhnete na
     otázku: <b>Kde se naše práce mění v hodnotu?</b>
@@ -29,7 +29,7 @@ hero:
 intro:
   id: uvod
   eyebrow: Co běžná porada neukáže
-  title: Malý projekt jako zrcadlo týmu.
+  title: Malý projekt jako zrcadlo týmu
   copy: >-
     Malý projekt rychle ukáže, jak spolu nasloucháte, ověřujete domněnky,
     přebíráte odpovědnost a měníte nejistotu v další krok. Ne jako test lidí,
@@ -62,18 +62,18 @@ sections:
     card_class: story-row
     items:
       - label: Role
-        title: Nejste jen své pozice.
+        title: Nejste jen své pozice
         copy: >-
           Obchod, produkt, delivery, podpora, vedení. V běžném provozu vás role
           drží pohromadě, ale také vás umí zakrýt. Camp na tři dny změní
           pravidla hry a nechá vás vystoupit z obvyklých škatulek.
       - label: Realita
-        title: Domněnka musí ven z místnosti.
+        title: Domněnka musí ven z místnosti
         copy: >-
           Vyjdete za zákazníky, kolegy nebo uživateli. Rychle poznáte, co zní
           dobře jen u stolu a co má sílu pohnout druhým člověkem k akci.
       - label: Zážitek
-        title: Schopnosti se ukážou v pohybu.
+        title: Schopnosti se ukážou v pohybu
         copy: >-
           Na malém projektu uvidíte, kdo umí naslouchat, kdo zahlédne
           příležitost, kdo rozhýbe ostatní a kdo dokáže z mlhy udělat konkrétní
@@ -83,7 +83,7 @@ sections:
     theme: soft
     cards: 3
     eyebrow: Jak to probíhá
-    title: Tři dny, které zvednou tým ze židlí.
+    title: Tři dny, které zvednou tým ze židlí
     perex: >-
       Odrazíte se od tématu, na kterém vám záleží. Pak z něj vytvoříte
       malý projekt a vezmete ho ven za lidmi, kterým může pomoct. Nakonec se 
@@ -111,7 +111,7 @@ sections:
     theme: dark
     cards: 3
     eyebrow: Kontext změny
-    title: Dovednosti se mění rychleji než popisy pracovních míst.
+    title: Dovednosti se mění rychleji než popisy pracovních míst
     perex_html: >-
       <span class="proof-stat"><strong><span data-countup-to="40">0</span> %</strong> dovedností</span>Podle
       World Economic Forum se do roku 2030 promění téměř 40 % pracovních
@@ -142,7 +142,7 @@ sections:
     theme: paper
     cards: 3
     eyebrow: Co si odnesete
-    title: Uvidíte se jinak než v běžném provozu.
+    title: Uvidíte se jinak než v běžném provozu
     perex: >-
       Neodvezete si jen dobrý pocit ze společného zážitku. Získáte konkrétní
       situaci, ke které se můžete vracet při dalších projektech, změnách i
@@ -168,7 +168,7 @@ sections:
           oporu pro tým, který chce lépe rozumět sám sobě.
   - type: quote
     eyebrow: Přenos do další práce
-    title: Zkušenost, ke které se dá vracet.
+    title: Zkušenost, ke které se dá vracet
     scroll_cue_target: 0.985
     scroll_cue_complete_at: 0.96
     copy: >-
@@ -179,7 +179,7 @@ sections:
     theme: soft
     cards: 3
     eyebrow: Pro koho
-    title: Pro týmy, které tuší, že další porada už nestačí.
+    title: Pro týmy, které tuší, že další porada už nestačí
     copy: >-
       Pro firmy, které potřebují znovu přiblížit své lidi zákazníkovi, realitě
       a vlastní odpovědnosti. V základní variantě camp neotevírá citlivé interní
@@ -193,24 +193,24 @@ sections:
         - position: back-center
     items:
       - label: Složení týmu
-        title: Smíšené týmy, které chtějí vidět víc než role.
+        title: Smíšené týmy, které chtějí vidět víc než role
         copy: >-
           Pro vedení, specialisty, obchod, produkt, delivery, podporu i týmy
           složené napříč firmou.
       - label: Situace firmy
-        title: Firmy v nové etapě nebo pod tlakem změny.
+        title: Firmy v nové etapě nebo pod tlakem změny
         copy: >-
           Pro chvíle, kdy vstupujete do nové etapy, měníte způsob práce,
           reorganizujete nebo hledáte, co s vámi udělá AI.
       - label: Typ lidí
-        title: Lidé, kteří ovlivňují druhé, i&nbsp;když neřídí tým.
+        title: Lidé, kteří ovlivňují druhé, i&nbsp;když neřídí tým
         copy: >-
           Pro lidi, kteří možná nemají manažerský titul, ale každý den ovlivňují
           zákazníka, kolegu nebo uživatele.
   - type: people
     id: lektori
     eyebrow: Kdo camp vede
-    title: Podnikání, technologie, vzdělávání a práce s lidmi.
+    title: Podnikání, technologie, vzdělávání a práce s lidmi
     perex: >-
       Camp vedou Tomáš Vavrda a Taťána Beránková Císařová. Spojují zkušenost s
       podnikáním, technologickou změnou a vzděláváním, které stojí na zážitku,
@@ -238,7 +238,7 @@ sections:
     theme: paper
     cards: 4
     eyebrow: Prakticky
-    title: Zakázkový camp pro celou firmu nebo tým.
+    title: Zakázkový camp pro celou firmu nebo tým
     perex: >-
       Konkrétní podobu ladíme podle skupiny, firemního kontextu a návazné práce.
     card_class: outcome-row
@@ -266,8 +266,7 @@ sections:
           Konkrétní podobu i cenu ladíme podle skupiny, firemního kontextu a
           návaznosti, kterou spolu chcete po campu otevřít.
 final_cta:
-  eyebrow: Závěr
-  title: Krize je drahý učitel, dotkněte se reality bezpečněji.
+  title: Krize je drahý učitel, dotkněte se reality bezpečněji
   lead: >-
     Vystupte na tři dny z rolí, porad a domněnek a vraťte se se společným
     zážitkem. Zahlédnete v něm vlastní přínos, práci ostatních i
