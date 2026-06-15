@@ -1,26 +1,27 @@
 <!doctype html>
 <html lang="cs">
 <head>
-  {% assign meta = page.meta | default: page %}
+  {% assign content_data = site.data[page.data_key] | default: page %}
+  {% assign meta = content_data.meta | default: content_data %}
   {% include site-head.html meta=meta %}
 </head>
 <body class="thank-you-body">
-  {% include site-header.html brand=page.header_brand %}
+  {% include site-header.html brand=content_data.header_brand %}
   <main class="thank-you-page">
     <section class="thank-you-hero">
       <div class="wrap">
         <div class="thank-you-card">
-          {% if page.eyebrow %}
-            <p class="eyebrow">{{ page.eyebrow }}</p>
+          {% if content_data.eyebrow %}
+            <p class="eyebrow">{{ content_data.eyebrow }}</p>
           {% endif %}
-          <h1>{{ page.title }}</h1>
-          {% if page.lead %}
-            <p class="lead">{{ page.lead }}</p>
+          <h1>{{ content_data.title }}</h1>
+          {% if content_data.lead %}
+            <p class="lead">{{ content_data.lead }}</p>
           {% endif %}
           <div class="hero-actions">
-            <a class="button" href="{{ page.primary_cta.url }}">{{ page.primary_cta.label }}</a>
-            {% if page.secondary_cta %}
-              <a class="button secondary thank-you-secondary" href="{{ page.secondary_cta.url }}">{{ page.secondary_cta.label }}</a>
+            <a class="button" href="{{ content_data.primary_cta.url }}">{{ content_data.primary_cta.label }}</a>
+            {% if content_data.secondary_cta %}
+              <a class="button secondary thank-you-secondary" href="{{ content_data.secondary_cta.url }}">{{ content_data.secondary_cta.label }}</a>
             {% endif %}
           </div>
         </div>

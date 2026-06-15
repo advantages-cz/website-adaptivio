@@ -1,0 +1,24 @@
+title: Díky. Ozveme se.
+meta:
+  title: Díky. Ozveme se. | Leadership Camp pro firmy
+  description: >-
+    Zpráva k Leadership Campu je u nás. Ozveme se vám osobně a společně
+    zjistíme, jestli camp dává smysl pro váš tým.
+  canonical: /landing/leadership-camp-pro-firmy/dekujeme/
+  og_image: /assets/social/leadership-camp-og-v2.png
+  og_image_type: image/png
+  og_image_alt: Leadership Camp pro firmy od Adaptivio
+header_brand:
+  name: Leadership Camp
+  cta_label: Zpět na stránku
+  cta_url: /landing/leadership-camp-pro-firmy/
+eyebrow: Odpověď odeslána
+lead: >-
+  Zpráva je u nás. Nečeká vás automatický mailing — ozve se vám člověk z týmu
+  Adaptivio a společně zjistíme, jestli camp dává smysl pro váš tým.
+primary_cta:
+  label: Zpět na Leadership Camp
+  url: /landing/leadership-camp-pro-firmy/
+secondary_cta:
+  label: Poslat ještě jednu zprávu
+  url: /landing/leadership-camp-pro-firmy/#odpovedni-formular

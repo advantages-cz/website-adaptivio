@@ -99,6 +99,7 @@ Typical edits:
 - section order and section content
 - speaker / people blocks
 - final CTA text
+- thank-you page text and metadata
 
 Keep the content structure data-driven instead of hardcoding one-off markup into page files.
 

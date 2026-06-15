@@ -1687,17 +1687,17 @@ section {
 }
 
 .thank-you-hero {
-  min-height: 0;
-  padding: calc(var(--nav) + 24px) 0 24px;
+  min-height: clamp(520px, calc(100svh - var(--nav) - 120px), 720px);
+  padding: calc(var(--nav) + 40px) 0 56px;
   display: grid;
-  align-items: start;
+  align-items: center;
 }
 
 .thank-you-card {
-  max-width: 760px;
+  max-width: 900px;
   display: grid;
-  gap: 18px;
-  padding: clamp(28px, 4vw, 44px);
+  gap: 24px;
+  padding: clamp(36px, 5vw, 64px);
   border-radius: 30px;
   background: rgba(255, 255, 255, 0.86);
   border: 1px solid rgba(0, 0, 0, 0.08);
@@ -1707,14 +1707,14 @@ section {
 
 .thank-you-card h1 {
   margin: 0;
-  max-width: 12ch;
+  max-width: 11ch;
 }
 
 .thank-you-card .lead {
   margin: 0;
-  max-width: 34rem;
-  font-size: 19px;
-  line-height: 1.55;
+  max-width: 40rem;
+  font-size: 21px;
+  line-height: 1.6;
   color: var(--muted);
 }
 
@@ -3131,7 +3131,9 @@ section {
   }
 
   .thank-you-hero {
+    min-height: 0;
     padding: calc(var(--nav) + 18px) 0 20px;
+    align-items: start;
   }
 
   .thank-you-card {
