@@ -246,9 +246,9 @@ sections:
     card_class: outcome-row
     items:
       - label: Formát
-        title: Třídenní camp pro tým 10-20 lidí
+        title: Třídenní camp pro tým 10–20 lidí
         copy: >-
-          Zakázkový camp pro celou firmu nebo vybraný tým. Skupina 10-20 lidí
+          Zakázkový camp pro celou firmu nebo vybraný tým. Skupina 10–20 lidí
           dává prostor pro skutečnou práci, terén i společnou reflexi.
       - label: Průběh
         title: Terén, prototyp a společná reflexe
@@ -278,7 +278,7 @@ final_cta:
     url: "#odpovedni-formular"
 response_form:
   id: odpovedni-formular
-  eyebrow: Kontaktní formulář
+  eyebrow: Kontaktní formulář 
   title: Chcete zjistit, jestli se camp hodí pro váš tým?
   copy: >-
     Napište nám. Ozveme se vám osobně a společně zjistíme, jestli dává
