@@ -987,6 +987,7 @@ section {
 .stickysection--cards-2 { --stickysection-columns: 2; --stickysection-scene-runway: calc((var(--stickysection-runway-viewport) - 112px) + 560px); }
 .stickysection--cards-3 { --stickysection-columns: 3; --stickysection-scene-runway: calc((var(--stickysection-runway-viewport) - 112px) + 700px); }
 .stickysection--cards-4 { --stickysection-columns: 4; --stickysection-scene-runway: calc((var(--stickysection-runway-viewport) - 112px) + 860px); }
+.intro.stickysection--cards-4 { --stickysection-scene-runway: calc((var(--stickysection-runway-viewport) - 112px) + 240px); }
 .stickysection--tall { --stickysection-card-height: 320px; --stickysection-card-height-tablet: 340px; }
 
 .stickysection-scene {
@@ -1464,23 +1465,23 @@ section {
   background: rgba(255, 255, 255, 0.88);
 }
 
-.token-card strong {
+.system-content .token-card strong {
   display: block;
   max-width: 18ch;
   line-height: 1.12;
   text-wrap: balance;
 }
 
-.token-card > span,
-.token-card > p {
+.system-content .token-card > span,
+.system-content .token-card > p {
   margin: 0;
 }
 
-.token-card > span {
+.system-content .token-card > span {
   color: var(--muted);
 }
 
-.token-card > p:last-child {
+.system-content .token-card > p:last-child {
   align-self: start;
 }
 
