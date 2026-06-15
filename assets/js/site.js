@@ -144,6 +144,10 @@
     const minTop = Math.max(0, sectionTop - headerHeight);
     const maxTop = Math.max(minTop, sectionTop + section.offsetHeight - viewportHeight);
 
+    if (window.innerWidth <= 767) {
+      return minTop;
+    }
+
     if (focusHeight >= availableHeight) {
       return minTop;
     }
