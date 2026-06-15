@@ -85,24 +85,25 @@ sections:
     eyebrow: Jak to probíhá
     title: Tři dny, které zvednou tým ze židlí.
     perex: >-
-      Nejdřív pojmenujete svou osobní výbavu. Pak najdete problém, který stojí
-      za pozornost. Nakonec vyjdete do terénu ověřit, co obstojí mimo místnost.
+      Orazíte se od tématu, na kterém vám záleží. Pak z něj vytvoříte
+      malý projekt a vezmete ho ven za lidmi, kterým může pomoct. Nakonec se 
+      vrátíte s tím, co obstálo mimo místnost.
     items:
       - step: "1. den"
-        label: Dovnitř
-        title: Výbava a problém
+        label: 1. den – dovnitř
+        title: Od tématu k problému
         copy: >-
           Vystoupíte z běžných rolí, pojmenujete své schopnosti a vyberete
           oblast, ve které máte energii i motivaci něco změnit.
       - step: "2. den"
-        label: Ven
-        title: Terén a první řešení
+        label: 2. den – ven
+        title: Od domněnky k realitě
         copy: >-
           Oddělíte domněnky od reality, promluvíte se zákazníky, kolegy nebo
           uživateli a složíte první verzi řešení.
       - step: "3. den"
-        label: Zpět
-        title: Zkouška, porota a reflexe
+        label: 3. den – Zpět
+        title: Od zkoušky k další práci
         copy: >-
           Řešení otestujete, představíte odborné porotě, dostanete syrovou
           zpětnou vazbu a pojmenujete, co si chcete odnést zpět do práce.
