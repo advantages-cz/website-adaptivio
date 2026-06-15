@@ -274,7 +274,7 @@ final_cta:
     zážitkem. Zahlédnete v něm vlastní přínos, práci ostatních i
     hodnotu, kterou společně přinášíte zákazníkům.
   cta:
-    label: Vyplnit formulář
+    label: Ozvěte se mi
     url: "#odpovedni-formular"
 response_form:
   id: odpovedni-formular
