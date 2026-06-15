@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="{{ page.lang | default: site.lang | default: 'cs' }}">
+<head>
+  {% assign content_data = nil %}
+  {% if page.data_key %}
+    {% assign content_data = site.data[page.data_key] %}
+  {% endif %}
+  {% assign meta = page.meta | default: content_data.meta | default: page %}
+  {% include site-head.html
+    meta=meta
+    include_site_css=page.include_site_css
+    include_plausible=page.include_plausible
+    extra_stylesheet=page.extra_stylesheet
+  %}
+</head>
+<body{% if page.body_class %} class="{{ page.body_class }}"{% endif %}>
+  {{ content }}
+  {% if page.include_site_scripts %}
+    {% include site-scripts.html %}
+  {% endif %}
+</body>
+</html>

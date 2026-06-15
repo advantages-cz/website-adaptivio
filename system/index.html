@@ -1,42 +1,34 @@
 ---
-layout: default
+layout: page
 title: Adaptivio Design System
+data_key: design_system
 permalink: /system/
+body_class: system-page
+include_site_scripts: true
 ---
 {% assign ds = site.data.design_system %}
-{% assign asset_version = site.time | date: '%s' %}
-<!doctype html>
-<html lang="cs">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <title>{{ ds.meta.title }}</title>
-  <meta name="description" content="{{ ds.meta.description }}">
-  <link rel="stylesheet" href="{{ '/assets/css/site.css' | relative_url }}?v={{ asset_version }}">
-</head>
-<body class="system-page">
-  <main class="wrap system-layout">
-    <section class="section-head">
-      <p class="eyebrow">Základ</p>
-      <h1>{{ ds.meta.title }}</h1>
-      <p class="copy">{{ ds.meta.description }}</p>
-    </section>
-    <section>
-      <div class="section-head">
-        <p class="eyebrow">Barvy</p>
-        <h2>Základní tokeny</h2>
-      </div>
-      <div class="token-grid">
-        {% for color in ds.foundations.colors %}
-        <article class="token-card">
-          <div class="token-swatch" style="background: {{ color.value }};"></div>
-          <strong>{{ color.name }}</strong>
-          <span>{{ color.value }}</span>
-          <p>{{ color.usage }}</p>
-        </article>
-        {% endfor %}
-      </div>
-    </section>
+<main class="wrap system-layout">
+  <section class="section-head">
+    <p class="eyebrow">Základ</p>
+    <h1>{{ ds.meta.title }}</h1>
+    <p class="copy">{{ ds.meta.description }}</p>
+  </section>
+  <section>
+    <div class="section-head">
+      <p class="eyebrow">Barvy</p>
+      <h2>Základní tokeny</h2>
+    </div>
+    <div class="token-grid">
+      {% for color in ds.foundations.colors %}
+      <article class="token-card">
+        <div class="token-swatch" style="background: {{ color.value }};"></div>
+        <strong>{{ color.name }}</strong>
+        <span>{{ color.value }}</span>
+        <p>{{ color.usage }}</p>
+      </article>
+      {% endfor %}
+    </div>
+  </section>
     <section>
       <div class="section-head">
         <p class="eyebrow">Principy</p>
@@ -189,7 +181,4 @@ permalink: /system/
     <div class="system-example-section">
       {% include components/quote.html section=ds.examples.quote %}
     </div>
-  </main>
-  <script src="{{ '/assets/js/site.js' | relative_url }}?v={{ asset_version }}"></script>
-</body>
-</html>
+</main>
