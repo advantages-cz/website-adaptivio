@@ -3044,6 +3044,10 @@ section {
     min-height: 224px;
   }
 
+  .stickysection--has-mobile-visual .stickysection-pin > .section-head + .sequence-list {
+    margin-top: 8px;
+  }
+
   .stickysection--has-mobile-visual .section-head--split .section-visual {
     display: none;
   }
