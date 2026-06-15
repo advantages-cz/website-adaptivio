@@ -8,28 +8,46 @@ include_site_scripts: true
 ---
 {% assign ds = site.data.design_system %}
 <main class="wrap system-layout">
-  <section class="section-head">
-    <p class="eyebrow">Základ</p>
-    <h1>{{ ds.meta.title }}</h1>
-    <p class="copy">{{ ds.meta.description }}</p>
-  </section>
-  <section>
-    <div class="section-head">
-      <p class="eyebrow">Barvy</p>
-      <h2>Základní tokeny</h2>
+  <aside class="system-sidebar">
+    <div class="system-topbar">
+      <p class="eyebrow">Design System</p>
+      <nav class="system-nav" aria-label="Obsah design systemu">
+        <a href="#overview">Přehled</a>
+        <a href="#colors">Barvy</a>
+        <a href="#principles">Principy</a>
+        <a href="#foundations">Typografie a rytmus</a>
+        <a href="#accessibility">Accessibility</a>
+        <a href="#layout-modes">Layout modes</a>
+        <a href="#stickysection">Stickysection</a>
+        <a href="#components">Komponenty</a>
+        <a href="#governance">Governance</a>
+        <a href="#examples">Příklady</a>
+      </nav>
     </div>
-    <div class="token-grid">
-      {% for color in ds.foundations.colors %}
-      <article class="token-card">
-        <div class="token-swatch" style="background: {{ color.value }};"></div>
-        <strong>{{ color.name }}</strong>
-        <span>{{ color.value }}</span>
-        <p>{{ color.usage }}</p>
-      </article>
-      {% endfor %}
-    </div>
-  </section>
-    <section>
+  </aside>
+  <div class="system-content">
+    <section class="section-head system-hero" id="overview">
+      <p class="eyebrow">Základ</p>
+      <h1>{{ ds.meta.title }}</h1>
+      <p class="copy">{{ ds.meta.description }}</p>
+    </section>
+    <section id="colors">
+      <div class="section-head">
+        <p class="eyebrow">Barvy</p>
+        <h2>Základní tokeny</h2>
+      </div>
+      <div class="token-grid">
+        {% for color in ds.foundations.colors %}
+        <article class="token-card">
+          <div class="token-swatch" style="background: {{ color.value }};"></div>
+          <strong>{{ color.name }}</strong>
+          <span>{{ color.value }}</span>
+          <p>{{ color.usage }}</p>
+        </article>
+        {% endfor %}
+      </div>
+    </section>
+    <section id="principles">
       <div class="section-head">
         <p class="eyebrow">Principy</p>
         <h2>Jak systém rozhoduje</h2>
@@ -43,54 +61,54 @@ include_site_scripts: true
         {% endfor %}
       </div>
     </section>
-    <section>
+    <section id="foundations">
       <div class="section-head">
         <p class="eyebrow">Typografie a rytmus</p>
         <h2>Základní pravidla</h2>
       </div>
-      <div class="token-grid">
+      <div class="system-table">
         {% for item in ds.foundations.typography %}
-        <article class="token-card">
-          <strong>{{ item.name }}</strong>
-          <span>{{ item.value }}</span>
+        <article class="token-card system-table-card">
+          <strong class="system-table-title">{{ item.name }}</strong>
+          <span class="system-table-value">{{ item.value }}</span>
           <p>{{ item.usage }}</p>
         </article>
         {% endfor %}
         {% for item in ds.foundations.spacing %}
-        <article class="token-card">
-          <strong>{{ item.name }}</strong>
-          <span>{{ item.value }}</span>
+        <article class="token-card system-table-card">
+          <strong class="system-table-title">{{ item.name }}</strong>
+          <span class="system-table-value">{{ item.value }}</span>
           <p>{{ item.usage }}</p>
         </article>
         {% endfor %}
       </div>
     </section>
-    <section>
+    <section id="accessibility">
       <div class="section-head">
         <p class="eyebrow">Accessibility</p>
         <h2>Systémové guardraily</h2>
         <p class="copy">Kontrast, focus a motion fallback patří do definice systému, ne až do QA na konci.</p>
       </div>
-      <div class="token-grid">
+      <div class="system-table">
         {% for item in ds.accessibility %}
-        <article class="token-card">
-          <strong>{{ item.name }}</strong>
-          <span>{{ item.requirement }}</span>
+        <article class="token-card system-table-card">
+          <strong class="system-table-title">{{ item.name }}</strong>
+          <span class="system-table-value">{{ item.requirement }}</span>
           <p>{{ item.note }}</p>
         </article>
         {% endfor %}
       </div>
     </section>
-    <section>
+    <section id="layout-modes">
       <div class="section-head">
         <p class="eyebrow">Layout modes</p>
         <h2>Jak se sekce skládají</h2>
       </div>
-      <div class="token-grid">
+      <div class="system-table">
         {% for item in ds.layout_modes %}
-        <article class="token-card">
-          <strong>{{ item.name }}</strong>
-          <span>
+        <article class="token-card system-table-card">
+          <strong class="system-table-title">{{ item.name }}</strong>
+          <span class="system-table-value">
             {% if item.min_width %}min {{ item.min_width }}{% endif %}
             {% if item.max_width %}{% if item.min_width %} / {% endif %}max {{ item.max_width }}{% endif %}
           </span>
@@ -99,30 +117,30 @@ include_site_scripts: true
         {% endfor %}
       </div>
     </section>
-    <section>
+    <section id="stickysection">
       <div class="section-head">
         <p class="eyebrow">Stickysection</p>
         <h2>Sdílená editorial scéna</h2>
       </div>
-      <div class="token-grid">
+      <div class="system-table">
         {% for item in ds.stickysection.metrics %}
-        <article class="token-card">
-          <strong>{{ item.name }}</strong>
-          <span>{{ item.value }}</span>
+        <article class="token-card system-table-card">
+          <strong class="system-table-title">{{ item.name }}</strong>
+          <span class="system-table-value">{{ item.value }}</span>
           <p>{{ item.usage }}</p>
         </article>
         {% endfor %}
       </div>
-      <div class="token-grid system-stack">
+      <div class="system-table system-stack">
         {% for item in ds.stickysection.motion %}
-        <article class="token-card">
-          <strong>{{ item.name }}</strong>
-          <span>{{ item.value }}</span>
+        <article class="token-card system-table-card">
+          <strong class="system-table-title">{{ item.name }}</strong>
+          <span class="system-table-value">{{ item.value }}</span>
           <p>{{ item.usage }}</p>
         </article>
         {% endfor %}
       </div>
-      <div class="token-card system-stack">
+      <div class="token-card system-stack system-inline-card">
         <strong>Allowed classes</strong>
         <p>
           {% for item in ds.stickysection.classes %}
@@ -131,7 +149,7 @@ include_site_scripts: true
         </p>
       </div>
     </section>
-    <section>
+    <section id="components">
       <div class="section-head">
         <p class="eyebrow">Komponenty</p>
         <h2>Reuse slovník pro celý web</h2>
@@ -151,7 +169,7 @@ include_site_scripts: true
         {% endfor %}
       </div>
     </section>
-    <section>
+    <section id="governance">
       <div class="section-head">
         <p class="eyebrow">Governance</p>
         <h2>Jak systém udržovat zdravý</h2>
@@ -165,7 +183,7 @@ include_site_scripts: true
         {% endfor %}
       </div>
     </section>
-    <section>
+    <section id="examples">
       <div class="section-head">
         <p class="eyebrow">Příklady</p>
         <h2>Živé ukázky patternů</h2>
@@ -181,4 +199,5 @@ include_site_scripts: true
     <div class="system-example-section">
       {% include components/quote.html section=ds.examples.quote %}
     </div>
+  </div>
 </main>
