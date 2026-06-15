@@ -42,7 +42,7 @@ intro:
   metrics:
     - value: "3"
       label: dny mimo běžný provoz
-    - value: "10-20"
+    - value: "10–20"
       label: lidí v jedné skupině
     - value: "2–3"
       label: malé projekty jako zrcadla týmů
