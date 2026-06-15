@@ -2595,7 +2595,6 @@ section {
   }
 
   .stickysection--has-mobile-visual .section-visual--static-card {
-    width: min(100%, 292px);
     height: 224px;
   }
 
