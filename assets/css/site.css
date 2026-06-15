@@ -1551,7 +1551,7 @@ section {
 
 .response-form-panel {
   display: grid;
-  gap: 18px;
+  gap: 12px;
   padding: 24px 28px 26px;
   border: 1px solid rgba(0, 0, 0, 0.08);
   border-radius: 24px;
@@ -1574,7 +1574,7 @@ section {
 .response-form-head h2 {
   max-width: 22ch;
   font-size: clamp(42px, 3.2vw, 58px);
-  line-height: 1;
+  line-height: var(--leading-display);
 }
 
 .response-form-head .copy {
@@ -1585,7 +1585,7 @@ section {
 
 .response-form {
   display: grid;
-  gap: 14px;
+  gap: 12px;
 }
 
 .response-form-grid {
@@ -1620,7 +1620,7 @@ section {
 }
 
 .response-form-field textarea {
-  min-height: 88px;
+  min-height: 76px;
   resize: vertical;
 }
 
@@ -1638,10 +1638,10 @@ section {
 }
 
 .response-form-actions {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  flex-wrap: wrap;
+  display: grid;
+  justify-items: start;
+  gap: 14px;
+  margin-top: 6px;
 }
 
 .response-form button[disabled] {
@@ -3102,16 +3102,25 @@ section {
 
   .response-form-panel {
     padding: 20px 18px;
-    gap: 16px;
+    gap: 10px;
     border-radius: 20px;
+  }
+
+  .response-form {
+    gap: 10px;
+  }
+
+  .response-form-head {
+    margin-bottom: 12px;
   }
 
   .response-form-head h2 {
     font-size: 34px;
   }
 
-  .response-form-head .copy {
-    font-size: 18px;
+  .response-form-actions {
+    gap: 12px;
+    margin-top: 10px;
   }
 
   .response-form-grid {
@@ -3129,7 +3138,7 @@ section {
   }
 
   .response-form-field textarea {
-    min-height: 84px;
+    min-height: 72px;
   }
 
   .thank-you-hero {

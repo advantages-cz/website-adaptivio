@@ -197,6 +197,14 @@
 
     const targetTop = target.getBoundingClientRect().top + window.scrollY;
 
+    if (section?.classList.contains("response-form-section")) {
+      const mobileFormOffset = window.innerWidth <= 767
+        ? Math.min(28, Math.max(0, window.innerHeight * 0.015))
+        : 0;
+
+      return Math.max(0, targetTop - headerHeight - 8 + mobileFormOffset);
+    }
+
     return Math.max(0, targetTop - headerHeight - 8);
   };
   const scrollToHashTarget = (hash = window.location.hash, behavior = "auto") => {

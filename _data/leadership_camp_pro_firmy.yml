@@ -278,7 +278,7 @@ final_cta:
     url: "#odpovedni-formular"
 response_form:
   id: odpovedni-formular
-  eyebrow: Kontakt
+  eyebrow: Kontaktní formulář
   title: Chcete zjistit, jestli se camp hodí pro váš tým?
   copy: >-
     Napište nám. Ozveme se vám osobně a společně zjistíme, jestli dává
@@ -306,7 +306,7 @@ response_form:
     - label: Pár slov k tomu
       name: entry.825859294
       type: textarea
-      rows: 5
+      rows: 3
       placeholder: >-
         Pro jaký tým o campu uvažujete? Co vás zaujalo? Stačí jedna věta.
       required: false
