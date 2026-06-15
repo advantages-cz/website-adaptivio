@@ -3154,12 +3154,20 @@ section {
 
   .thank-you-card {
     gap: 16px;
-    padding: 24px 22px 26px;
+    padding: 24px 22px 20px;
     border-radius: 24px;
   }
 
   .thank-you-card .lead {
     font-size: 18px;
+  }
+
+  .thank-you-card .hero-actions {
+    margin-top: 8px;
+  }
+
+  .thank-you-body .nav-links {
+    display: none;
   }
 
   .site-footer-block:last-child {
