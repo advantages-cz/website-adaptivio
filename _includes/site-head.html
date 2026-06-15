@@ -14,6 +14,7 @@
 <meta property="og:title" content="{{ include.meta.title | default: page.title | default: site.title }}">
 <meta property="og:description" content="{{ include.meta.description | default: site.description }}">
 <meta property="og:url" content="{{ include.meta.canonical | absolute_url }}">
+<meta property="og:secure_url" content="{{ include.meta.canonical | absolute_url }}">
 <meta property="og:image" content="{{ include.meta.og_image | absolute_url }}">
 <meta property="og:image:type" content="{{ include.meta.og_image_type | default: 'image/jpeg' }}">
 <meta property="og:image:width" content="{{ include.meta.og_image_width | default: 1200 }}">
