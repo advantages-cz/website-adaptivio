@@ -225,6 +225,7 @@ sections:
           organizace zvládají změnu, složitost a nové způsoby práce.
         image: /assets/images/leadership-camp/tomas-vavrda.jpg
         image_alt: Tomáš Vavrda
+        image_position: center 4%
       - tone: dark
         label: Vzdělávání a práce s lidmi
         title: Taťána Beránková Císařová
@@ -234,6 +235,7 @@ sections:
           pomáhá učitelům vstupovat do nové role.
         image: /assets/images/leadership-camp/tatana-berankova-cisarova.jpg
         image_alt: Taťána Beránková Císařová
+        image_position: 54% 12%
   - type: stickysection
     theme: paper
     cards: 4

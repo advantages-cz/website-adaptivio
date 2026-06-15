@@ -2649,9 +2649,10 @@ section {
 
   .people .lecturer-media img {
     display: block;
+    width: 100%;
     height: 100%;
     object-fit: cover;
-    object-position: center 12%;
+    object-position: var(--people-image-position, center 12%);
   }
 
   .site-footer-grid {
@@ -3076,7 +3077,7 @@ section {
     height: 100%;
     display: block;
     object-fit: cover;
-    object-position: center 21%;
+    object-position: var(--people-image-position, center 21%);
   }
 
   .quote-section .wrap {

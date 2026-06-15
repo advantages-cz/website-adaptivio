@@ -314,6 +314,7 @@ patterns:
       - Sekce staví na `stickysection` systému a používá `stickysection--paper stickysection--cards-2 stickysection--tall`.
       - Profilová karta skládá médium a text do jednoho sdíleného layoutu bez wrapperů jen pro jednu stránku.
       - Na menších breakpointech se layout láme do jednoho sloupce bez duplikace obsahu.
+      - Pokud konkrétní portrét potřebuje jiný crop, nastavuje se v datech přes `image_position` pro sdílený `object-position`, ne přes jednorázovou CSS třídu.
 
 examples:
   sticky:
