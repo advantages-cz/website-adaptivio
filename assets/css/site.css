@@ -554,6 +554,7 @@ section {
   height: 100%;
   overflow: visible;
   isolation: isolate;
+  transform: translateX(-20px);
 }
 
 .section-visual--static-card .section-visual-surface::after {
