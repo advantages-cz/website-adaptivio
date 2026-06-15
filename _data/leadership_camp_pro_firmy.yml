@@ -10,8 +10,8 @@ meta:
   og_image_alt: Leadership Camp pro firmy od Adaptivio
 brand:
   name: Leadership Camp
-  cta_label: Chci vědět víc
-  cta_url: https://forms.gle/leadership-camp-placeholder
+  cta_label: Ozvěte se mi
+  cta_url: "#odpovedni-formular"
 hero:
   eyebrow: Leadership Camp pro firmy
   title: Tři dny mimo běžné role.
@@ -21,13 +21,13 @@ hero:
   image: /assets/images/leadership-camp/hero.jpeg
   image_alt: Účastníci Leadership Campu při společné práci v místnosti
   primary_cta:
-    label: Chci vědět víc
-    url: https://forms.gle/leadership-camp-placeholder
+    label: Ozvěte se mi
+    url: "#odpovedni-formular"
   secondary_cta:
     label: Jak to funguje
-    url: "#film"
+    url: "#uvod"
 intro:
-  id: film
+  id: uvod
   eyebrow: Co běžná porada neukáže
   title: Malý projekt jako zrcadlo týmu.
   copy: >-
@@ -273,5 +273,39 @@ final_cta:
     zážitkem. Zahlédnete v něm vlastní přínos, práci ostatních i
     hodnotu, kterou společně přinášíte zákazníkům.
   cta:
-    label: Chci vědět víc
-    url: https://forms.gle/leadership-camp-placeholder
+    label: Vyplnit formulář
+    url: "#odpovedni-formular"
+response_form:
+  id: odpovedni-formular
+  eyebrow: Kontakt
+  title: Chcete zjistit, jestli se camp hodí pro váš tým?
+  copy: >-
+    Napište nám. Ozveme se vám osobně a společně zjistíme, jestli dává
+    smysl se potkat.
+  action: https://docs.google.com/forms/d/e/1FAIpQLSf_T3e0aFQ8ee9qOexqqWSNTjh-E1TxBZcp2tD_SNP7kPPohw/formResponse
+  success_url: /landing/leadership-camp-pro-firmy/dekujeme/
+  submit_label: Ozvěte se mi
+  privacy_note: >-
+    Zpráva se uloží do Google Forms. Nepřidáme vás do žádného automatického
+    mailingu — ozve se vám člověk z týmu Adaptivio.
+  fields:
+    - label: Váš e-mail
+      name: entry.313773228
+      type: email
+      pattern: '^[^\s@]+@[^\s@]+\.[^\s@]{2,}$'
+      validation_message: Zadejte e-mail ve tvaru jmeno@firma.cz.
+      placeholder: vase@firma.cz
+      required: true
+    - label: Telefon, pokud chcete zavolat
+      name: entry.1293957438
+      type: tel
+      inputmode: tel
+      placeholder: +420 123 456 789
+      required: false
+    - label: Pár slov k tomu
+      name: entry.825859294
+      type: textarea
+      rows: 5
+      placeholder: >-
+        Pro jaký tým o campu uvažujete? Co vás zaujalo? Stačí jedna věta.
+      required: false

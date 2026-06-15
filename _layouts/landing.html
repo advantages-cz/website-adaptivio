@@ -23,6 +23,9 @@
         {% endcase %}
       {% endfor %}
       {% include components/final-cta.html section=content_data.final_cta %}
+      {% if content_data.response_form %}
+        {% include components/response-form.html section=content_data.response_form %}
+      {% endif %}
     </article>
     <button class="scroll-cue" type="button" aria-label="Posunout na další sekci">
       <span aria-hidden="true">↓</span>

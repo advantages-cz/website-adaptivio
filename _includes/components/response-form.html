@@ -1,0 +1,48 @@
+<section class="response-form-section stickysection stickysection--paper stickysection--cards-1" id="{{ include.section.id | default: 'odpovedni-formular' }}">
+  <div class="wrap">
+    <div class="response-form-panel">
+      {% include components/section-head.html section=include.section class="response-form-head" %}
+      <form
+        class="response-form"
+        method="post"
+        action="{{ include.section.action }}"
+        data-google-form
+        data-success-url="{{ include.section.success_url | relative_url }}"
+        novalidate>
+        <div class="response-form-grid">
+          {% for field in include.section.fields %}
+            {% assign field_type = field.type | default: 'text' %}
+            <label class="response-form-field">
+              <span>{{ field.label }}</span>
+              {% if field_type == 'textarea' %}
+                <textarea
+                  name="{{ field.name }}"
+                  rows="{{ field.rows | default: 5 }}"
+                  {% if field.pattern %}pattern="{{ field.pattern }}"{% endif %}
+                  {% if field.validation_message %}title="{{ field.validation_message }}"{% endif %}
+                  {% if field.placeholder %}placeholder="{{ field.placeholder }}"{% endif %}
+                  {% if field.required %}required{% endif %}></textarea>
+              {% else %}
+                <input
+                  type="{{ field_type }}"
+                  name="{{ field.name }}"
+                  {% if field.inputmode %}inputmode="{{ field.inputmode }}"{% endif %}
+                  {% if field.pattern %}pattern="{{ field.pattern }}"{% endif %}
+                  {% if field.validation_message %}title="{{ field.validation_message }}"{% endif %}
+                  {% if field.placeholder %}placeholder="{{ field.placeholder }}"{% endif %}
+                  {% if field.required %}required{% endif %}>
+              {% endif %}
+            </label>
+          {% endfor %}
+        </div>
+        <div class="response-form-actions">
+          <button class="button" type="submit" data-submit-label="{{ include.section.submit_label | default: 'Odeslat' }}">{{ include.section.submit_label | default: "Odeslat" }}</button>
+          {% if include.section.privacy_note %}
+            <p class="response-form-note">{{ include.section.privacy_note }}</p>
+          {% endif %}
+        </div>
+        <p class="response-form-status" data-form-status aria-live="polite"></p>
+      </form>
+    </div>
+  </div>
+</section>

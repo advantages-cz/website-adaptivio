@@ -1,4 +1,8 @@
 (() => {
+  if ("scrollRestoration" in history) {
+    history.scrollRestoration = "manual";
+  }
+
   const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
   const header = document.querySelector("[data-header]");
   const hero = document.querySelector('[data-parallax="hero"]');
@@ -7,6 +11,7 @@
   const scrollCue = document.querySelector(".scroll-cue");
   const articleSections = [...document.querySelectorAll("article > section")];
   const siteFooter = document.querySelector(".site-footer");
+  const googleForms = [...document.querySelectorAll("[data-google-form]")];
   const stickySections = [...document.querySelectorAll("[data-stickysection-scene]")].map(scene => ({
     section: scene.closest("section"),
     scene,
@@ -170,6 +175,57 @@
     const targetTop = sceneTop - state.pinTop + nextPassed;
 
     return Math.max(0, targetTop);
+  };
+  const getHashTarget = hash => {
+    if (!hash || hash === "#") return null;
+
+    try {
+      return document.getElementById(decodeURIComponent(hash.slice(1)));
+    } catch (error) {
+      return document.getElementById(hash.slice(1));
+    }
+  };
+  const getAnchorScrollTop = target => {
+    const headerHeight = header?.offsetHeight || 0;
+    const section = target.matches("article > section")
+      ? target
+      : target.closest("article > section");
+
+    if (section && !section.classList.contains("response-form-section")) {
+      return getSectionScrollTop(section);
+    }
+
+    const targetTop = target.getBoundingClientRect().top + window.scrollY;
+
+    return Math.max(0, targetTop - headerHeight - 8);
+  };
+  const scrollToHashTarget = (hash = window.location.hash, behavior = "auto") => {
+    const target = getHashTarget(hash);
+
+    if (!target) return false;
+
+    window.scrollTo({
+      top: getAnchorScrollTop(target),
+      behavior: reducedMotion ? "auto" : behavior
+    });
+    requestUpdate();
+
+    return true;
+  };
+  const settleInitialHashTarget = () => {
+    if (!window.location.hash) return;
+
+    const scrollToTarget = () => {
+      scrollToHashTarget(window.location.hash, "auto");
+      window.requestAnimationFrame(() => scrollToHashTarget(window.location.hash, "auto"));
+    };
+
+    scrollToTarget();
+    window.addEventListener("load", scrollToTarget, { once: true });
+
+    if (document.fonts?.ready) {
+      document.fonts.ready.then(scrollToTarget);
+    }
   };
 
   const syncStickySectionMotionState = () => {
@@ -442,7 +498,78 @@
     }, 180);
   };
 
+  const setupGoogleForms = () => {
+    for (const form of googleForms) {
+      const status = form.querySelector("[data-form-status]");
+      const submitButton = form.querySelector('button[type="submit"]');
+      const defaultLabel = submitButton?.getAttribute("data-submit-label") || submitButton?.textContent || "";
+
+      form.addEventListener("submit", async event => {
+        event.preventDefault();
+
+        if (!form.reportValidity()) {
+          return;
+        }
+
+        if (submitButton) {
+          submitButton.disabled = true;
+          submitButton.textContent = "Odesílám…";
+        }
+
+        if (status) {
+          status.textContent = "";
+        }
+
+        try {
+          await fetch(form.action, {
+            method: "POST",
+            mode: "no-cors",
+            body: new FormData(form)
+          });
+
+          const successUrl = form.getAttribute("data-success-url");
+
+          if (successUrl) {
+            window.location.assign(successUrl);
+            return;
+          }
+
+          form.reset();
+
+          if (status) {
+            status.textContent = "Děkujeme, odpověď byla odeslána.";
+          }
+        } catch (error) {
+          if (status) {
+            status.textContent = "Odeslání se nepovedlo. Zkuste to prosím znovu.";
+          }
+        } finally {
+          if (submitButton) {
+            submitButton.disabled = false;
+            submitButton.textContent = defaultLabel;
+          }
+        }
+      });
+    }
+  };
+
   setupTimelineRoutes();
+  setupGoogleForms();
+  settleInitialHashTarget();
+
+  document.addEventListener("click", event => {
+    const link = event.target.closest('a[href^="#"]');
+
+    if (!link) return;
+
+    const hash = link.getAttribute("href");
+
+    if (!getHashTarget(hash)) return;
+
+    event.preventDefault();
+    history.pushState(null, "", hash);
+    scrollToHashTarget(hash, "smooth");
+  });
 
   if (scrollCue) {
     scrollCue.addEventListener("click", () => {
@@ -469,4 +596,6 @@
   window.addEventListener("scroll", requestUpdate, { passive: true });
   window.addEventListener("resize", requestResizeUpdate);
   window.addEventListener("load", requestUpdate);
+  window.addEventListener("pageshow", requestUpdate);
+  window.addEventListener("hashchange", () => scrollToHashTarget(window.location.hash, "auto"));
 })();
