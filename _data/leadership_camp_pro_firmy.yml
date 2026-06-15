@@ -290,7 +290,7 @@ response_form:
     Zpráva se uloží do Google Forms. Nepřidáme vás do žádného automatického
     mailingu — ozve se vám člověk z týmu Adaptivio.
   fields:
-    - label: Váš e-mail
+    - label: Váš e-mail (povinný)
       name: entry.313773228
       type: email
       pattern: '^[^\s@]+@[^\s@]+\.[^\s@]{2,}$'
