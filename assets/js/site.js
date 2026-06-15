@@ -33,6 +33,7 @@
 
   const clamp = (value, min, max) => Math.min(max, Math.max(min, value));
   const easeOutCubic = value => 1 - Math.pow(1 - value, 3);
+  const parseCssNumber = value => Number.parseFloat(String(value).trim()) || 0;
   const canAnimateStickySections = () => !reducedMotion && window.innerWidth >= 1280;
   const getCounterProgress = scene => {
     const completionPoint = 0.94;
@@ -196,6 +197,72 @@
     }
   };
 
+  const setConvergenceVisualProgress = (section, progress) => {
+    const visual = section.scene.querySelector("[data-convergence-visual]");
+    if (!visual) return;
+
+    const eased = easeOutCubic(progress);
+    const cluster = 1 - eased;
+    const ring = clamp((eased - 0.16) / 0.84, 0, 1);
+    const rise = clamp((eased - 0.12) / 0.5, 0, 1);
+
+    visual.style.setProperty("--convergence-progress", eased.toFixed(3));
+    visual.style.setProperty("--convergence-cluster", cluster.toFixed(3));
+    visual.style.setProperty("--convergence-ring-opacity", ring.toFixed(3));
+    visual.style.setProperty("--convergence-rise", rise.toFixed(3));
+
+    const bounds = visual.getBoundingClientRect();
+    const lightX = bounds.width * -0.28;
+    const lightY = bounds.height * -0.42;
+    const shadowLength = bounds.width * 0.28;
+
+    for (const figure of visual.querySelectorAll("[data-convergence-figure]")) {
+      const styles = getComputedStyle(figure);
+      const wrap = figure.querySelector(".figure-silhouette-wrap");
+      const wrapStyles = wrap ? getComputedStyle(wrap) : styles;
+      const tableX = parseCssNumber(styles.getPropertyValue("--table-x"));
+      const tableY = parseCssNumber(styles.getPropertyValue("--table-y"));
+      const startX = parseCssNumber(styles.getPropertyValue("--person-start-x"));
+      const startY = parseCssNumber(styles.getPropertyValue("--person-start-y"));
+      const endX = parseCssNumber(styles.getPropertyValue("--person-end-x"));
+      const endY = parseCssNumber(styles.getPropertyValue("--person-end-y"));
+      const leftFootX = parseCssNumber(
+        wrapStyles.getPropertyValue("--figure-shadow-left-x") ||
+        wrapStyles.getPropertyValue("--figure-foot-x")
+      );
+      const leftFootY = parseCssNumber(
+        wrapStyles.getPropertyValue("--figure-shadow-left-y") ||
+        wrapStyles.getPropertyValue("--figure-foot-y")
+      );
+      const rightFootX = parseCssNumber(
+        wrapStyles.getPropertyValue("--figure-shadow-right-x") ||
+        String(leftFootX)
+      );
+      const rightFootY = parseCssNumber(
+        wrapStyles.getPropertyValue("--figure-shadow-right-y") ||
+        String(leftFootY)
+      );
+      const personX = ((tableX + startX) * cluster) + (endX * eased);
+      const personY = ((tableY + startY) * cluster) + (endY * eased);
+      const leftX = personX + leftFootX;
+      const leftY = personY + leftFootY;
+      const rightX = personX + rightFootX;
+      const rightY = personY + rightFootY;
+      const centerX = (leftX + rightX) / 2;
+      const centerY = (leftY + rightY) / 2;
+      const lightVectorX = centerX - lightX;
+      const lightVectorY = centerY - lightY;
+      const lightVectorLength = Math.max(Math.hypot(lightVectorX, lightVectorY), 1);
+      const tailX = centerX + (lightVectorX / lightVectorLength) * shadowLength;
+      const tailY = centerY + (lightVectorY / lightVectorLength) * shadowLength;
+      const leftAngle = Math.atan2(tailY - leftY, tailX - leftX) * (180 / Math.PI);
+      const rightAngle = Math.atan2(tailY - rightY, tailX - rightX) * (180 / Math.PI);
+
+      figure.style.setProperty("--figure-shadow-left-angle", `${leftAngle.toFixed(2)}deg`);
+      figure.style.setProperty("--figure-shadow-right-angle", `${rightAngle.toFixed(2)}deg`);
+    }
+  };
+
   const resetStickySectionCards = () => {
     for (const section of stickySections) {
       for (const card of section.cards) {
@@ -219,6 +286,7 @@
       }
 
       setTimelineMapReveal(section, 0);
+      setConvergenceVisualProgress(section, 0);
     }
   };
 
@@ -233,6 +301,7 @@
           counter.element.textContent = String(counter.target);
         }
         setTimelineMapReveal(section, 1);
+        setConvergenceVisualProgress(section, 1);
       }
       return;
     }
@@ -303,6 +372,7 @@
       const routeDelay = 0.12;
       const routeProgress = clamp((ratio - routeDelay) / (1 - routeDelay), 0, 1);
       setTimelineMapReveal(section, routeProgress);
+      setConvergenceVisualProgress(section, clamp((ratio - 0.08) / 0.84, 0, 1));
       const counterProgress = getCounterProgress(section.scene);
 
       for (const counter of section.counters || []) {

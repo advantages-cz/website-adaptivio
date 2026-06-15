@@ -178,11 +178,17 @@ sections:
     cards: 3
     eyebrow: Pro koho
     title: Pro týmy, které tuší, že další porada už nestačí.
-    perex: >-
+    copy: >-
       Pro firmy, které potřebují znovu přiblížit své lidi zákazníkovi, realitě
       a vlastní odpovědnosti. V základní variantě camp neotevírá citlivé interní
       projekty. Pokud chcete pracovat přímo se svými tématy, připravíme variantu
       s interním zadáním.
+    visual:
+      type: convergence
+      figures:
+        - position: front-left
+        - position: front-right
+        - position: back-center
     items:
       - label: Složení týmu
         title: Smíšené týmy, které chtějí vidět víc než role.

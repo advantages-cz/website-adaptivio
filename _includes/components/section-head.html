@@ -17,4 +17,7 @@
   {% elsif include.section.perex %}
   <p class="copy section-perex{% if include.perex_class %} {{ include.perex_class }}{% endif %}">{{ include.section.perex }}</p>
   {% endif %}
+  {% if include.section.visual and include.section.visual.type == "convergence" %}
+  {% include components/convergence-visual.html figures=include.section.visual.figures %}
+  {% endif %}
 </div>

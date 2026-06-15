@@ -1,0 +1,68 @@
+<div class="section-visual section-visual--convergence{% if include.class %} {{ include.class }}{% endif %}" aria-hidden="true"{% unless include.static %} data-convergence-visual{% endunless %}>
+  <div class="section-visual-surface">
+    <div class="section-visual-glow section-visual-glow--blue"></div>
+    <div class="section-visual-glow section-visual-glow--orange"></div>
+    {% for figure in include.figures %}
+    <figure class="convergence-figure convergence-figure--{{ figure.position }}" data-convergence-figure>
+      <div class="convergence-table"></div>
+      <div class="figure-silhouette-wrap figure-silhouette-wrap--{{ forloop.index }}">
+        <svg class="figure-shadow figure-shadow--left" viewBox="0 -14 84 28" aria-hidden="true" focusable="false">
+          <defs>
+            <linearGradient id="figure-shadow-fade-{{ forloop.index }}-left" x1="0%" y1="0%" x2="100%" y2="0%">
+              <stop offset="0%" stop-color="rgb(17,24,39)" stop-opacity="0.36" />
+              <stop offset="45%" stop-color="rgb(17,24,39)" stop-opacity="0.18" />
+              <stop offset="100%" stop-color="rgb(17,24,39)" stop-opacity="0" />
+            </linearGradient>
+          </defs>
+          <path fill="url(#figure-shadow-fade-{{ forloop.index }}-left)" d="M0 -5C18 -10 48 -8 84 0C48 8 18 10 0 5C4 3 4 -3 0 -5Z" />
+        </svg>
+        <svg class="figure-shadow figure-shadow--right" viewBox="0 -14 84 28" aria-hidden="true" focusable="false">
+          <defs>
+            <linearGradient id="figure-shadow-fade-{{ forloop.index }}-right" x1="0%" y1="0%" x2="100%" y2="0%">
+              <stop offset="0%" stop-color="rgb(17,24,39)" stop-opacity="0.32" />
+              <stop offset="45%" stop-color="rgb(17,24,39)" stop-opacity="0.16" />
+              <stop offset="100%" stop-color="rgb(17,24,39)" stop-opacity="0" />
+            </linearGradient>
+          </defs>
+          <path fill="url(#figure-shadow-fade-{{ forloop.index }}-right)" d="M0 -5C18 -10 48 -8 84 0C48 8 18 10 0 5C4 3 4 -3 0 -5Z" />
+        </svg>
+        <div class="figure-silhouette figure-silhouette--{{ forloop.index }}">
+          {% case forloop.index %}
+          {% when 1 %}
+          <svg class="figure-silhouette-svg figure-silhouette-svg--1" viewBox="0 0 72 118" aria-hidden="true">
+            <path class="ink-fill ink-hair" d="M18 26C18 13 27 5 39 5C51 5 58 14 57 28C56 39 51 47 42 52C31 50 18 43 18 26Z" />
+            <path class="ink-face" d="M29 24C29 16 34 11 41 11C48 12 52 17 52 25C52 33 47 39 39 39C33 39 29 33 29 24Z" />
+            <path class="ink-body" d="M34 45C37 43 41 43 44 45C48 49 50 58 49 70L55 91C50 95 44 97 37 97C30 97 24 95 19 91L26 69C25 57 28 49 34 45Z" />
+            <path class="ink-line" d="M27 58C21 64 18 71 17 79" />
+            <path class="ink-line" d="M49 58C54 64 57 70 58 77" />
+            <path class="ink-line" d="M34 96L31 111" />
+            <path class="ink-line" d="M42 96L51 108" />
+          </svg>
+          {% when 2 %}
+          <svg class="figure-silhouette-svg figure-silhouette-svg--2" viewBox="0 0 72 118" aria-hidden="true">
+            <path class="ink-fill ink-hair" d="M23 17L31 8C36 5 45 5 51 8C56 11 59 16 59 22L54 29H29L23 24Z" />
+            <path class="ink-face" d="M29 21C29 14 34 10 41 10C49 10 54 15 54 22V28L49 36H34L29 28V21Z" />
+            <path class="ink-body" d="M19 51C24 44 31 40 40 40C49 40 56 44 61 51L56 75C52 82 47 86 40 86C33 86 28 82 24 75L19 51Z" />
+            <path class="ink-line" d="M18 58C12 64 9 71 8 79" />
+            <path class="ink-line" d="M62 58C68 64 71 71 72 79" />
+            <path class="ink-line" d="M35 88L30 111" />
+            <path class="ink-line" d="M45 88L52 111" />
+          </svg>
+          {% when 3 %}
+          <svg class="figure-silhouette-svg figure-silhouette-svg--3" viewBox="0 0 72 118" aria-hidden="true">
+            <path class="ink-fill ink-hair" d="M23 23C23 14 30 8 38 8C47 8 53 14 53 23C53 31 48 38 39 40C31 38 23 32 23 23Z" />
+            <path class="ink-fill ink-hair" d="M49 17C55 16 59 20 59 25C58 30 54 33 49 32V17Z" />
+            <path class="ink-face" d="M29 23C29 17 33 13 39 13C45 13 49 18 49 24C49 30 45 35 39 35C33 35 29 30 29 23Z" />
+            <path class="ink-body" d="M27 47C30 43 34 41 39 41C44 41 48 43 51 47C54 53 55 61 53 69C51 76 46 80 39 80C32 80 27 76 25 69C23 61 24 53 27 47Z" />
+            <path class="ink-line" d="M28 56C24 60 22 65 21 71" />
+            <path class="ink-line" d="M50 56C54 60 56 65 57 70" />
+            <path class="ink-line" d="M36 79L32 99" />
+            <path class="ink-line" d="M42 79L48 99" />
+          </svg>
+          {% endcase %}
+        </div>
+      </div>
+    </figure>
+    {% endfor %}
+  </div>
+</div>

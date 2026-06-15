@@ -1,12 +1,19 @@
 {% assign theme_class = 'stickysection--' | append: include.section.theme %}
 {% assign cards_class = 'stickysection--cards-' | append: include.section.cards %}
 {% assign section_id = include.section.id %}
-<section{% if section_id %} id="{{ section_id }}"{% endif %} class="stickysection {{ theme_class }} {{ cards_class }}{% if include.section.tall %} stickysection--tall{% endif %}">
+<section{% if section_id %} id="{{ section_id }}"{% endif %} class="stickysection {{ theme_class }} {{ cards_class }}{% if include.section.tall %} stickysection--tall{% endif %}{% if include.section.visual and include.section.visual.type == 'convergence' %} stickysection--has-mobile-visual{% endif %}">
   <div class="wrap">
     <div class="stickysection-scene" data-stickysection-scene>
       <div class="stickysection-pin">
         {% include components/section-head.html section=include.section class="section-head--split stickysection-head" %}
         <div class="sequence-list stickysection-grid">
+          {% if include.section.visual and include.section.visual.type == 'convergence' %}
+          <article class="sequence-item stickysection-card stickysection-card--convergence-static">
+            <div class="stickysection-card-content convergence-static-card-body">
+              {% include components/convergence-visual.html figures=include.section.visual.figures class="section-visual--static-card" static=true %}
+            </div>
+          </article>
+          {% endif %}
           {% for item in include.section.items %}
           <article class="sequence-item stickysection-card{% if include.section.card_class %} {{ include.section.card_class }}{% endif %}{% if forloop.first %} is-active{% endif %}" data-stickysection-card>
             {% if item.indicator %}
