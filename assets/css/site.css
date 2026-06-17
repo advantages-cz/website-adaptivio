@@ -2773,6 +2773,11 @@ section {
     row-gap: 24px;
   }
 
+  .section-head--split .section-aside {
+    grid-column: auto;
+    grid-row: auto;
+  }
+
   .section-head--split .section-visual {
     display: none;
   }
