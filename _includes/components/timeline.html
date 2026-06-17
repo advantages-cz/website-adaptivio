@@ -2,13 +2,11 @@
 {% assign sticky_cards = include.section.cards | default: 3 %}
 {% assign theme_class = 'stickysection--' | append: sticky_theme %}
 {% assign cards_class = 'stickysection--cards-' | append: sticky_cards %}
-<section class="flow flow--timeline-sticky stickysection {{ theme_class }} {{ cards_class }}"{% if include.section.id %} id="{{ include.section.id }}"{% endif %}>
-  <div class="wrap">
-    <div class="stickysection-scene" data-stickysection-scene>
-      <div class="stickysection-pin">
-        {% include components/section-head.html section=include.section class="section-head--split timeline-head" %}
-        <div class="sequence-list stickysection-grid timeline timeline--sticky">
-          <div class="timeline-map" aria-hidden="true">
+{% capture timeline_class %}flow flow--timeline-sticky stickysection {{ theme_class }} {{ cards_class }}{% endcapture %}
+{% capture timeline_body %}
+  {% include components/section-head.html section=include.section class="section-head--split timeline-head" %}
+  <div class="sequence-list stickysection-grid timeline timeline--sticky">
+    <div class="timeline-map" aria-hidden="true">
             <svg class="timeline-map-svg timeline-map-svg--desktop" viewBox="0 -48 1160 306" preserveAspectRatio="none">
               <path class="timeline-map-route timeline-map-route--ghost" d="M18 62C106 56 184 66 248 94C290 112 318 136 340 162C360 186 372 206 392 206C414 206 424 186 422 164C420 138 400 124 402 108C406 86 438 82 470 94C500 106 510 120 522 120C538 120 546 104 556 90C572 68 588 58 606 58C634 58 660 84 686 116C714 150 740 168 764 168C786 168 804 152 826 126C852 94 876 60 906 38C932 18 964 8 998 14C1028 20 1048 36 1048 54C1048 70 1030 82 1002 88C970 96 954 98 954 106C954 114 974 116 1004 116C1032 116 1052 120 1062 128" />
               <path class="timeline-map-route timeline-map-route--active" data-timeline-route d="M18 62C106 56 184 66 248 94C290 112 318 136 340 162C360 186 372 206 392 206C414 206 424 186 422 164C420 138 400 124 402 108C406 86 438 82 470 94C500 106 510 120 522 120C538 120 546 104 556 90C572 68 588 58 606 58C634 58 660 84 686 116C714 150 740 168 764 168C786 168 804 152 826 126C852 94 876 60 906 38C932 18 964 8 998 14C1028 20 1048 36 1048 54C1048 70 1030 82 1002 88C970 96 954 98 954 106C954 114 974 116 1004 116C1032 116 1052 120 1062 128" />
@@ -99,21 +97,23 @@
                 </g>
               </g>
             </svg>
-          </div>
-          {% for item in include.section.items %}
-          <article class="sequence-item stickysection-card timeline-card{% if forloop.first %} is-active{% endif %}" data-stickysection-card>
-            <strong class="timeline-step">{{ item.step }}</strong>
-            <div class="stickysection-card-content">
-              {% if item.label %}
-              <span class="tag">{{ item.label }}</span>
-              {% endif %}
-              <h3>{{ item.title }}</h3>
-              <p>{{ item.copy }}</p>
-            </div>
-          </article>
-          {% endfor %}
-        </div>
-      </div>
     </div>
+    {% for item in include.section.items %}
+    <article class="sequence-item stickysection-card timeline-card{% if forloop.first %} is-active{% endif %}" data-stickysection-card>
+      <strong class="timeline-step">{{ item.step }}</strong>
+      <div class="stickysection-card-content">
+        {% if item.label %}
+        <span class="tag">{{ item.label }}</span>
+        {% endif %}
+        <h3>{{ item.title }}</h3>
+        <p>{{ item.copy }}</p>
+      </div>
+    </article>
+    {% endfor %}
   </div>
-</section>
+{% endcapture %}
+{% include components/sticky-shell.html
+  section_id=include.section.id
+  section_class=timeline_class
+  body=timeline_body
+%}

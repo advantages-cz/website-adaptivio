@@ -1,0 +1,17 @@
+<section{% if include.section_id %} id="{{ include.section_id }}"{% endif %} class="{{ include.section_class }}">
+  <div class="wrap">
+    <div
+      class="stickysection-scene"
+      data-stickysection-scene
+      {% if include.scroll_cue_start_at %}data-scroll-cue-start-at="{{ include.scroll_cue_start_at }}"{% endif %}
+      {% if include.scroll_cue_preview_opacity %}data-scroll-cue-preview-opacity="{{ include.scroll_cue_preview_opacity }}"{% endif %}
+      {% if include.scroll_cue_preview_travel %}data-scroll-cue-preview-travel="{{ include.scroll_cue_preview_travel }}"{% endif %}
+      {% if include.scroll_cue_preview_scale %}data-scroll-cue-preview-scale="{{ include.scroll_cue_preview_scale }}"{% endif %}
+      {% if include.scroll_cue_target %}data-scroll-cue-target="{{ include.scroll_cue_target }}"{% endif %}
+      {% if include.scroll_cue_complete_at %}data-scroll-cue-complete-at="{{ include.scroll_cue_complete_at }}"{% endif %}>
+      <div class="stickysection-pin{% if include.pin_class %} {{ include.pin_class }}{% endif %}">
+        {{ include.body }}
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,17 +1,16 @@
-<section class="intro stickysection stickysection--paper stickysection--cards-4" id="{{ include.section.id }}">
-  <div class="wrap">
-    <div class="stickysection-scene" data-stickysection-scene>
-      <div class="stickysection-pin">
-        {% include components/section-head.html section=include.section class="section-head--split stickysection-head intro-head" title_class="intro-title" copy_class="intro-copy" perex_class="intro-aside" %}
-        <div class="intro-metrics stickysection-grid" aria-label="Zakladni parametry campu">
-          {% for item in include.section.metrics %}
-          <article class="stickysection-card intro-metric{% if item.tone %} intro-metric--{{ item.tone }}{% endif %}{% if forloop.first %} is-active{% endif %}" data-stickysection-card>
-            <strong>{{ item.value }}</strong>
-            <span>{{ item.label }}</span>
-          </article>
-          {% endfor %}
-        </div>
-      </div>
-    </div>
+{% capture intro_body %}
+  {% include components/section-head.html section=include.section class="section-head--split stickysection-head intro-head" title_class="intro-title" copy_class="intro-copy" perex_class="intro-aside" %}
+  <div class="intro-metrics stickysection-grid" aria-label="Zakladni parametry campu">
+    {% for item in include.section.metrics %}
+    <article class="stickysection-card intro-metric{% if item.tone %} intro-metric--{{ item.tone }}{% endif %}{% if forloop.first %} is-active{% endif %}" data-stickysection-card>
+      <strong>{{ item.value }}</strong>
+      <span>{{ item.label }}</span>
+    </article>
+    {% endfor %}
   </div>
-</section>
+{% endcapture %}
+{% include components/sticky-shell.html
+  section_id=include.section.id
+  section_class="intro stickysection stickysection--paper stickysection--cards-4"
+  body=intro_body
+%}

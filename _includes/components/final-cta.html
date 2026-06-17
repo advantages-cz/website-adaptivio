@@ -1,26 +1,23 @@
-<section class="final quote-section stickysection stickysection--dark stickysection--cards-1 stickysection--tall">
-  <div class="wrap">
-    <div
-      class="stickysection-scene"
-      data-stickysection-scene
-      {% if include.section.scroll_cue_start_at %}data-scroll-cue-start-at="{{ include.section.scroll_cue_start_at }}"{% endif %}
-      {% if include.section.scroll_cue_preview_opacity %}data-scroll-cue-preview-opacity="{{ include.section.scroll_cue_preview_opacity }}"{% endif %}
-      {% if include.section.scroll_cue_preview_travel %}data-scroll-cue-preview-travel="{{ include.section.scroll_cue_preview_travel }}"{% endif %}
-      {% if include.section.scroll_cue_preview_scale %}data-scroll-cue-preview-scale="{{ include.section.scroll_cue_preview_scale }}"{% endif %}
-      {% if include.section.scroll_cue_target %}data-scroll-cue-target="{{ include.section.scroll_cue_target }}"{% endif %}
-      {% if include.section.scroll_cue_complete_at %}data-scroll-cue-complete-at="{{ include.section.scroll_cue_complete_at }}"{% endif %}>
-      <div class="stickysection-pin quote-pin">
-        <div class="quote-head final-head">
-          <p class="eyebrow">{{ include.section.eyebrow }}</p>
-          <blockquote class="big-quote">{{ include.section.title }}</blockquote>
-        </div>
-        <div class="quote-body final-body stickysection-card is-active" data-stickysection-card>
-          <p class="copy lead">{{ include.section.lead }}</p>
-          <div class="hero-actions">
-            <a class="button" href="{{ include.section.cta.url }}">{{ include.section.cta.label }}</a>
-          </div>
-        </div>
-      </div>
+{% capture final_cta_body %}
+  <div class="quote-head final-head">
+    <p class="eyebrow">{{ include.section.eyebrow }}</p>
+    <blockquote class="big-quote">{{ include.section.title }}</blockquote>
+  </div>
+  <div class="quote-body final-body stickysection-card is-active" data-stickysection-card>
+    <p class="copy lead">{{ include.section.lead }}</p>
+    <div class="hero-actions">
+      <a class="button" href="{{ include.section.cta.url }}">{{ include.section.cta.label }}</a>
     </div>
   </div>
-</section>
+{% endcapture %}
+{% include components/sticky-shell.html
+  section_class="final quote-section stickysection stickysection--dark stickysection--cards-1 stickysection--tall"
+  pin_class="quote-pin"
+  scroll_cue_start_at=include.section.scroll_cue_start_at
+  scroll_cue_preview_opacity=include.section.scroll_cue_preview_opacity
+  scroll_cue_preview_travel=include.section.scroll_cue_preview_travel
+  scroll_cue_preview_scale=include.section.scroll_cue_preview_scale
+  scroll_cue_target=include.section.scroll_cue_target
+  scroll_cue_complete_at=include.section.scroll_cue_complete_at
+  body=final_cta_body
+%}

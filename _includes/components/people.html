@@ -1,29 +1,28 @@
-<section class="people stickysection stickysection--paper stickysection--cards-2 stickysection--tall"{% if include.section.id %} id="{{ include.section.id }}"{% endif %}>
-  <div class="wrap">
-    <div class="stickysection-scene" data-stickysection-scene>
-      <div class="stickysection-pin">
-        {% include components/section-head.html section=include.section class="section-head--split stickysection-head" %}
-        <div class="stickysection-grid">
-          {% for item in include.section.items %}
-          <article class="stickysection-card people-row{% if forloop.first %} is-active{% endif %}" data-stickysection-card data-people-tone="{{ item.tone }}">
-            <div class="lecturer-layout">
-              <figure class="lecturer-media">
-                <img
-                  src="{{ item.image | relative_url }}"
-                  alt="{{ item.image_alt }}"
-                  {% if item.image_position %}style="--people-image-position: {{ item.image_position }};"{% endif %}
-                >
-              </figure>
-              <figcaption class="lecturer-meta">
-                <strong class="sequence-state-label">{{ item.label }}</strong>
-                <h3>{{ item.title }}</h3>
-                <p>{{ item.copy }}</p>
-              </figcaption>
-            </div>
-          </article>
-          {% endfor %}
-        </div>
+{% capture people_body %}
+  {% include components/section-head.html section=include.section class="section-head--split stickysection-head" %}
+  <div class="stickysection-grid">
+    {% for item in include.section.items %}
+    <article class="stickysection-card people-row{% if forloop.first %} is-active{% endif %}" data-stickysection-card data-people-tone="{{ item.tone }}">
+      <div class="lecturer-layout">
+        <figure class="lecturer-media">
+          <img
+            src="{{ item.image | relative_url }}"
+            alt="{{ item.image_alt }}"
+            {% if item.image_position %}style="--people-image-position: {{ item.image_position }};"{% endif %}
+          >
+        </figure>
+        <figcaption class="lecturer-meta">
+          <strong class="sequence-state-label">{{ item.label }}</strong>
+          <h3>{{ item.title }}</h3>
+          <p>{{ item.copy }}</p>
+        </figcaption>
       </div>
-    </div>
+    </article>
+    {% endfor %}
   </div>
-</section>
+{% endcapture %}
+{% include components/sticky-shell.html
+  section_id=include.section.id
+  section_class="people stickysection stickysection--paper stickysection--cards-2 stickysection--tall"
+  body=people_body
+%}
