@@ -1,0 +1,72 @@
+.stickysection {
+  --stickysection-space: 8px;
+  --stickysection-space-1-5: calc(var(--stickysection-space) * 1.5);
+  --stickysection-space-2: calc(var(--stickysection-space) * 2);
+  --stickysection-space-3: calc(var(--stickysection-space) * 3);
+  --stickysection-space-4: calc(var(--stickysection-space) * 4);
+  --stickysection-space-5: calc(var(--stickysection-space) * 5);
+  --stickysection-space-6: calc(var(--stickysection-space) * 6);
+  --stickysection-space-8: calc(var(--stickysection-space) * 8);
+  --stickysection-space-12: calc(var(--stickysection-space) * 12);
+  --stickysection-columns: 3;
+  --stickysection-pin-top: 112px;
+  --stickysection-pin-min-height: calc(100svh - var(--stickysection-pin-top));
+  --stickysection-runway-viewport: min(100svh, 760px);
+  --stickysection-runway-extra: 1040px;
+  --stickysection-scene-runway: calc((var(--stickysection-runway-viewport) - var(--stickysection-pin-top)) + var(--stickysection-runway-extra));
+  --stickysection-pin-padding-block: 0px;
+  --stickysection-section-padding-block: var(--stickysection-space-12);
+  --stickysection-card-height: 280px;
+  --stickysection-card-height-tablet: 0px;
+  --stickysection-lead-inset: var(--section-perex-inset);
+  --stickysection-static-head-gap: var(--stickysection-space-6);
+  --stickysection-pin-gap: var(--stickysection-space-6);
+  --stickysection-content-gap: var(--section-head-margin-bottom);
+  --stickysection-proof-gap: var(--stickysection-space-4);
+  --stickysection-grid-gap: 24px;
+  --stickysection-card-padding: 34px 32px 30px;
+  --stickysection-card-gap: var(--stickysection-space-2);
+  --stickysection-card-inner-gap: var(--stickysection-space-1-5);
+  --stickysection-card-radius: 28px;
+  --stickysection-card-surface: rgba(255, 255, 255, 0.88);
+  --stickysection-card-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.45), 0 18px 46px rgba(129, 234, 252, 0.18);
+  --stickysection-bg: linear-gradient(180deg, rgba(129, 234, 252, 0.34) 0%, rgba(255, 255, 255, 0.94) 54%, rgba(255, 101, 18, 0.14) 100%);
+  --stickysection-accent: var(--accent-text);
+  --stickysection-card-border: rgba(255, 101, 18, 0.26);
+  --stickysection-card-copy: rgba(0, 0, 0, 0.68);
+  --stickysection-lead-rule: rgba(255, 101, 18, 0.28);
+  padding-block: var(--stickysection-section-padding-block);
+  background: var(--stickysection-bg);
+}
+
+.stickysection--soft { --stickysection-bg: linear-gradient(180deg, rgba(129, 234, 252, 0.34) 0%, rgba(255, 255, 255, 0.94) 54%, rgba(255, 101, 18, 0.14) 100%); }
+.stickysection--dark {
+  --stickysection-bg:
+    radial-gradient(circle at 12% 20%, rgba(255, 101, 18, 0.42), transparent 0 36%),
+    radial-gradient(circle at 88% 18%, rgba(129, 234, 252, 0.32), transparent 0 42%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.04) 0%, rgba(0, 0, 0, 0) 28%, rgba(255, 255, 255, 0.02) 100%),
+    linear-gradient(135deg, rgba(255, 101, 18, 0.16), transparent 42%),
+    linear-gradient(315deg, rgba(129, 234, 252, 0.14), transparent 46%),
+    var(--ink);
+  --stickysection-accent: var(--blue);
+  --eyebrow-color: var(--white);
+  --eyebrow-rule: color-mix(in srgb, var(--blue) 72%, white);
+  --stickysection-card-border: rgba(129, 234, 252, 0.28);
+  --stickysection-card-copy: rgba(255, 255, 255, 0.72);
+  --stickysection-lead-rule: rgba(129, 234, 252, 0.24);
+  --stickysection-card-surface: rgba(0, 0, 0, 0.78);
+  --stickysection-card-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.05), 0 22px 60px rgba(0, 0, 0, 0.34);
+  color: var(--white);
+  border-top: 0;
+}
+
+.stickysection--dark .eyebrow {
+  color: var(--blue);
+}
+
+.stickysection--paper { --stickysection-bg: linear-gradient(180deg, rgba(129, 234, 252, 0.22) 0%, rgba(255, 255, 255, 0.96) 52%, rgba(255, 101, 18, 0.12) 100%); }
+.stickysection--cards-1 { --stickysection-columns: 1; --stickysection-runway-extra: 420px; }
+.stickysection--cards-2 { --stickysection-columns: 2; --stickysection-runway-extra: 560px; }
+.stickysection--cards-3 { --stickysection-columns: 3; --stickysection-runway-extra: 700px; }
+.stickysection--cards-4 { --stickysection-columns: 4; --stickysection-runway-extra: 860px; }
+.stickysection--tall { --stickysection-card-height: 320px; --stickysection-card-height-tablet: 340px; }
