@@ -10,12 +10,19 @@
     <p class="copy{% if include.copy_class %} {{ include.copy_class }}{% endif %}">{{ include.section.copy }}</p>
     {% endif %}
   </div>
-  {% if include.section.perex_html %}
-  <div class="copy section-perex{% if include.perex_class %} {{ include.perex_class }}{% endif %}">
-    {{ include.section.perex_html }}
+  {% if include.section.perex_html or include.section.perex or include.section.source %}
+  <div class="section-aside">
+    {% if include.section.perex_html %}
+    <div class="copy section-perex{% if include.perex_class %} {{ include.perex_class }}{% endif %}">
+      {{ include.section.perex_html }}
+    </div>
+    {% elsif include.section.perex %}
+    <p class="copy section-perex{% if include.perex_class %} {{ include.perex_class }}{% endif %}">{{ include.section.perex }}</p>
+    {% endif %}
+    {% if include.section.source %}
+    <p class="proof-source">{{ include.section.source }}</p>
+    {% endif %}
   </div>
-  {% elsif include.section.perex %}
-  <p class="copy section-perex{% if include.perex_class %} {{ include.perex_class }}{% endif %}">{{ include.section.perex }}</p>
   {% endif %}
   {% if include.section.visual and include.section.visual.type == "convergence" %}
   {% include components/convergence-visual.html figures=include.section.visual.figures %}

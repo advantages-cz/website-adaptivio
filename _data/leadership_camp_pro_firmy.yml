@@ -1,9 +1,8 @@
 meta:
   title: Leadership Camp pro firmy
   description: >-
-    Leadership Camp je třídenní týmová zkušenost pro firmy, které chtějí
-    vystoupit z běžných rolí, sáhnout si na realitu a lépe porozumět tomu, jak
-    jejich tým přemýšlí, jedná a spolupracuje.
+    Když se hodnota práce ztrácí mezi rolemi, poradami a domněnkami, 
+    třídenní týmová zkušenost mimo běžný provoz pomůže podívat se na ni zblízka.
   canonical: /landing/leadership-camp-pro-firmy/
   og_image: /assets/social/leadership-camp-og-v2.png
   og_image_type: image/png
@@ -13,11 +12,12 @@ brand:
   cta_label: Ozvěte se mi
   cta_url: "#odpovedni-formular"
 hero:
-  eyebrow: Leadership Camp pro firmy
+  eyebrow: Týmová zkušenost pro firmy
   title: Tři dny mimo běžné role
   lead: >-
-    Na tři dny vystoupíte z rolí, porad a domněnek a společně si sáhnete na
-    otázku: <b>Kde se naše práce mění v hodnotu?</b>
+    Na tři dny vystoupíte z rolí, porad a domněnek. Společně si sáhnete na
+    otázku, která se v běžném provozu může vytratit:
+    <i>&bdquo;Kde se naše práce mění v hodnotu?&ldquo;</i>
   image: /assets/images/leadership-camp/hero.jpeg
   image_alt: Účastníci Leadership Campu při společné práci v místnosti
   primary_cta:
@@ -31,160 +31,35 @@ intro:
   eyebrow: Co běžná porada neukáže
   title: Malý projekt jako zrcadlo týmu
   copy: >-
-    Malý projekt rychle ukáže, jak spolu nasloucháte, ověřujete domněnky,
-    přebíráte odpovědnost a měníte nejistotu v další krok. Ne jako test lidí,
-    ale jako společnou zkušenost, ke které se dá vracet.
+    Porada ukáže, co si kdo myslí. Malý projekt rychle ukáže, kde práce
+    opravdu vytváří hodnotu a kde ne — dřív, než z ní vznikne velký projekt, dlouhá debata
+    nebo drahý omyl. Zároveň odkryje schopnosti a přínosy, které v běžném provozu
+    často zůstávají schované.
   perex: >-
-    Během tří dnů se odrazíte od tématu, na kterém vám záleží, a vytvoříte z něj
-    společně něco nového. Nepracujete na interním projektu. Začnete od nuly:
-    pojmenujete problém, najdete lidi, kterým může jeho řešení pomoct, postavíte
-    jednoduchou zkušební verzi a ověříte ji v terénu.
+    Během tří dnů vezmete téma, na kterém vám záleží, a zmenšíte ho do podoby,
+    kterou jde rychle vyzkoušet. Připravíte jednoduchou první verzi, pustíte ji
+    ven a získáte zpětnou vazbu. Projekt není cílem. Je to nejkratší cesta
+    k tomu, aby tým uviděl, kde práce vytváří hodnotu — a co do ní sám přináší.
   metrics:
     - value: "3"
       label: dny mimo běžný provoz
     - value: "10–20"
-      label: lidí v jedné skupině
-    - value: "2–3"
-      label: malé projekty jako zrcadla týmů
+      label: lidí v jednom běhu
+    - value: "4–6"
+      label: lidí v jednom týmu
     - value: "0"
       label: teorie odtržené od reality
       tone: accent
 sections:
-  - type: stickysection
-    theme: dark
-    cards: 3
-    eyebrow: Proč teď
-    title: Práce nemizí. Přeskládává se.
-    perex: >-
-      Budoucnost vaší firmy nezačíná jen u strategie. Začíná i u lidí, kteří
-      umějí číst situaci, učit se z praxe a pohnout věcmi, když popis práce
-      přestane stačit.
-    card_class: story-row
-    items:
-      - label: Role
-        title: Nejste jen své pozice
-        copy: >-
-          Obchod, produkt, delivery, podpora, vedení. V běžném provozu vás role
-          drží pohromadě, ale také vás umí zakrýt. Camp na tři dny změní
-          pravidla hry a nechá vás vystoupit z obvyklých škatulek.
-      - label: Realita
-        title: Domněnka musí ven z místnosti
-        copy: >-
-          Vyjdete za zákazníky, kolegy nebo uživateli. Rychle poznáte, co zní
-          dobře jen u stolu a co má sílu pohnout druhým člověkem k akci.
-      - label: Zážitek
-        title: Schopnosti se ukážou v pohybu
-        copy: >-
-          Na malém projektu uvidíte, kdo umí naslouchat, kdo zahlédne
-          příležitost, kdo rozhýbe ostatní a kdo dokáže z mlhy udělat konkrétní
-          další krok.
-  - type: timeline
-    id: prubeh
-    theme: soft
-    cards: 3
-    eyebrow: Jak to probíhá
-    title: Tři dny, které zvednou tým ze židlí
-    perex: >-
-      Odrazíte se od tématu, na kterém vám záleží. Pak z něj vytvoříte
-      malý projekt a vezmete ho ven za lidmi, kterým může pomoct. Nakonec se 
-      vrátíte s tím, co obstálo mimo místnost.
-    items:
-      - step: "1. den"
-        label: 1. den – dovnitř
-        title: Od tématu k problému
-        copy: >-
-          Vystoupíte z běžných rolí, pojmenujete své schopnosti a vyberete
-          oblast, ve které máte energii i motivaci něco změnit.
-      - step: "2. den"
-        label: 2. den – ven
-        title: Od domněnky k realitě
-        copy: >-
-          Oddělíte domněnky od reality, promluvíte se zákazníky, kolegy nebo
-          uživateli a složíte první verzi řešení.
-      - step: "3. den"
-        label: 3. den – Zpět
-        title: Od zkoušky k další práci
-        copy: >-
-          Řešení otestujete, představíte odborné porotě, dostanete syrovou
-          zpětnou vazbu a pojmenujete, co si chcete odnést zpět do práce.
-  - type: stickysection
-    theme: dark
-    cards: 3
-    eyebrow: Kontext změny
-    title: Dovednosti se mění rychleji než popisy pracovních míst
-    perex_html: >-
-      <span class="proof-stat"><strong><span data-countup-to="40">0</span> %</strong> dovedností</span>Podle
-      World Economic Forum se do roku 2030 promění téměř 40 % pracovních
-      dovedností. Mezeru v dovednostech přitom 63 % zaměstnavatelů označuje za
-      hlavní překážku transformace.
-    source: "Zdroj: World Economic Forum, Future of Jobs Report 2025."
-    items:
-      - label: Nové příležitosti
-        indicator: up
-        title: 170 mil.
-        copy: >-
-          nových rolí má vzniknout do roku 2030 kvůli technologickým,
-          ekonomickým a demografickým změnám.
-      - label: Mizející pozice
-        indicator: down
-        title: 92 mil.
-        copy: >-
-          rolí má ve stejném období zaniknout, protože některé činnosti a
-          pracovní modely přestanou dávat smysl.
-      - label: Celkový dopad
-        indicator: up
-        title: 78 mil.
-        copy: >-
-          pracovních míst má celkově přibýt. Rozhodovat ale nebude jistota
-          pozice, nýbrž schopnost měnit způsob práce.
-  - type: stickysection
-    id: prinos
-    theme: paper
-    cards: 3
-    eyebrow: Co si odnesete
-    title: Uvidíte se jinak než v běžném provozu
-    perex: >-
-      Neodvezete si jen dobrý pocit ze společného zážitku. Získáte konkrétní
-      situaci, ke které se můžete vracet při dalších projektech, změnách i
-      každodenní spolupráci.
-    card_class: outcome-row
-    items:
-      - label: Člověk
-        title: Schopnosti mimo pracovní škatulky
-        copy: >-
-          Pojmenujete si výbavu, kterou často berete jako samozřejmost:
-          improvizaci, cit pro situaci, odvahu zeptat se, schopnost slyšet
-          druhého člověka nebo dotáhnout nejasný nápad do prvního kroku.
-      - label: Tým
-        title: Rychlejší učení z praxe
-        copy: >-
-          Vyzkoušíte si malé pokusy místo dlouhých debat, ověřování místo
-          domněnek a zpětnou vazbu dřív, než projekt nabobtná a ztěžkne.
-      - label: Firma
-        title: Společný jazyk pro další práci
-        copy: >-
-          Získáte společný zážitek a slovník pro práci s odpovědností,
-          iniciativou a zákaznickou realitou. Ne jako audit lidí, ale jako
-          oporu pro tým, který chce lépe rozumět sám sobě.
-  - type: quote
-    eyebrow: Přenos do další práce
-    title: Zkušenost, ke které se dá vracet
-    scroll_cue_target: 0.985
-    scroll_cue_complete_at: 0.96
-    copy: >-
-      Camp nevrací jen energii. Dá vám konkrétní situaci, na které uvidíte, jak
-      oddělujete domněnky od toho, co se opravdu děje, jak spolupracujete a co 
-      si z toho chcete přenést do další práce.
   - type: stickysection
     theme: soft
     cards: 3
     eyebrow: Pro koho
     title: Pro týmy, které tuší, že další porada už nestačí
     copy: >-
-      Pro firmy, které potřebují znovu přiblížit své lidi zákazníkovi, realitě
-      a vlastní odpovědnosti. V základní variantě camp neotevírá citlivé interní
-      projekty. Pokud chcete pracovat přímo se svými tématy, připravíme variantu
-      s interním zadáním.
+      Pro firmy kde lidem nechybí snaha,
+      ale často jim chybí společný obraz. Každý vidí práci z jiného 
+      místa — a právě tam se ztrácí nápady na zlepšení i nové příležitosti.
     visual:
       type: convergence
       figures:
@@ -192,21 +67,118 @@ sections:
         - position: front-right
         - position: back-center
     items:
-      - label: Složení týmu
-        title: Smíšené týmy, které chtějí vidět víc než role
+      - label: Složení
+        title: Týmy napříč firmou
         copy: >-
-          Pro vedení, specialisty, obchod, produkt, delivery, podporu i týmy
-          složené napříč firmou.
+          Pro vedení, specialisty, obchod, produkt i provoz — pro lidi,
+          kteří se v běžné práci potkávají hlavně přes role.
       - label: Situace firmy
-        title: Firmy v nové etapě nebo pod tlakem změny
+        title: Firmy v nové etapě
         copy: >-
-          Pro chvíle, kdy vstupujete do nové etapy, měníte způsob práce,
-          reorganizujete nebo hledáte, co s vámi udělá AI.
-      - label: Typ lidí
-        title: Lidé, kteří ovlivňují druhé, i&nbsp;když neřídí tým
+          Pro chvíle, kdy rostete, měníte způsob práce, reorganizujete nebo zjišťujete,
+          jak AI promění každodenní práci.
+      - label: Vliv v týmu
+        title: Lidé s reálným vlivem
         copy: >-
-          Pro lidi, kteří možná nemají manažerský titul, ale každý den ovlivňují
-          zákazníka, kolegu nebo uživatele.
+          Pro lidi, kteří nemusí mít manažerský titul, ale každý den ovlivňují
+          zákazníka, kolegu, uživatele nebo směr práce.
+  - type: stickysection
+    theme: dark
+    cards: 3
+    eyebrow: Proč teď
+    title: Práce se mění rychleji než role
+    copy: >-
+      Když se vám práce přeskládává pod rukama, nestačí jen přepsat role
+      nebo čekat na nové zadání shora. Potřebujete rychleji poznat, kde se
+      ve vaší firmě rodí schopnost jednat, učit se a vytvářet hodnotu.
+    perex_html: >-
+      <span class="proof-stat"><strong><span data-countup-to="40">40</span> %</strong> dovedností</span>
+      Podle World Economic Forum se <strong>do roku 2030 promění téměř 40 % pracovních
+      dovedností.</strong> Nejde jen o nové profese. Nové nástroje, AI a měnící se očekávání
+      zákazníků proměňují i to, co lidé potřebují umět ve své současné práci.
+    source: "Zdroj: World Economic Forum, Future of Jobs Report 2025."
+    items:
+      - label: Staré mapy
+        title: Včerejší role
+        copy: >-
+          Role pomáhají firmu řídit. Když se práce mění, ukazují
+          spíš to, kým člověk byl včera, než co může přinést dnes. Právě tam
+          snadno přehlédnete schopnost, kterou teď potřebujete.
+      - label: Bezpečné cesty
+        title: Drahá jistota
+        copy: >-
+          Když je práce stabilní, čekání na zadání chrání firmu před chaosem.
+          Když se ale práce mění, stejné čekání začne firmu stát čas, nápady 
+          i blízkost k zákazníkovi.
+      - label: Skrytá hodnota
+        title: Platíte, co nevidíte
+        copy: >-
+          Nové role se snadno kreslí od stolu, ale hledat lidi je drahé.
+          Než začnete investovat do změny sestavy, stojí za to zjistit, jaké schopnosti
+          už ve vašem týmu tvoří hodnotu — jen zatím nemohly vyrůst.
+  - type: timeline
+    id: prubeh
+    theme: soft
+    cards: 3
+    eyebrow: Jak to probíhá
+    title: Tři dny, které si jindy nedovolíte
+    perex: >-
+      Camp má jednoduchý rytmus: nejdřív vystoupíte z běžných rolí,
+      potom vyjdete ven za lidmi a nakonec se vrátíte se zkušeností, kterou
+      společně pojmenujete. Každý den posune projekt i tým o krok dál.
+    items:
+      - step: "1. den"
+        label: 1. den — dovnitř
+        title: Témata a týmy
+        copy: >-
+          Začnete u témat, která lidé opravdu chtějí řešit. Podle nich sestavíte
+          pracovní týmy. Teprve potom si pojmenujete, co kdo umí a jakou výbavu
+          může do společné práce přinést.
+      - step: "2. den"
+        label: 2. den — ven
+        title: Očima zákazníka
+        copy: >-
+          Téma zmenšíte na konkrétní problém, zákazníka a první obrys řešení.
+          Pak vyjdete ven mluvit s lidmi, ověřovat domněnky a upravovat
+          směr podle toho, co skutečně uslyšíte.
+      - step: "3. den"
+        label: 3. den — zpět
+        title: Řešení a reflexe
+        copy: >-
+          Připravíte první jednoduchou podobu řešení, představíte ji a dostanete
+          přímou zpětnou vazbu. Na konci pojmenujete, co se povedlo, co nevyšlo
+          a co si z toho chcete odnést zpět do práce.
+  - type: stickysection
+    id: prinos
+    theme: paper
+    cards: 3
+    eyebrow: Co si odnesete
+    title: Jedna zkušenost, na které se dá stavět
+    perex: >-
+      Camp neskončí tím, že se tým vrátí z příjemné akce. Odnesete si společnou
+      situaci, ve které uvidíte lidi, práci, zákazníka i hodnotu jinak než
+      v běžném provozu. Právě k ní se můžete vracet, když budete řešit další
+      změny, projekty nebo spolupráci.
+    card_class: outcome-row
+    items:
+      - label: Člověk
+        title: Víc než pracovní škatulka
+        copy: >-
+          Pojmenujete si schopnosti, které často používáte samozřejmě:
+          všímavost, odvahu zeptat se, cit pro druhého člověka nebo schopnost
+          udělat první krok i ve chvíli, kdy ještě není všechno jasné.
+      - label: Tým
+        title: Zákazník na vlastní oči
+        copy: >-
+          Napříč firmou zažijete přímý kontakt se zákazníkem, uživatelem
+          nebo kolegou, kterému má práce pomoct. Najednou nejde o názor oddělení,
+          ale o společnou zkušenost s tím, co někdo opravdu potřebuje.
+      - label: Firma
+        title: Zodpovědnost bez zbytečného rizika
+        copy: >-
+          Samostatnost nemusí znamenat náhodné kroky bez kontroly.
+          Když lidé rozumí problému, zákazníkovi a dopadu, mohou jednat dřív,
+          učit se rychleji a přinášet hodnotu s menším rizikem.
   - type: people
     id: lektori
     eyebrow: Kdo camp vede
@@ -242,35 +214,41 @@ sections:
     eyebrow: Prakticky
     title: Zakázkový camp pro celou firmu nebo tým
     perex: >-
-      Konkrétní podobu ladíme podle skupiny, firemního kontextu a návazné práce.
+      Camp ladíme podle vašeho kontextu, ale obsah nevymýšlíme předem za tým.
+      Právě tím vzniká bezpečný prostor, kde se lidé mohou zapojit jinak než
+      v běžném provozu: vzít si téma za své, vyzkoušet novou odpovědnost
+      a podívat se na práci očima zákazníka.
     card_class: outcome-row
     items:
-      - label: Formát
-        title: Třídenní camp pro tým 10–20 lidí
+      - label: Koho zapojit
+        title: Smíšený tým, ne jen manažeři
         copy: >-
-          Zakázkový camp pro celou firmu nebo vybraný tým. Skupina 10–20 lidí
-          dává prostor pro skutečnou práci, terén i společnou reflexi.
-      - label: Průběh
-        title: Terén, prototyp a společná reflexe
+          Nejlépe funguje skupina lidí napříč firmou: vedení, obchod, provoz,
+          produkt, podpora i lidé bez formálního titulu. Důležitý není název
+          pozice, ale různé pohledy na práci, zákazníka a tým.
+      - label: Příprava
+        title: Kontext ano, zadání ne
         copy: >-
-          Místo teorie od stolu jdete do terénu, stavíte první řešení,
-          ověřujete ho mimo místnost a vracíte se se zpětnou vazbou od poroty i
-          vlastního týmu.
-      - label: Před a po
-        title: Příprava a návaznost po campu
+          Před campem si ujasníme, proč ho děláte, koho chcete zapojit a co se
+          ve firmě mění. Nepřipravujeme hotová témata ani projekty. Ta vznikají
+          až na místě z toho, k čemu mají lidé skutečný vztah.
+      - label: Výstup
+        title: Společná zkušenost
         copy: >-
-          Před campem pojmenujeme potřeby a očekávání skupiny. Po campu
-          pomůžeme zkušenost usadit, vrátit ji do firemního kontextu a převést
-          do další práce.
-      - label: Cena
-        title: Cena podle rozsahu spolupráce
+          Výsledek nemusí mít jednu podobu. Někdy vznikne nápad na další projekt,
+          jindy silné poznání o zákazníkovi, týmu nebo vlastní roli v práci.
+          Důležité je, že nejde o hodnocení lidí, ale o společnou zkušenost,
+          ze které si každý může něco odnést.
+      - label: Po campu
+        title: Reflexe s odstupem
         copy: >-
-          Konkrétní podobu i cenu ladíme podle skupiny, firemního kontextu a
-          návaznosti, kterou spolu chcete po campu otevřít.
+          Po návratu pomůžeme zkušenost usadit. S odstupem se podíváme, co se
+          opravdu propsalo do práce, co má pokračovat a jak z toho udělat další
+          konkrétní krok ve firmě.
 final_cta:
   title: Krize je drahý učitel, dotkněte se reality bezpečněji.
   lead: >-
-    Vystupte na tři dny z rolí, porad a domněnek a vraťte se se společným
+    Vystupte na tři dny ze zajetých kolejí a vraťte se se společným
     zážitkem. Zahlédnete v něm vlastní přínos, práci ostatních i
     hodnotu, kterou společně přinášíte zákazníkům.
   cta:
