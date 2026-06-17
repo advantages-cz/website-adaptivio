@@ -57,7 +57,7 @@
     const rect = section.scene.getBoundingClientRect();
     const pinTop = 112;
     const pinnedHeight =
-      section.scene.querySelector(".stickysection-pin, .timeline-pin")?.offsetHeight || 0;
+      section.scene.querySelector(".stickysection-pin")?.offsetHeight || 0;
     const total = Math.max(rect.height - pinnedHeight, 1);
     const passed = clamp(pinTop - rect.top, 0, total);
     const ratio = passed / total;
@@ -133,9 +133,9 @@
     const viewportHeight = window.innerHeight || document.documentElement.clientHeight || 0;
     const availableHeight = Math.max(0, viewportHeight - headerHeight);
     const focusTarget =
-      section.querySelector(".quote-pin, .final-pin") ||
+      section.querySelector(".quote-pin") ||
       section.querySelector(".stickysection-card.is-active") ||
-      section.querySelector(".stickysection-pin, .timeline-pin, .final-inner") ||
+      section.querySelector(".stickysection-pin, .final-inner") ||
       section.querySelector(".wrap, .section-head") ||
       section;
     const sectionTop = section.offsetTop;
@@ -380,7 +380,7 @@
       const rect = section.scene.getBoundingClientRect();
       const pinTop = 112;
       const pinnedHeight =
-        section.scene.querySelector(".stickysection-pin, .timeline-pin")?.offsetHeight || 0;
+        section.scene.querySelector(".stickysection-pin")?.offsetHeight || 0;
       const total = Math.max(rect.height - pinnedHeight, 1);
       const passed = clamp(pinTop - rect.top, 0, total);
       const ratio = passed / total;

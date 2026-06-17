@@ -9,7 +9,8 @@ Small Jekyll site for the Adaptivio homepage, landing pages, and design-system p
 - `_data/` contains YAML content for landing pages and the design system.
 - `_includes/components/` contains reusable landing-page sections.
 - `_layouts/landing.html` renders the shared landing-page flow.
-- `assets/css/site.css` and `assets/js/site.js` contain shared styling and behavior.
+- `assets/css/landing.css`, `assets/css/thank-you.css`, and `assets/css/system.css` are page-family styling entrypoints; included partials live in `assets/css/site/`.
+- `assets/js/site.js` contains shared client behavior.
 - `system/index.html` renders the internal design-system preview.
 
 ## Requirements
@@ -108,7 +109,7 @@ Keep the content structure data-driven instead of hardcoding one-off markup into
 The source of truth for shared UI patterns is:
 
 - `_data/design_system.yml`
-- `assets/css/site.css`
+- page-family CSS entrypoints and included partials in `assets/css/site/`
 - `assets/js/site.js`
 
 Preview page:

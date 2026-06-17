@@ -10,7 +10,8 @@ Keep this file short and repo-specific. Prefer pointing agents to the real sourc
   - `_layouts/` for page layouts
   - `_includes/` for shared partials and components
   - `_data/` for YAML-driven page content and design-system metadata
-  - `assets/css/site.css` for shared styling
+  - `assets/css/landing.css`, `assets/css/thank-you.css`, and `assets/css/system.css` as page-family styling entrypoints
+  - `assets/css/site/` for included shared CSS partials
   - `assets/js/site.js` for shared client behavior
 - Primary landing pages are data-driven.
 - The current landing flow is routed through `_layouts/landing.html` and reads content from `_data/<key>.yml`.
@@ -37,7 +38,7 @@ Keep this file short and repo-specific. Prefer pointing agents to the real sourc
 - This repo already contains a design-system dataset and preview page:
   - `_data/design_system.yml`
   - `system/index.html`
-- Treat those files, together with `assets/css/site.css`, as the source of truth for tokens, patterns, and current UI rules.
+- Treat those files, together with CSS entrypoints and included partials in `assets/css/site/`, as the source of truth for tokens, patterns, and current UI rules.
 - Do not restate large chunks of design-system documentation in `AGENTS.md`. Keep only the smallest set of rules agents need to work safely.
 
 ## Stickysection Guardrails
@@ -55,7 +56,8 @@ Keep this file short and repo-specific. Prefer pointing agents to the real sourc
 For current stickysection details, inspect:
 
 - `_includes/components/stickysection.html`
-- `assets/css/site.css`
+- `assets/css/landing.css`
+- `assets/css/site/`
 - `assets/js/site.js`
 - `_data/design_system.yml`
 

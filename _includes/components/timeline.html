@@ -4,8 +4,8 @@
 {% assign cards_class = 'stickysection--cards-' | append: sticky_cards %}
 <section class="flow flow--timeline-sticky stickysection {{ theme_class }} {{ cards_class }}"{% if include.section.id %} id="{{ include.section.id }}"{% endif %}>
   <div class="wrap">
-    <div class="stickysection-scene timeline-scene" data-stickysection-scene>
-      <div class="stickysection-pin timeline-pin">
+    <div class="stickysection-scene" data-stickysection-scene>
+      <div class="stickysection-pin">
         {% include components/section-head.html section=include.section class="section-head--split timeline-head" %}
         <div class="sequence-list stickysection-grid timeline timeline--sticky">
           <div class="timeline-map" aria-hidden="true">

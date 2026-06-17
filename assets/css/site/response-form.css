@@ -1,0 +1,164 @@
+.response-form-section {
+  --stickysection-bg:
+    linear-gradient(180deg, rgba(255, 255, 255, 1) 0%, rgba(129, 234, 252, 0.14) 100%);
+  --stickysection-section-padding-block: 48px;
+  color: var(--ink);
+  border-top: 1px solid rgba(0, 0, 0, 0.06);
+  scroll-margin-top: calc(var(--nav) + 24px);
+}
+
+.response-form-panel {
+  display: grid;
+  gap: 12px;
+  padding: 24px 28px 26px;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  border-radius: 24px;
+  background:
+    linear-gradient(135deg, rgba(255, 101, 18, 0.08), transparent 42%),
+    linear-gradient(315deg, rgba(129, 234, 252, 0.12), transparent 50%),
+    rgba(255, 255, 255, 0.92);
+  box-shadow: 0 28px 70px rgba(0, 0, 0, 0.08);
+}
+
+.response-form-head {
+  margin-bottom: 0;
+  row-gap: 12px;
+}
+
+.response-form-head .eyebrow {
+  margin-bottom: 0;
+}
+
+.response-form-head h2 {
+  max-width: 22ch;
+  font-size: clamp(42px, 3.2vw, 58px);
+  line-height: var(--leading-display);
+}
+
+.response-form-head .copy {
+  max-width: 48rem;
+  font-size: 20px;
+  line-height: 1.5;
+}
+
+.response-form {
+  display: grid;
+  gap: 12px;
+}
+
+.response-form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.response-form-field {
+  display: grid;
+  gap: 8px;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.response-form-field:last-child {
+  grid-column: 1 / -1;
+}
+
+.response-form-field input,
+.response-form-field textarea {
+  width: 100%;
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.96);
+  color: var(--ink);
+  font: inherit;
+  font-size: 16px;
+  line-height: 1.45;
+  padding: 13px 16px;
+  transition: border-color .18s ease, box-shadow .18s ease, background .18s ease;
+}
+
+.response-form-field textarea {
+  min-height: 76px;
+  resize: vertical;
+}
+
+.response-form-field input::placeholder,
+.response-form-field textarea::placeholder {
+  color: rgba(0, 0, 0, 0.42);
+}
+
+.response-form-field input:focus,
+.response-form-field textarea:focus {
+  outline: none;
+  border-color: rgba(255, 101, 18, 0.42);
+  box-shadow: var(--focus-ring);
+  background: var(--white);
+}
+
+.response-form-actions {
+  display: grid;
+  justify-items: start;
+  gap: 14px;
+  margin-top: 6px;
+}
+
+.response-form button[disabled] {
+  cursor: wait;
+  opacity: 0.72;
+  transform: none;
+}
+
+.response-form-note,
+.response-form-status {
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.5;
+  color: var(--muted);
+}
+
+.response-form-status:empty {
+  display: none;
+}
+
+@media (max-width: 767px) {
+  .response-form-panel {
+    padding: 20px 18px;
+    gap: 10px;
+    border-radius: 20px;
+  }
+
+  .response-form {
+    gap: 10px;
+  }
+
+  .response-form-head {
+    margin-bottom: 12px;
+  }
+
+  .response-form-head h2 {
+    font-size: 34px;
+  }
+
+  .response-form-actions {
+    gap: 12px;
+    margin-top: 10px;
+  }
+
+  .response-form-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .response-form-field:last-child {
+    grid-column: auto;
+  }
+
+  .response-form-field input,
+  .response-form-field textarea {
+    font-size: 16px;
+    padding: 12px 14px;
+  }
+
+  .response-form-field textarea {
+    min-height: 72px;
+  }
+}

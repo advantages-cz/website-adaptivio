@@ -8,7 +8,7 @@
   {% assign meta = page.meta | default: content_data.meta | default: page %}
   {% include site-head.html
     meta=meta
-    include_site_css=page.include_site_css
+    stylesheet=page.stylesheet
     include_plausible=page.include_plausible
     extra_stylesheet=page.extra_stylesheet
   %}

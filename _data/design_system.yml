@@ -156,14 +156,19 @@ stickysection:
       usage: >-
         Sticky scéna na desktopu neroste do nekonečna; po této výšce se její
         délka zastropuje.
-    - name: Cards-2 runway
-      value: "calc((min(100svh, 760px) - 112px) + 560px)"
+    - name: Runway formula
+      value: "calc((var(--stickysection-runway-viewport) - var(--stickysection-pin-top)) + var(--stickysection-runway-extra))"
+      usage: >-
+        Všechny sticky scény používají stejný výpočet výšky; jednotlivé sekce
+        mění jen hodnotu runway extra.
+    - name: Cards-2 runway extra
+      value: 560px
       usage: Krátká sticky scéna pro 2 karty.
-    - name: Cards-3 runway
-      value: "calc((min(100svh, 760px) - 112px) + 700px)"
+    - name: Cards-3 runway extra
+      value: 700px
       usage: Výchozí sticky scéna pro 3 karty.
-    - name: Cards-4 runway
-      value: "calc((min(100svh, 760px) - 112px) + 860px)"
+    - name: Cards-4 runway extra
+      value: 860px
       usage: Délka sticky scény pro 4 karty.
     - name: Desktop card height
       value: 280px
@@ -276,6 +281,7 @@ patterns:
         Pozadí může v pinned režimu přetéct přes viewport, ale sekční spacing
         se stále řídí tokeny.
       - Když sticky skončí, sekce se vrací do běžného rytmu daného spacing tokeny.
+      - Délka pinned scény se mění přes `--stickysection-runway-extra`, ne vlastním výpočtem.
       - Intro může používat stejný sticky model a stejné JS hooky bez vlastního motion systému.
   - name: Timeline
     class: timeline
@@ -287,6 +293,7 @@ patterns:
       - Desktop může vést kroky po zalomené trase, ne nutně po jedné rovné ose.
       - Mobile timeline se skládá na 44px osu se svislou linkou.
       - Sticky varianta používá stejný scroll model a stejné JS hooky jako stickysection.
+      - Timeline nepřepisuje sticky scene/pin výpočet; liší se jen SVG trasou a stavem kroků.
   - name: Quote
     class: quote-section
     kind: Centered band

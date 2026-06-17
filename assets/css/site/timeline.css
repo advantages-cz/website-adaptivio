@@ -1,0 +1,334 @@
+.flow {
+  background: linear-gradient(180deg, rgba(129, 234, 252, 0.34) 0%, rgba(255, 255, 255, 0.94) 54%, rgba(255, 101, 18, 0.14) 100%);
+}
+
+.flow .section-head {
+  max-width: none;
+}
+
+.flow .section-perex { border-left-color: rgba(0, 0, 0, 0.16); }
+
+.flow--timeline-sticky {
+  --stickysection-content-gap: 82px;
+  --timeline-axis-card-gap: 66px;
+  --stickysection-card-height: 268px;
+}
+
+.timeline-head .copy {
+  margin-top: 0;
+}
+
+.timeline {
+  --timeline-gap: 36px;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-auto-rows: 1fr;
+  gap: var(--timeline-gap);
+  padding-top: 34px;
+  align-items: start;
+}
+
+.timeline--sticky {
+  position: relative;
+  isolation: isolate;
+  padding-top: 0;
+}
+
+.timeline-map {
+  position: absolute;
+  top: calc((var(--timeline-axis-card-gap) * -1) - 96px);
+  left: 3%;
+  width: 90%;
+  aspect-ratio: 1160 / 306;
+  height: auto;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.timeline-map-svg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+}
+
+.timeline-map-svg--mobile {
+  display: none;
+}
+
+.timeline-map-route {
+  fill: none;
+  stroke-width: 2.2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-dasharray: 9 9;
+  vector-effect: non-scaling-stroke;
+}
+
+.timeline-map-route--ghost {
+  stroke: rgba(0, 0, 0, 0.16);
+  opacity: 0.95;
+}
+
+.timeline-map-route--active {
+  stroke: var(--ink);
+  opacity: 0.82;
+}
+
+.timeline-map-pin {
+  opacity: 0.24;
+  transition: opacity 220ms ease, transform 220ms ease;
+}
+
+.timeline-map-pin.is-reached {
+  opacity: 1;
+}
+
+.timeline-map-pin-halo {
+  fill: rgba(255, 255, 255, 0.92);
+}
+
+.timeline-map-pin-dot {
+  fill: var(--ink);
+}
+
+.timeline-map-pin-stem {
+  stroke: var(--ink);
+  stroke-width: 3;
+  stroke-linecap: round;
+}
+
+.timeline-map-pin--day-2 .timeline-map-pin-dot {
+  fill: var(--orange);
+}
+
+.timeline-map-pin--day-3 .timeline-map-pin-dot {
+  fill: var(--blue);
+}
+
+.timeline-map-label-box {
+  fill: rgba(255, 252, 246, 0.94);
+  stroke: rgba(0, 0, 0, 0.18);
+  stroke-width: 1.15;
+  stroke-dasharray: 3 3;
+  vector-effect: non-scaling-stroke;
+}
+
+.timeline-map-label-connector {
+  stroke: rgba(0, 0, 0, 0.28);
+  stroke-width: 1.15;
+  stroke-linecap: round;
+  vector-effect: non-scaling-stroke;
+}
+
+.timeline-map-label-text {
+  fill: var(--ink);
+  font-family: var(--font-ui);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+}
+
+.timeline-map-day-text {
+  display: none;
+  fill: rgba(0, 0, 0, 0.48);
+  font-family: var(--font-ui);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.timeline-map-day-badge-fill {
+  display: none;
+  fill: rgba(255, 255, 255, 0.82);
+}
+
+.timeline strong {
+  display: grid;
+  place-items: center;
+  width: 48px;
+  height: 48px;
+  border-radius: 999px;
+  background: var(--ink);
+  color: var(--white);
+  position: relative;
+  z-index: 1;
+}
+
+.timeline article:nth-child(2) strong { background: var(--orange); color: var(--ink); }
+.timeline article:nth-child(3) strong { background: var(--blue); color: var(--ink); }
+
+.timeline--sticky .timeline-card {
+  --timeline-node-shift: 0px;
+  overflow: visible;
+  height: 100%;
+  z-index: 1;
+}
+
+.timeline--sticky .timeline-step {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  box-shadow: 0 0 0 10px rgba(255, 255, 255, 0.92);
+}
+
+.timeline--sticky .timeline-card .timeline-step {
+  opacity: 0;
+  pointer-events: none;
+}
+
+@media (min-width: 1280px) {
+  .timeline--sticky {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 1280px) and (prefers-reduced-motion: no-preference) {
+  html.has-stickysection-motion .timeline--sticky .timeline-card::before {
+    transition: transform .18s ease;
+  }
+}
+
+@media (max-width: 1279px) {
+  .timeline {
+    align-items: stretch;
+  }
+
+  .timeline--sticky .timeline-card {
+    height: 100%;
+  }
+
+  .timeline--sticky .timeline-card:not(:last-child)::before {
+    top: -48.5px;
+    left: 48px;
+    width: calc(100% + var(--timeline-gap));
+    height: 1px;
+    transform: none;
+    z-index: 0;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1279px) {
+  .timeline.timeline--sticky {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-auto-rows: minmax(var(--stickysection-card-height-tablet), auto);
+  }
+
+  .flow--timeline-sticky.stickysection--cards-3 .timeline-card:nth-child(3) {
+    grid-column: auto;
+  }
+
+  .timeline--sticky .timeline-card {
+    height: auto;
+    margin-left: 0;
+  }
+
+  .timeline-map {
+    top: calc((var(--timeline-axis-card-gap) * -1) - 82px);
+    left: 0;
+    width: 100%;
+    aspect-ratio: 1160 / 306;
+    height: auto;
+  }
+}
+
+@media (max-width: 767px) {
+  .flow .section-head,
+  .timeline {
+    grid-template-columns: 1fr;
+  }
+
+  .timeline {
+    gap: 36px;
+    padding-top: 0;
+  }
+
+  .timeline strong {
+    grid-column: 1;
+    grid-row: 1;
+    width: 44px;
+    height: 44px;
+    margin-left: 0;
+  }
+
+  .timeline--sticky {
+    --timeline-mobile-gutter: clamp(84px, 18vw, 108px);
+    display: block;
+    padding-top: 0;
+    position: relative;
+  }
+
+  .flow--timeline-sticky .stickysection-pin > .section-head + .sequence-list {
+    margin-top: 0;
+  }
+
+  .timeline-map {
+    display: block;
+    top: 8px;
+    left: 0;
+    width: var(--timeline-mobile-gutter);
+    height: calc(100% - 12px);
+    aspect-ratio: auto;
+    overflow: visible;
+  }
+
+  .timeline--sticky .timeline-card {
+    --timeline-node-shift: 0px;
+    display: block;
+    height: auto;
+    min-height: 0;
+    margin-left: var(--timeline-mobile-gutter);
+  }
+
+  .timeline--sticky .timeline-card + .timeline-card {
+    margin-top: var(--stickysection-grid-gap);
+  }
+
+  .timeline--sticky .timeline-step {
+    opacity: 0;
+    pointer-events: none;
+    top: 0;
+    left: -72px;
+    width: 44px;
+    height: 44px;
+  }
+
+  .timeline--sticky .timeline-card:not(:last-child)::before {
+    top: 22px;
+    left: -50.5px;
+    width: 1px;
+    height: calc(100% + var(--stickysection-grid-gap));
+    transform: none;
+  }
+
+  .timeline-map-svg--desktop {
+    display: none;
+  }
+
+  .timeline-map-svg--mobile {
+    display: block;
+    inset: auto;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    max-width: none;
+    transform: none;
+  }
+
+  .timeline-map-svg--mobile .timeline-map-day-text {
+    display: block;
+    fill: rgba(0, 0, 0, 0.36);
+  }
+
+  .timeline-map-svg--mobile .timeline-map-day-badge-fill {
+    display: block;
+  }
+
+  .timeline-map-svg--mobile .timeline-map-label {
+    display: none;
+  }
+}

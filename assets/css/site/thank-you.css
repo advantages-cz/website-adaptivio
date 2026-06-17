@@ -1,0 +1,87 @@
+.thank-you-page {
+  min-height: 0;
+  background:
+    radial-gradient(circle at 16% 18%, rgba(255, 101, 18, 0.22), transparent 0 34%),
+    radial-gradient(circle at 82% 18%, rgba(129, 234, 252, 0.2), transparent 0 38%),
+    linear-gradient(180deg, rgba(255, 255, 255, 1) 0%, rgba(129, 234, 252, 0.12) 100%);
+}
+
+.thank-you-body .site-header {
+  color: var(--ink);
+  background: rgba(255, 255, 255, 0.88);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+  backdrop-filter: blur(18px);
+}
+
+.thank-you-body .brand img {
+  filter: none;
+}
+
+.thank-you-body .nav-links {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+
+.thank-you-hero {
+  min-height: clamp(520px, calc(100svh - var(--nav) - 120px), 720px);
+  padding: calc(var(--nav) + 40px) 0 56px;
+  display: grid;
+  align-items: center;
+}
+
+.thank-you-card {
+  max-width: 900px;
+  display: grid;
+  gap: 24px;
+  padding: clamp(36px, 5vw, 64px);
+  border-radius: 30px;
+  background: rgba(255, 255, 255, 0.86);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  box-shadow: 0 28px 70px rgba(0, 0, 0, 0.08);
+  backdrop-filter: blur(14px);
+}
+
+.thank-you-card h1 {
+  margin: 0;
+  max-width: 11ch;
+}
+
+.thank-you-card .lead {
+  margin: 0;
+  max-width: 40rem;
+  font-size: 21px;
+  line-height: 1.6;
+  color: var(--muted);
+}
+
+.thank-you-secondary {
+  color: var(--ink);
+  border-color: rgba(0, 0, 0, 0.16);
+}
+
+@media (max-width: 767px) {
+  .thank-you-hero {
+    min-height: 0;
+    padding: calc(var(--nav) + var(--section-space-mobile)) 0 var(--section-space-mobile);
+    align-items: start;
+  }
+
+  .thank-you-card {
+    gap: 16px;
+    padding: 26px 22px 24px;
+    border-radius: 24px;
+  }
+
+  .thank-you-card .lead {
+    font-size: 18px;
+  }
+
+  .thank-you-card .hero-actions {
+    margin-top: 8px;
+  }
+
+  .thank-you-body .nav-links {
+    display: none;
+  }
+}

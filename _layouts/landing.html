@@ -2,7 +2,7 @@
 <html lang="cs">
 <head>
   {% assign content_data = site.data[page.data_key] %}
-  {% include site-head.html meta=content_data.meta %}
+  {% include site-head.html meta=content_data.meta stylesheet="/assets/css/landing.css" %}
 </head>
 <body>
   {% include site-header.html brand=content_data.brand %}

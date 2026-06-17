@@ -3,7 +3,7 @@
 <head>
   {% assign content_data = site.data[page.data_key] | default: page %}
   {% assign meta = content_data.meta | default: content_data %}
-  {% include site-head.html meta=meta %}
+  {% include site-head.html meta=meta stylesheet="/assets/css/thank-you.css" %}
 </head>
 <body class="thank-you-body">
   {% include site-header.html brand=content_data.header_brand %}

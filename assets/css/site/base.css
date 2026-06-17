@@ -1,0 +1,98 @@
+:root {
+  --ink: #000000;
+  --paper: #ffffff;
+  --white: #ffffff;
+  --muted: rgba(0, 0, 0, 0.66);
+  --soft: rgba(129, 234, 252, 0.12);
+  --line: rgba(0, 0, 0, 0.13);
+  --orange: #ff6512;
+  --blue: #81eafc;
+  --accent-surface: var(--orange);
+  --accent-text: var(--orange);
+  --accent-on-surface: var(--ink);
+  --focus-ring: 0 0 0 3px rgba(129, 234, 252, 0.9);
+  --max: 1280px;
+  --nav: 74px;
+  --font-ui: "Matter Trial", Arial, Helvetica, sans-serif;
+  --leading-display: 1.08;
+  --leading-heading: 1.12;
+  --leading-card-heading: 1.12;
+  --leading-lead: 1.42;
+  --leading-copy: 1.68;
+  --leading-small: 1.48;
+  --hero-pad-top: calc(var(--nav) + 20px);
+  --hero-pad-bottom: 32px;
+  --hero-copy-pad-block: 20px;
+  --section-space-desktop: 96px;
+  --section-space-mobile: 64px;
+  --section-head-gap-y: 22px;
+  --section-head-stack-gap: 18px;
+  --section-head-stack-gap-display: 24px;
+  --section-head-stack-gap-xl: 32px;
+  --section-head-margin-bottom: 42px;
+  --section-head-split-columns: minmax(0, 1.2fr) minmax(380px, 0.8fr);
+  --section-head-split-gap-x: clamp(32px, 3vw, 64px);
+  --section-head-split-gap-y: 18px;
+  --section-head-title-max: 22ch;
+  --section-head-copy-max: 42ch;
+  --section-perex-inset: 24px;
+}
+
+* { box-sizing: border-box; }
+
+html {
+  min-height: 100%;
+  background: var(--paper);
+}
+
+body {
+  margin: 0;
+  min-height: 100%;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--font-ui);
+  line-height: var(--leading-copy);
+  font-weight: 400;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background:
+    linear-gradient(90deg, rgba(0, 0, 0, 0.035) 1px, transparent 1px),
+    linear-gradient(180deg, rgba(0, 0, 0, 0.025) 1px, transparent 1px);
+  background-size: 88px 88px;
+  mask-image: linear-gradient(180deg, transparent, #000 18%, #000 78%, transparent);
+}
+
+img { display: block; max-width: 100%; }
+a { color: inherit; }
+code { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; }
+
+a:focus-visible,
+button:focus-visible,
+.button:focus-visible {
+  outline: none;
+  box-shadow: var(--focus-ring);
+}
+
+.wrap {
+  width: min(var(--max), calc(100% - 44px));
+  margin: 0 auto;
+}
+
+@media (max-width: 767px) {
+  :root {
+    --hero-pad-top: calc(var(--nav) + 16px);
+    --hero-pad-bottom: 24px;
+    --hero-copy-pad-block: 12px;
+    --section-space-mobile: 56px;
+  }
+
+  .wrap {
+    width: min(100%, calc(100% - 32px));
+  }
+}
