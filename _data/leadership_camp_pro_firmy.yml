@@ -45,8 +45,8 @@ intro:
       label: dny mimo běžný provoz
     - value: "10–20"
       label: lidí v jednom běhu
-    - value: "4–6"
-      label: lidí v jednom týmu
+    - value: "3–4"
+      label: týmy po ~5 lidech
     - value: "0"
       label: teorie odtržené od reality
       tone: accent
@@ -132,8 +132,8 @@ sections:
         title: Témata a týmy
         copy: >-
           Začnete u témat, která lidé opravdu chtějí řešit. Podle nich sestavíte
-          pracovní týmy. Teprve potom si pojmenujete, co kdo umí a jakou výbavu
-          může do společné práce přinést.
+          pracovní týmy o cca 5 lidech. Teprve potom si pojmenujete, co kdo umí
+          a jakou výbavu může do společné práce přinést.
       - step: "2. den"
         label: 2. den — ven
         title: Očima zákazníka
