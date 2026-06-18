@@ -88,7 +88,18 @@
         const nextSection = activeStickySection
           ? navigation.getNextSectionAfter(activeStickySection.section)
           : navigation.getNextSection();
-        if (nextSection) return navigation.getSectionScrollTop(nextSection);
+        if (nextSection) {
+          const nextStickySection = stickySectionsController.stickySections.find(
+            stickySection => stickySection.section === nextSection
+          );
+
+          if (nextStickySection?.cards.length === 1) {
+            return stickySectionsController.getStickyAdvanceScrollTop(nextStickySection)
+              ?? navigation.getSectionScrollTop(nextSection);
+          }
+
+          return navigation.getSectionScrollTop(nextSection);
+        }
         return navigation.getFooterScrollTop();
       })();
 

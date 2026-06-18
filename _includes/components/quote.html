@@ -5,6 +5,14 @@
 {% if quote_scroll_cue_start_at == nil %}
   {% assign quote_scroll_cue_start_at = -0.44 %}
 {% endif %}
+{% assign quote_scroll_cue_target = include.section.scroll_cue_target %}
+{% if quote_scroll_cue_target == nil and has_cta %}
+  {% assign quote_scroll_cue_target = 1 %}
+{% endif %}
+{% assign quote_scroll_cue_complete_at = include.section.scroll_cue_complete_at %}
+{% if quote_scroll_cue_complete_at == nil and has_cta %}
+  {% assign quote_scroll_cue_complete_at = 0.68 %}
+{% endif %}
 {% capture quote_body %}
   <div class="quote-head{% if is_dark_quote %} final-head{% endif %}">
     <p class="eyebrow">{{ include.section.eyebrow }}</p>
@@ -26,7 +34,7 @@
   scroll_cue_preview_opacity=include.section.scroll_cue_preview_opacity
   scroll_cue_preview_travel=include.section.scroll_cue_preview_travel
   scroll_cue_preview_scale=include.section.scroll_cue_preview_scale
-  scroll_cue_target=include.section.scroll_cue_target
-  scroll_cue_complete_at=include.section.scroll_cue_complete_at
+  scroll_cue_target=quote_scroll_cue_target
+  scroll_cue_complete_at=quote_scroll_cue_complete_at
   body=quote_body
 %}
