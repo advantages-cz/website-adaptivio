@@ -67,9 +67,8 @@ The shared landing renderer is `_layouts/landing.html`. It reads:
 - `meta`
 - `brand`
 - `hero`
-- `intro`
 - `sections`
-- `final_cta`
+- `response_form`
 
 Most new landing pages only need:
 
@@ -79,6 +78,7 @@ Most new landing pages only need:
 
 Current shared section types:
 
+- `stats`
 - `stickysection`
 - `timeline`
 - `quote`
@@ -96,10 +96,10 @@ Use `_data/*.yml` for page content changes whenever possible.
 Typical edits:
 
 - hero copy, CTA labels, and links
-- intro text and metrics
+- stats / intro text and metrics
 - section order and section content
 - speaker / people blocks
-- final CTA text
+- closing quote / CTA text
 - thank-you page text and metadata
 
 Keep the content structure data-driven instead of hardcoding one-off markup into page files.
@@ -117,6 +117,14 @@ Preview page:
 - `/system/`
 
 When changing the shared `stickysection` pattern, update the markup, CSS, JS, and design-system documentation together.
+
+## Quote Motion
+
+`quote` is a shared section type, including the closing dark CTA variant.
+
+- `quote` uses the shared stickysection motion model on desktop.
+- The component currently defines its own internal default `scroll_cue_start_at` so quote-style single-card scenes settle at the intended visual center without repeating page-specific YAML overrides.
+- Override that value in page data only when a specific quote section genuinely needs a different scroll timing.
 
 ## Deploying A Static Build Locally
 

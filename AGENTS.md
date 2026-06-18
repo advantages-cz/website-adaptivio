@@ -24,12 +24,11 @@ Keep this file short and repo-specific. Prefer pointing agents to the real sourc
 - Reusable sections live in `_includes/components/`.
 - Current shared landing components include:
   - `hero`
-  - `intro`
+  - `stats`
   - `stickysection`
   - `timeline`
   - `quote`
   - `people`
-  - `final-cta`
 - When extending a landing page, prefer composing existing includes before creating a new section type.
 - If a new section type is truly needed, update both the relevant include and the section switch in `_layouts/landing.html`.
 
@@ -56,6 +55,7 @@ Keep this file short and repo-specific. Prefer pointing agents to the real sourc
 For current stickysection details, inspect:
 
 - `_includes/components/stickysection.html`
+- `_includes/components/sticky-shell.html`
 - `assets/css/landing.css`
 - `assets/css/site/`
 - `assets/js/site.js`

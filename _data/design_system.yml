@@ -282,7 +282,7 @@ patterns:
         se stále řídí tokeny.
       - Když sticky skončí, sekce se vrací do běžného rytmu daného spacing tokeny.
       - Délka pinned scény se mění přes `--stickysection-runway-extra`, ne vlastním výpočtem.
-      - Intro může používat stejný sticky model a stejné JS hooky bez vlastního motion systému.
+      - Stats/intro sekce může používat stejný sticky model a stejné JS hooky bez vlastního motion systému.
   - name: Timeline
     class: timeline
     kind: Process strip
@@ -297,22 +297,15 @@ patterns:
   - name: Quote
     class: quote-section
     kind: Centered band
-    description: Vyšší meziblok s velkým blockquote a navazující copy.
+    description: Vyšší meziblok s velkým blockquote a navazujícím pravým obsahem, případně i CTA.
     rules:
       - Na desktopu se obsah chová jako center band uvnitř vyšší sekce.
-      - Sticky varianta může připnout eyebrow a headline a animovat jen navazující copy blok.
+      - Sticky varianta připíná levý quote blok a animuje pravý obsah jako jednu kartu.
+      - Quote komponenta má vlastní interní start motion parametr pro single-card dojezd; page data ho přepisují jen výjimečně.
       - Na mobilu se band zkracuje a zůstává kompaktní.
       - >-
         Rozestupy quote sekce se mají řídit systémovým rytmem, ne jednorázovým
         lokálním hackem.
-  - name: Final CTA
-    class: final
-    kind: Closing band
-    description: Závěrečný dark band s headline, leadem a CTA.
-    rules:
-      - Působí jako uzavírací scéna s jednokartovou sticky kompozicí na desktopu.
-      - Obsah má zůstat čistý a jednosměrný, bez dalších podsekcí.
-      - Scroll cue může používat stejné datové prahy jako ostatní sticky scény.
   - name: People
     class: people
     kind: Profile strip
