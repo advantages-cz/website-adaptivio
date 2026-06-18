@@ -9,9 +9,10 @@
   <main id="top">
     <article aria-labelledby="page-title" aria-describedby="page-summary">
       {% include components/hero.html section=content_data.hero %}
-      {% include components/intro.html section=content_data.intro %}
       {% for section in content_data.sections %}
         {% case section.type %}
+        {% when 'stats' %}
+          {% include components/stats.html section=section %}
         {% when 'stickysection' %}
           {% include components/stickysection.html section=section %}
         {% when 'timeline' %}
@@ -22,7 +23,6 @@
           {% include components/people.html section=section %}
         {% endcase %}
       {% endfor %}
-      {% include components/final-cta.html section=content_data.final_cta %}
       {% if content_data.response_form %}
         {% include components/response-form.html section=content_data.response_form %}
       {% endif %}

@@ -1,16 +1,28 @@
+{% assign is_dark_quote = include.section.theme == 'dark' %}
+{% assign has_cta = include.section.cta %}
+{% capture quote_section_class %}{% if is_dark_quote %}final quote-section stickysection stickysection--dark stickysection--cards-1 stickysection--tall{% else %}quote-section stickysection stickysection--paper stickysection--cards-2{% endif %}{% endcapture %}
+{% assign quote_scroll_cue_start_at = include.section.scroll_cue_start_at %}
+{% if quote_scroll_cue_start_at == nil %}
+  {% assign quote_scroll_cue_start_at = -0.44 %}
+{% endif %}
 {% capture quote_body %}
-  <div class="quote-head">
+  <div class="quote-head{% if is_dark_quote %} final-head{% endif %}">
     <p class="eyebrow">{{ include.section.eyebrow }}</p>
     <blockquote class="big-quote">{{ include.section.title }}</blockquote>
   </div>
-  <div class="quote-body stickysection-card is-active" data-stickysection-card>
-    <p class="copy">{{ include.section.copy }}</p>
+  <div class="quote-body{% if is_dark_quote %} final-body{% endif %} stickysection-card is-active" data-stickysection-card>
+    <p class="copy{% if is_dark_quote %} lead{% endif %}">{{ include.section.copy }}</p>
+    {% if has_cta %}
+    <div class="hero-actions">
+      <a class="button" href="{{ include.section.cta.url }}">{{ include.section.cta.label }}</a>
+    </div>
+    {% endif %}
   </div>
 {% endcapture %}
 {% include components/sticky-shell.html
-  section_class="quote-section stickysection stickysection--paper stickysection--cards-2"
+  section_class=quote_section_class
   pin_class="quote-pin"
-  scroll_cue_start_at=include.section.scroll_cue_start_at
+  scroll_cue_start_at=quote_scroll_cue_start_at
   scroll_cue_preview_opacity=include.section.scroll_cue_preview_opacity
   scroll_cue_preview_travel=include.section.scroll_cue_preview_travel
   scroll_cue_preview_scale=include.section.scroll_cue_preview_scale

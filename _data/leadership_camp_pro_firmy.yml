@@ -26,31 +26,31 @@ hero:
   secondary_cta:
     label: Jak to funguje
     url: "#uvod"
-intro:
-  id: uvod
-  eyebrow: Co běžná porada neukáže
-  title: Malý projekt jako zrcadlo týmu
-  copy: >-
-    Porada ukáže, co si kdo myslí. Malý projekt rychle zviditelní, kde práce
-    opravdu vytváří hodnotu a kde ne — dřív, než z ní vznikne velký projekt, dlouhá debata
-    nebo drahý omyl. Zároveň odkryje schopnosti a přínosy, které v běžném provozu
-    často zůstávají schované.
-  perex: >-
-    Během tří dnů vezmete téma, na kterém vám záleží, a zmenšíte ho do podoby,
-    kterou jde rychle vyzkoušet. Připravíte jednoduchou první verzi, pustíte ji
-    ven a získáte zpětnou vazbu. Projekt není cílem. Je to nejkratší cesta
-    k tomu, aby tým uviděl, kde práce vytváří hodnotu — a co do ní sám přináší.
-  metrics:
-    - value: "3"
-      label: dny mimo běžný provoz
-    - value: "10–20"
-      label: lidí v jednom běhu
-    - value: "3–4"
-      label: týmy po ~5 lidech
-    - value: "0"
-      label: teorie odtržené od reality
-      tone: accent
 sections:
+  - type: stats
+    id: uvod
+    eyebrow: Co běžná porada neukáže
+    title: Malý projekt jako zrcadlo týmu
+    copy: >-
+      Porada ukáže, co si kdo myslí. Malý projekt rychle zviditelní, kde práce
+      opravdu vytváří hodnotu a kde ne — dřív, než z ní vznikne velký projekt, dlouhá debata
+      nebo drahý omyl. Zároveň odkryje schopnosti a přínosy, které v běžném provozu
+      často zůstávají schované.
+    perex: >-
+      Během tří dnů vezmete téma, na kterém vám záleží, a zmenšíte ho do podoby,
+      kterou jde rychle vyzkoušet. Připravíte jednoduchou první verzi, pustíte ji
+      ven a získáte zpětnou vazbu. Projekt není cílem. Je to nejkratší cesta
+      k tomu, aby tým uviděl, kde práce vytváří hodnotu — a co do ní sám přináší.
+    stats:
+      - value: "3"
+        label: dny mimo běžný provoz
+      - value: "10–20"
+        label: lidí v jednom běhu
+      - value: "3–4"
+        label: týmy po ~5 lidech
+      - value: "0"
+        label: teorie odtržené od reality
+        tone: accent
   - type: stickysection
     theme: soft
     cards: 3
@@ -245,15 +245,16 @@ sections:
           Po návratu pomůžeme zkušenost usadit. S odstupem se podíváme, co se
           opravdu propsalo do práce, co má pokračovat a jak z toho udělat další
           konkrétní krok ve firmě.
-final_cta:
-  title: Krize je drahý učitel, dotkněte se reality bezpečněji.
-  lead: >-
-    Vystupte na tři dny ze zajetých kolejí a vraťte se se společným
-    zážitkem. Zahlédnete v něm vlastní přínos, práci ostatních i
-    hodnotu, kterou společně přinášíte zákazníkům.
-  cta:
-    label: Ozvěte se mi
-    url: "#odpovedni-formular"
+  - type: quote
+    theme: dark
+    title: Krize je drahý učitel, dotkněte se reality bezpečněji.
+    copy: >-
+      Vystupte na tři dny ze zajetých kolejí a vraťte se se společným
+      zážitkem. Zahlédnete v něm vlastní přínos, práci ostatních i
+      hodnotu, kterou společně přinášíte zákazníkům.
+    cta:
+      label: Ozvěte se mi
+      url: "#odpovedni-formular"
 response_form:
   id: odpovedni-formular
   eyebrow: Kontaktní formulář 

@@ -1,5 +1,5 @@
 .quote-section {
-  --stickysection-runway-extra: 620px;
+  --stickysection-scene-runway: calc((var(--stickysection-runway-viewport) - 112px) + 620px);
   --stickysection-content-gap: 72px;
   --stickysection-card-height: auto;
   --stickysection-card-height-tablet: auto;
